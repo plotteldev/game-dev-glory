@@ -73,7 +73,7 @@ export function HomePage() {
                 blocking your Unity project.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <BookingLink className="w-full sm:w-auto">Book your session</BookingLink>
+                <BookingLink className="w-full sm:w-auto">Book now</BookingLink>
                 <p className="text-sm text-muted">
                   No hype. No generic advice. Just one focused session on the problem in front of
                   you.
@@ -148,7 +148,7 @@ export function HomePage() {
                   Bring one main problem. We&apos;ll focus the session around that.
                 </p>
               </div>
-              <BookingLink className="w-full md:w-auto">Book your session</BookingLink>
+              <BookingLink className="w-full md:w-auto">Book now</BookingLink>
             </div>
           </div>
         </section>
