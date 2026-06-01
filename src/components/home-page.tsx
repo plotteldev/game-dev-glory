@@ -42,6 +42,21 @@ const faqs = [
     question: "What if my problem is vague?",
     answer: "That is fine. We can start by making it clearer.",
   },
+  {
+    question: "What is the refund policy?",
+    answer:
+      "If you need to cancel, please do so at least 24 hours before the session for a refund. Once the session has started, the booking is non-refundable.",
+  },
+  {
+    question: "Can I reschedule?",
+    answer:
+      "Yes. You can reschedule before the session using the link in your booking confirmation. Please avoid last-minute changes where possible.",
+  },
+  {
+    question: "How should I prepare?",
+    answer:
+      "Bring one main problem to focus on. Code, screenshots, notes, builds, or a rough explanation are all fine. The clearer the problem, the more useful the session will be.",
+  },
 ];
 
 export function HomePage() {

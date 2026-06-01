@@ -14,7 +14,12 @@ export function SiteFooter() {
           />
           <span className="font-medium text-foreground">Game Dev Glory</span>
         </div>
-        <p>60 minutes. $150 USD. Online.</p>
+        <div className="flex flex-col gap-2 sm:items-end">
+          <p>60 minutes. $150 USD. Online.</p>
+          <a className="transition hover:text-foreground" href="mailto:info@gamedevglory.com">
+            Contact: info@gamedevglory.com
+          </a>
+        </div>
       </div>
     </footer>
   );
