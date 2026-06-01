@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fbfdff;
   --foreground: #12233f;
   --muted: #5f6f86;
   --brand-blue: #102a52;
   --brand-blue-soft: #edf3fb;
+  --brand-blue-pale: #f6f9fd;
   --brand-yellow: #f4c542;
+  --brand-yellow-soft: #fff6d8;
   --border: #d9e2ef;
 }
 
@@ -16,17 +18,40 @@
   --color-muted: var(--muted);
   --color-brand-blue: var(--brand-blue);
   --color-brand-blue-soft: var(--brand-blue-soft);
+  --color-brand-blue-pale: var(--brand-blue-pale);
   --color-brand-yellow: var(--brand-yellow);
+  --color-brand-yellow-soft: var(--brand-yellow-soft);
   --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
+  background:
+    linear-gradient(rgba(16, 42, 82, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 42, 82, 0.035) 1px, transparent 1px),
+    var(--background);
+  background-size: 32px 32px;
   color: var(--foreground);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.pixel-corners {
+  clip-path: polygon(
+    0 10px,
+    10px 10px,
+    10px 0,
+    calc(100% - 10px) 0,
+    calc(100% - 10px) 10px,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    10px calc(100% - 10px),
+    0 calc(100% - 10px)
+  );
 }

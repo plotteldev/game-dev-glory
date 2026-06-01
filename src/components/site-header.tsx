@@ -10,7 +10,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-border bg-white/95">
+    <header className="border-b border-border bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
         <a className="flex items-center gap-3" href="#top" aria-label="Game Dev Glory home">
           <Image
@@ -18,7 +18,7 @@ export function SiteHeader() {
             alt="Game Dev Glory logo"
             width={44}
             height={44}
-            className="h-11 w-11 rounded-md object-cover"
+            className="pixel-corners h-11 w-11 object-cover"
             priority
           />
           <span className="text-base font-semibold text-brand-blue">Game Dev Glory</span>
@@ -29,7 +29,11 @@ export function SiteHeader() {
           aria-label="Main navigation"
         >
           {navItems.map((item) => (
-            <a key={item.href} className="transition hover:text-brand-blue" href={item.href}>
+            <a
+              key={item.href}
+              className="relative transition hover:text-brand-blue after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-0 after:bg-brand-yellow after:transition-all hover:after:w-full"
+              href={item.href}
+            >
               {item.label}
             </a>
           ))}

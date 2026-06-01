@@ -10,7 +10,7 @@ export function SiteFooter() {
             alt="Game Dev Glory logo"
             width={36}
             height={36}
-            className="h-9 w-9 rounded-md object-cover"
+            className="pixel-corners h-9 w-9 object-cover"
           />
           <span className="font-medium text-brand-blue">Game Dev Glory</span>
         </div>
