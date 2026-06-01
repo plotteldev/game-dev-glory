@@ -130,14 +130,14 @@ export function HomePage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {authorityItems.map((item) => (
               <article
                 key={item.title}
-                className="rounded-md border border-border bg-surface p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
+                className="rounded border border-border bg-surface px-4 py-4 text-sm text-foreground shadow-[3px_3px_0_0_var(--brand-blue-soft)] transition hover:-translate-y-0.5 hover:border-brand-yellow/60 hover:shadow-[4px_4px_0_0_var(--brand-yellow)]"
               >
-                <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-3 leading-7 text-muted">{item.body}</p>
+                <h3 className="font-semibold">{item.title}</h3>
+                <p className="mt-2 leading-6 text-muted">{item.body}</p>
               </article>
             ))}
           </div>
