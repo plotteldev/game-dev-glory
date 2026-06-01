@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: "Game Dev Glory | Unity Consults",
   description:
     "Book a focused consult for a stuck Unity project: 60 minutes, $150 USD.",
+  icons: {
+    icon: "/logo.jpg",
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
   openGraph: {
     title: "Game Dev Glory | Unity Consults",
     description:
