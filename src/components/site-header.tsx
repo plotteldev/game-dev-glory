@@ -39,7 +39,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden sm:block">
-          <BookingLink>Book a $150 consult</BookingLink>
+          <BookingLink>Book your session</BookingLink>
         </div>
       </div>
     </header>
