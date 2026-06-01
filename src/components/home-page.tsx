@@ -15,12 +15,18 @@ const helpItems = [
 ];
 
 const authorityItems = [
-  "Commercial games programmer since 2018",
-  "Projects from Indie to AAA",
-  "Unity and C# as deepest areas",
-  "Five years teaching university computer science and games development",
-  "Hundreds of students helped",
-  "One practical next step",
+  {
+    title: "2018",
+    body: "Indie -> AAA. Start -> Finish.",
+  },
+  {
+    title: "Technical range",
+    body: "Variety of engines and languages. Deepest in Unity and C#.",
+  },
+  {
+    title: "University teaching",
+    body: "Computer science and games development.",
+  },
 ];
 
 const faqs = [
@@ -122,16 +128,21 @@ export function HomePage() {
               Most stuck developers do not need another tutorial. They need an experienced game
               programmer to look at their actual project and help them untangle what is happening.
             </p>
-            <p>
-              I&apos;ve worked commercially as a games programmer since 2018, on projects from Indie
-              to AAA, across development from start to finish. Unity and C# are my deepest areas of
-              experience.
-            </p>
-            <p>
-              I also spent five years teaching university computer science and games development,
-              helping hundreds of students break down technical problems and understand the real
-              blocker.
-            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {authorityItems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-md border border-border bg-surface p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
+              >
+                <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-3 leading-7 text-muted">{item.body}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10 max-w-3xl space-y-5 text-lg leading-8 text-muted">
             <p>
               In a session, we can look at your code, architecture, game design, workflow, scope,
               or motivation problem.
@@ -139,17 +150,6 @@ export function HomePage() {
             <p className="text-foreground">
               The goal is always the same: leave the session knowing exactly what to do next.
             </p>
-          </div>
-
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {authorityItems.map((item) => (
-              <div
-                key={item}
-                className="rounded border border-border bg-surface px-4 py-4 text-sm font-semibold text-foreground shadow-[3px_3px_0_0_var(--brand-blue-soft)]"
-              >
-                {item}
-              </div>
-            ))}
           </div>
         </LandingSection>
 
