@@ -15,18 +15,12 @@ const helpItems = [
 ];
 
 const authorityItems = [
-  {
-    title: "Commercial production context",
-    body: "I can help separate a local bug from a wider architecture, workflow, or scope problem.",
-  },
-  {
-    title: "Unity and C# depth",
-    body: "We can talk through scripts, scenes, prefabs, systems, tooling, or the technical decision you are avoiding.",
-  },
-  {
-    title: "Teaching that translates",
-    body: "The session is built around explanation, diagnosis, and a practical path you can follow after the call.",
-  },
+  "Commercial games programmer since 2018",
+  "Projects from Indie to AAA",
+  "Unity and C# as deepest areas",
+  "Five years teaching university computer science and games development",
+  "Hundreds of students helped",
+  "One practical next step",
 ];
 
 const faqs = [
@@ -147,15 +141,14 @@ export function HomePage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {authorityItems.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-md border border-border bg-surface p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
+              <div
+                key={item}
+                className="rounded border border-border bg-surface px-4 py-4 text-sm font-semibold text-foreground shadow-[3px_3px_0_0_var(--brand-blue-soft)]"
               >
-                <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-3 leading-7 text-muted">{item.body}</p>
-              </article>
+                {item}
+              </div>
             ))}
           </div>
         </LandingSection>
