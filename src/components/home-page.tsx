@@ -66,7 +66,7 @@ export function HomePage() {
           </div>
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="max-w-3xl">
-              <p className="pixel-corners mb-5 inline-flex border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
+              <p className="mb-5 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
                 60 minutes &middot; USD $150 &middot; Online
               </p>
               <h1 className="text-4xl font-semibold text-foreground sm:text-6xl">
@@ -83,7 +83,7 @@ export function HomePage() {
               </div>
             </div>
 
-            <div className="pixel-corners border border-border bg-surface p-6 shadow-[8px_8px_0_0_var(--brand-blue-soft)]">
+            <div className="rounded-md border border-border bg-surface p-6 shadow-[8px_8px_0_0_var(--brand-blue-soft)]">
               <div className="border-l-4 border-brand-yellow pl-5">
                 <p className="text-sm font-semibold uppercase text-muted">Focused consult</p>
                 <p className="mt-3 text-2xl font-semibold text-foreground">One project problem.</p>
@@ -101,7 +101,7 @@ export function HomePage() {
             {helpItems.map((item) => (
               <li
                 key={item}
-                className="pixel-corners border border-border bg-surface px-4 py-4 text-sm font-medium text-foreground shadow-[3px_3px_0_0_var(--brand-blue-soft)] transition hover:-translate-y-0.5 hover:border-brand-yellow/60 hover:shadow-[4px_4px_0_0_var(--brand-yellow)]"
+                className="rounded border border-border bg-surface px-4 py-4 text-sm font-medium text-foreground shadow-[3px_3px_0_0_var(--brand-blue-soft)] transition hover:-translate-y-0.5 hover:border-brand-yellow/60 hover:shadow-[4px_4px_0_0_var(--brand-yellow)]"
               >
                 {item}
               </li>
@@ -114,7 +114,7 @@ export function HomePage() {
             {steps.map((step, index) => (
               <article
                 key={step.title}
-                className="pixel-corners border border-border bg-surface p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
+                className="rounded-md border border-border bg-surface p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
               >
                 <p className="mb-5 flex h-9 w-9 items-center justify-center bg-brand-yellow text-sm font-semibold text-brand-blue">
                   {index + 1}
@@ -144,7 +144,7 @@ export function HomePage() {
         </LandingSection>
 
         <section id="book" className="scroll-mt-10 px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
-          <div className="pixel-corners mx-auto max-w-6xl border border-brand-yellow/35 bg-surface-raised p-8 shadow-[8px_8px_0_0_var(--brand-yellow-soft)] sm:p-10">
+          <div className="mx-auto max-w-6xl rounded-md border border-brand-yellow/35 bg-surface-raised p-8 shadow-[8px_8px_0_0_var(--brand-yellow-soft)] sm:p-10">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">

@@ -4,14 +4,14 @@
   --background: #07111f;
   --foreground: #f4f8ff;
   --muted: #aebbd0;
-  --brand-blue: #102a52;
-  --brand-blue-soft: #18345a;
-  --brand-blue-pale: #09182b;
+  --brand-blue: #0060c0;
+  --brand-blue-soft: #0c3768;
+  --brand-blue-pale: #081a31;
   --brand-yellow: #f4c542;
   --brand-yellow-soft: #3b3219;
-  --surface: #0d1b31;
-  --surface-raised: #122846;
-  --border: #294260;
+  --surface: #0a203a;
+  --surface-raised: #0f2b4d;
+  --border: #1d4d80;
 }
 
 @theme inline {
@@ -32,8 +32,8 @@
 
 body {
   background:
-    linear-gradient(rgba(244, 197, 66, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(244, 197, 66, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(0, 96, 192, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 96, 192, 0.08) 1px, transparent 1px),
     var(--background);
   background-size: 32px 32px;
   color: var(--foreground);
@@ -41,21 +41,4 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
-
-.pixel-corners {
-  clip-path: polygon(
-    0 10px,
-    10px 10px,
-    10px 0,
-    calc(100% - 10px) 0,
-    calc(100% - 10px) 10px,
-    100% 10px,
-    100% calc(100% - 10px),
-    calc(100% - 10px) calc(100% - 10px),
-    calc(100% - 10px) 100%,
-    10px 100%,
-    10px calc(100% - 10px),
-    0 calc(100% - 10px)
-  );
 }

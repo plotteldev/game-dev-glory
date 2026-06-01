@@ -18,7 +18,7 @@ export function SiteHeader() {
             alt="Game Dev Glory logo"
             width={44}
             height={44}
-            className="pixel-corners h-11 w-11 object-cover"
+            className="h-11 w-11 rounded object-cover"
             priority
           />
           <span className="text-base font-semibold text-foreground">Game Dev Glory</span>
