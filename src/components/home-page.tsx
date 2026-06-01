@@ -35,10 +35,6 @@ const faqs = [
     answer: "No. You just need a Unity project and a problem to work through.",
   },
   {
-    question: "Can I bring code?",
-    answer: "Yes. Code, screenshots, builds, notes, or a rough explanation are all fine.",
-  },
-  {
     question: "Will you build it for me?",
     answer: "No. This is coaching and problem-solving, not a done-for-you service.",
   },
