@@ -129,7 +129,7 @@ export function HomePage() {
               programmer to look at their actual project and help them untangle what is happening.
             </p>
             <p>
-              I&apos;ve worked on projects big and small, across development from start to finish.
+              I&apos;ve worked on projects from Indie to AAA, across development from start to finish.
               In a session, we can look at your code, architecture, game design, workflow, scope,
               or motivation problem.
             </p>
