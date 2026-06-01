@@ -14,6 +14,21 @@ const helpItems = [
   '"I don\'t know what to do next"',
 ];
 
+const authorityItems = [
+  {
+    title: "Project-level judgment",
+    body: "A stuck game is rarely just one broken script. We look at the code, the system, and the decision around it.",
+  },
+  {
+    title: "Practical technical tradeoffs",
+    body: "The goal is not to make everything perfect. It is to find the next move that fits your project, skill level, and scope.",
+  },
+  {
+    title: "Clearer direction",
+    body: "You get a working conversation about the problem in front of you, then leave with a plan you can actually act on.",
+  },
+];
+
 const faqs = [
   {
     question: "Do I need to be advanced?",
@@ -88,6 +103,32 @@ export function HomePage() {
               </li>
             ))}
           </ul>
+        </LandingSection>
+
+        <LandingSection id="authority" title="Help from someone who understands stuck projects">
+          <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-muted">
+            <p>
+              I&apos;m Matt Noone. I work best with game developers who are close enough to their
+              project to care, but too deep in the details to see the next step clearly.
+            </p>
+            <p>
+              This is not business coaching or generic motivation. It is a focused technical
+              session for Unity projects that need clearer thinking around code, bugs, systems,
+              architecture, or scope.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {authorityItems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-md border border-border bg-surface p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
+              >
+                <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-3 leading-7 text-muted">{item.body}</p>
+              </article>
+            ))}
+          </div>
         </LandingSection>
 
         <LandingSection
