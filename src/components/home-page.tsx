@@ -16,16 +16,16 @@ const helpItems = [
 
 const authorityItems = [
   {
-    title: "2018",
-    body: "Indie -> AAA. Start -> Finish.",
+    title: "Commercial experience since 2018",
+    body: "I have worked on games from indie projects to AAA production, across development from start to finish.",
   },
   {
-    title: "Technical range",
-    body: "Variety of engines and languages. Deepest in Unity and C#.",
+    title: "Broad technical background",
+    body: "I have worked across a variety of engines and languages, with the deepest experience in Unity and C#.",
   },
   {
     title: "University teaching",
-    body: "Computer science and games development.",
+    body: "I have taught university computer science and games development, helping students break down technical problems clearly.",
   },
 ];
 
