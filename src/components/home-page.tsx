@@ -21,7 +21,7 @@ const authorityItems = [
   },
   {
     title: "Broad technical background",
-    body: "I have worked across a variety of engines and languages, so the advice is grounded in how systems actually work, not just the Unity golden path.",
+    body: "I have worked across different engines and languages, so I can help with the underlying system, not just the usual Unity answer.",
   },
   {
     title: "University teaching",
