@@ -3,7 +3,7 @@ import { BookingLink } from "@/components/booking-link";
 
 const navItems = [
   { href: "#help", label: "Help" },
-  { href: "#about", label: "About" },
+  { href: "#authority", label: "About" },
   { href: "#book", label: "Book" },
 ];
 

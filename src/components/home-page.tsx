@@ -69,12 +69,14 @@ export function HomePage() {
                 Stuck on your Unity game?
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-                Book a focused 1-on-1 consult and leave with a clearer next step.
+                Book a focused 1-on-1 consult for the code, system, scope, or decision that is
+                blocking your Unity project.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <BookingLink className="w-full sm:w-auto">Book a $150 consult</BookingLink>
                 <p className="text-sm text-muted">
-                  No subscription. No sales call. Just one focused session.
+                  No hype. No generic advice. Just one focused session on the problem in front of
+                  you.
                 </p>
               </div>
             </div>
@@ -131,23 +133,6 @@ export function HomePage() {
                 <p className="mt-3 leading-7 text-muted">{item.body}</p>
               </article>
             ))}
-          </div>
-        </LandingSection>
-
-        <LandingSection
-          id="about"
-          title="Practical help for stuck Unity devs"
-          className="border-y border-border bg-brand-blue text-white"
-        >
-          <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-white/80">
-            <p>
-              Game Dev Glory is 1-on-1 coaching for Unity developers who need help making sense of
-              a stuck project.
-            </p>
-            <p>
-              No hype. No generic advice. Just a focused working session on the problem in front of
-              you.
-            </p>
           </div>
         </LandingSection>
 
