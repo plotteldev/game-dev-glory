@@ -20,12 +20,12 @@ const authorityItems = [
     body: "I have worked on games from indie projects to AAA production, across development from start to finish.",
   },
   {
-    title: "Broad technical background",
+    title: "Beyond Unity",
     body: "I have worked across different engines and languages, so I can help with the underlying system, not just the usual Unity answer.",
   },
   {
     title: "University teaching",
-    body: "I have taught hundreds of university computer science and games development students over five years.",
+    body: "With over 5 years of experience, I've helped hundreds of university computer science and games development students move from confusion to clarity.",
   },
 ];
 
