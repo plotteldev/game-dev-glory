@@ -24,8 +24,8 @@ const authorityItems = [
     body: "Unity and C# are my deepest areas of experience, but the coaching is about understanding systems and making better technical decisions.",
   },
   {
-    title: "Five years of teaching",
-    body: "I have helped hundreds of students move from confusion to clarity by breaking problems down and finding the real blocker.",
+    title: "University teaching experience",
+    body: "Across five years teaching university computer science and games development, I helped hundreds of students move from confusion to clarity.",
   },
 ];
 
