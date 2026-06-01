@@ -10,7 +10,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-border bg-white/90 backdrop-blur">
+    <header className="border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
         <a className="flex items-center gap-3" href="#top" aria-label="Game Dev Glory home">
           <Image
@@ -21,7 +21,7 @@ export function SiteHeader() {
             className="pixel-corners h-11 w-11 object-cover"
             priority
           />
-          <span className="text-base font-semibold text-brand-blue">Game Dev Glory</span>
+          <span className="text-base font-semibold text-foreground">Game Dev Glory</span>
         </a>
 
         <nav
@@ -31,7 +31,7 @@ export function SiteHeader() {
           {navItems.map((item) => (
             <a
               key={item.href}
-              className="relative transition hover:text-brand-blue after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-0 after:bg-brand-yellow after:transition-all hover:after:w-full"
+              className="relative transition hover:text-foreground after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-0 after:bg-brand-yellow after:transition-all hover:after:w-full"
               href={item.href}
             >
               {item.label}
@@ -39,7 +39,9 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <BookingLink className="hidden sm:inline-flex">Book a $150 consult</BookingLink>
+        <div className="hidden sm:block">
+          <BookingLink>Book a $150 consult</BookingLink>
+        </div>
       </div>
     </header>
   );

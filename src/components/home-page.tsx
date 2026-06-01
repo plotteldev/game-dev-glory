@@ -59,17 +59,17 @@ export function HomePage() {
               <span
                 key={index}
                 className={`h-2.5 w-2.5 ${
-                  index % 5 === 0 ? "bg-brand-yellow" : "bg-brand-blue-soft"
+                  index % 5 === 0 ? "bg-brand-yellow" : "bg-surface-raised"
                 }`}
               />
             ))}
           </div>
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="max-w-3xl">
-              <p className="pixel-corners mb-5 inline-flex bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-blue">
+              <p className="pixel-corners mb-5 inline-flex border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
                 60 minutes &middot; USD $150 &middot; Online
               </p>
-              <h1 className="text-4xl font-semibold text-brand-blue sm:text-6xl">
+              <h1 className="text-4xl font-semibold text-foreground sm:text-6xl">
                 Stuck on your Unity game?
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
@@ -83,10 +83,10 @@ export function HomePage() {
               </div>
             </div>
 
-            <div className="pixel-corners border border-border bg-white p-6 shadow-[8px_8px_0_0_var(--brand-blue-soft)]">
+            <div className="pixel-corners border border-border bg-surface p-6 shadow-[8px_8px_0_0_var(--brand-blue-soft)]">
               <div className="border-l-4 border-brand-yellow pl-5">
                 <p className="text-sm font-semibold uppercase text-muted">Focused consult</p>
-                <p className="mt-3 text-2xl font-semibold text-brand-blue">One project problem.</p>
+                <p className="mt-3 text-2xl font-semibold text-foreground">One project problem.</p>
                 <p className="mt-4 leading-7 text-muted">
                   A practical session for code, bugs, systems, architecture, scope, or next-step
                   clarity.
@@ -96,12 +96,12 @@ export function HomePage() {
           </div>
         </section>
 
-        <LandingSection id="help" title="What we can work on" className="bg-brand-blue-pale/85">
+        <LandingSection id="help" title="What we can work on" className="bg-brand-blue-pale/80">
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {helpItems.map((item) => (
               <li
                 key={item}
-                className="pixel-corners border border-border bg-white px-4 py-4 text-sm font-medium text-brand-blue shadow-[3px_3px_0_0_var(--brand-blue-soft)] transition hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--brand-yellow)]"
+                className="pixel-corners border border-border bg-surface px-4 py-4 text-sm font-medium text-foreground shadow-[3px_3px_0_0_var(--brand-blue-soft)] transition hover:-translate-y-0.5 hover:border-brand-yellow/60 hover:shadow-[4px_4px_0_0_var(--brand-yellow)]"
               >
                 {item}
               </li>
@@ -114,12 +114,12 @@ export function HomePage() {
             {steps.map((step, index) => (
               <article
                 key={step.title}
-                className="pixel-corners border border-border bg-white p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
+                className="pixel-corners border border-border bg-surface p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
               >
                 <p className="mb-5 flex h-9 w-9 items-center justify-center bg-brand-yellow text-sm font-semibold text-brand-blue">
                   {index + 1}
                 </p>
-                <h3 className="text-xl font-semibold text-brand-blue">{step.title}</h3>
+                <h3 className="text-xl font-semibold text-foreground">{step.title}</h3>
                 <p className="mt-3 leading-7 text-muted">{step.body}</p>
               </article>
             ))}
@@ -129,7 +129,7 @@ export function HomePage() {
         <LandingSection
           id="about"
           title="Practical help for stuck Unity devs"
-          className="bg-brand-blue text-white"
+          className="border-y border-border bg-brand-blue text-white"
         >
           <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-white/80">
             <p>
@@ -144,10 +144,10 @@ export function HomePage() {
         </LandingSection>
 
         <section id="book" className="scroll-mt-10 px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
-          <div className="pixel-corners mx-auto max-w-6xl border border-border bg-white p-8 shadow-[8px_8px_0_0_var(--brand-yellow-soft)] sm:p-10">
+          <div className="pixel-corners mx-auto max-w-6xl border border-brand-yellow/35 bg-surface-raised p-8 shadow-[8px_8px_0_0_var(--brand-yellow-soft)] sm:p-10">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
-                <h2 className="text-3xl font-semibold text-brand-blue sm:text-4xl">
+                <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">
                   Book a paid consult
                 </h2>
                 <p className="mt-4 text-lg text-muted">60 minutes. $150 USD. Online.</p>
@@ -164,9 +164,9 @@ export function HomePage() {
           <div className="mt-8 divide-y divide-border border-y border-border">
             {faqs.map((faq) => (
               <details key={faq.question} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-base font-semibold text-brand-blue">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-base font-semibold text-foreground">
                   {faq.question}
-                  <span className="text-brand-blue transition group-open:rotate-45">+</span>
+                  <span className="text-brand-yellow transition group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-4 max-w-3xl leading-7 text-muted">{faq.answer}</p>
               </details>
