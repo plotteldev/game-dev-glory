@@ -40,3 +40,16 @@ npm run lint
 - The site does not use a database.
 - All consult CTAs read from `NEXT_PUBLIC_BOOKING_URL`.
 - The consult price is $150 USD and the duration is 60 minutes.
+
+## DigitalOcean App Platform
+
+This repository includes a DigitalOcean App Platform spec at `.do/app.yaml`.
+
+Use it to deploy as a Node.js web service:
+
+- Build command: `npm run build`
+- Run command: `npm run start`
+- HTTP port: `3000`
+- Environment variable: `NEXT_PUBLIC_BOOKING_URL=https://cal.com/matt-noone-avjm8m/60min`
+
+After the app is live, connect the production domain in DigitalOcean and run a real booking test through Cal.com.

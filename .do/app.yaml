@@ -1,0 +1,31 @@
+name: game-dev-glory
+alerts:
+  - rule: DEPLOYMENT_FAILED
+  - rule: DOMAIN_FAILED
+ingress:
+  rules:
+    - component:
+        name: web
+      match:
+        path:
+          prefix: /
+services:
+  - name: web
+    environment_slug: node-js
+    github:
+      repo: plotteldev/game-dev-glory
+      branch: main
+      deploy_on_push: true
+    source_dir: /
+    build_command: npm run build
+    run_command: npm run start
+    http_port: 3000
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    health_check:
+      http_path: /
+    envs:
+      - key: NEXT_PUBLIC_BOOKING_URL
+        value: https://cal.com/matt-noone-avjm8m/60min
+        scope: RUN_AND_BUILD_TIME
+        type: GENERAL
