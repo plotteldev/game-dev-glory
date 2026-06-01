@@ -16,16 +16,16 @@ const helpItems = [
 
 const authorityItems = [
   {
-    title: "Commercial game programming",
-    body: "I have worked commercially as a games programmer since 2018 across different engines, languages, project sizes, and stages of development.",
+    title: "Commercial production context",
+    body: "I can help separate a local bug from a wider architecture, workflow, or scope problem.",
   },
   {
-    title: "Deep Unity and C# experience",
-    body: "Unity and C# are my deepest areas of experience, but the coaching is about understanding systems and making better technical decisions.",
+    title: "Unity and C# depth",
+    body: "We can talk through scripts, scenes, prefabs, systems, tooling, or the technical decision you are avoiding.",
   },
   {
-    title: "University teaching experience",
-    body: "Across five years teaching university computer science and games development, I helped hundreds of students move from confusion to clarity.",
+    title: "Teaching that translates",
+    body: "The session is built around explanation, diagnosis, and a practical path you can follow after the call.",
   },
 ];
 
@@ -129,7 +129,16 @@ export function HomePage() {
               programmer to look at their actual project and help them untangle what is happening.
             </p>
             <p>
-              I&apos;ve worked on projects from Indie to AAA, across development from start to finish.
+              I&apos;ve worked commercially as a games programmer since 2018, on projects from Indie
+              to AAA, across development from start to finish. Unity and C# are my deepest areas of
+              experience.
+            </p>
+            <p>
+              I also spent five years teaching university computer science and games development,
+              helping hundreds of students break down technical problems and understand the real
+              blocker.
+            </p>
+            <p>
               In a session, we can look at your code, architecture, game design, workflow, scope,
               or motivation problem.
             </p>
