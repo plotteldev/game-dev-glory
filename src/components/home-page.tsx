@@ -16,16 +16,16 @@ const helpItems = [
 
 const authorityItems = [
   {
-    title: "Project-level judgment",
-    body: "A stuck game is rarely just one broken script. We look at the code, the system, and the decision around it.",
+    title: "Commercial game programming",
+    body: "I have worked commercially as a games programmer since 2018 across different engines, languages, project sizes, and stages of development.",
   },
   {
-    title: "Practical technical tradeoffs",
-    body: "The goal is not to make everything perfect. It is to find the next move that fits your project, skill level, and scope.",
+    title: "Deep Unity and C# experience",
+    body: "Unity and C# are my deepest areas of experience, but the coaching is about understanding systems and making better technical decisions.",
   },
   {
-    title: "Clearer direction",
-    body: "You get a working conversation about the problem in front of you, then leave with a plan you can actually act on.",
+    title: "Five years of teaching",
+    body: "I have helped hundreds of students move from confusion to clarity by breaking problems down and finding the real blocker.",
   },
 ];
 
@@ -105,16 +105,19 @@ export function HomePage() {
           </ul>
         </LandingSection>
 
-        <LandingSection id="authority" title="Help from someone who understands stuck projects">
+        <LandingSection id="authority" title="I help stuck Unity devs find the next real step">
           <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-muted">
             <p>
-              I&apos;m Matt Noone. I work best with game developers who are close enough to their
-              project to care, but too deep in the details to see the next step clearly.
+              Most stuck developers do not need another tutorial. They need an experienced game
+              programmer to look at their actual project and help them untangle what is happening.
             </p>
             <p>
-              This is not business coaching or generic motivation. It is a focused technical
-              session for Unity projects that need clearer thinking around code, bugs, systems,
-              architecture, or scope.
+              I&apos;ve worked on projects big and small, across development from start to finish.
+              In a session, we can look at your code, architecture, game design, workflow, scope,
+              or motivation problem.
+            </p>
+            <p className="text-foreground">
+              The goal is always the same: leave the session knowing exactly what to do next.
             </p>
           </div>
 
