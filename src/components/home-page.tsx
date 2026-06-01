@@ -14,21 +14,6 @@ const helpItems = [
   '"I don\'t know what to do next"',
 ];
 
-const steps = [
-  {
-    title: "Book a time",
-    body: "Choose a slot and pay.",
-  },
-  {
-    title: "Bring one problem",
-    body: "Code, notes, screenshots, or a rough explanation are fine.",
-  },
-  {
-    title: "Leave with a plan",
-    body: "We turn the problem into clear next steps.",
-  },
-];
-
 const faqs = [
   {
     question: "Do I need to be advanced?",
@@ -103,23 +88,6 @@ export function HomePage() {
               </li>
             ))}
           </ul>
-        </LandingSection>
-
-        <LandingSection id="how-it-works" title="How it works">
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {steps.map((step, index) => (
-              <article
-                key={step.title}
-                className="rounded-md border border-border bg-surface p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
-              >
-                <p className="mb-5 flex h-9 w-9 items-center justify-center bg-brand-yellow text-sm font-semibold text-brand-blue">
-                  {index + 1}
-                </p>
-                <h3 className="text-xl font-semibold text-foreground">{step.title}</h3>
-                <p className="mt-3 leading-7 text-muted">{step.body}</p>
-              </article>
-            ))}
-          </div>
         </LandingSection>
 
         <LandingSection
