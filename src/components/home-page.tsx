@@ -21,11 +21,11 @@ const authorityItems = [
   },
   {
     title: "Broad technical background",
-    body: "I have worked across a variety of engines and languages, with the deepest experience in Unity and C#.",
+    body: "I have worked across a variety of engines and languages, so the advice is grounded in how systems actually work, not just the Unity golden path.",
   },
   {
     title: "University teaching",
-    body: "I have taught university computer science and games development, helping students break down technical problems clearly.",
+    body: "I have taught hundreds of university computer science and games development students over five years.",
   },
 ];
 
