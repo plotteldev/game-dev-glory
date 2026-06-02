@@ -14,6 +14,7 @@ const calLink = bookingUrl
   .replace(/^\/+/, "");
 const namespace = "game-dev-glory-consult";
 const embedId = "cal-booking-embed";
+const paidBookingConversionSendTo = "AW-18205791019/dmgeCNiY6rccEKummelD";
 
 function buildCalEmbedScript(link: string) {
   return `
@@ -66,6 +67,21 @@ function buildCalEmbedScript(link: string) {
         });
       }
 
+      function reportPaidBookingConversion(detail) {
+        var data = detail && detail.data ? detail.data : {};
+
+        if (typeof window.gtag !== "function") {
+          return;
+        }
+
+        window.gtag("event", "conversion", {
+          send_to: ${JSON.stringify(paidBookingConversionSendTo)},
+          value: 150.0,
+          currency: "USD",
+          transaction_id: data.uid
+        });
+      }
+
       window.Cal("init", namespace, { origin: "https://app.cal.com" });
       window.Cal.ns[namespace]("inline", {
         elementOrSelector: embedSelector,
@@ -86,6 +102,7 @@ function buildCalEmbedScript(link: string) {
         action: "bookingSuccessfulV2",
         callback: function (event) {
           pushDataLayer("paid_consult_booked", event.detail);
+          reportPaidBookingConversion(event.detail);
         }
       });
     })();
