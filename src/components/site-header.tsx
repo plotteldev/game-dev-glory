@@ -13,11 +13,11 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-6 lg:px-8">
         <a className="flex items-center gap-3" href="#top" aria-label="Game Dev Glory home">
           <Image
-            src="/logo.jpg"
+            src="/logo-mark.png"
             alt="Game Dev Glory logo"
             width={44}
             height={44}
-            className="h-11 w-11 rounded object-cover"
+            className="h-11 w-11 object-contain"
             priority
           />
           <span className="text-base font-semibold text-foreground">Game Dev Glory</span>
