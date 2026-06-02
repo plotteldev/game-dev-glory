@@ -17,6 +17,7 @@ cp .env.example .env.local
 ```
 
 Set `NEXT_PUBLIC_BOOKING_URL` in `.env.local` to the booking/payment URL.
+Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready.
 
 Run the development server:
 
@@ -39,6 +40,8 @@ npm run lint
 
 - The site does not use a database.
 - All consult CTAs read from `NEXT_PUBLIC_BOOKING_URL`.
+- The `/book` page embeds Cal.com and pushes `cal_booker_viewed` and
+  `paid_consult_booked` events to Google Tag Manager's `dataLayer`.
 - The consult price is $150 USD and the duration is 60 minutes.
 
 ## DigitalOcean App Platform
@@ -51,5 +54,6 @@ Use it to deploy as a Node.js web service:
 - Run command: `npm run start`
 - HTTP port: `3000`
 - Environment variable: `NEXT_PUBLIC_BOOKING_URL=https://cal.com/matt-noone-avjm8m/60min`
+- Environment variable: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX`
 
 After the app is live, connect the production domain in DigitalOcean and run a real booking test through Cal.com.

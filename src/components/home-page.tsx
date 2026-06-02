@@ -55,7 +55,7 @@ const faqs = [
   {
     question: "How should I prepare?",
     answer:
-      "Bring one main problem to focus on. Code, screenshots, notes, builds, or a rough explanation are all fine. The clearer the problem, the more useful the session will be.",
+      "Bring one blocker or a list of smaller issues. Code, screenshots, notes, builds, or a rough explanation are all fine. We will focus the session where it creates the most progress.",
   },
 ];
 
@@ -99,7 +99,7 @@ export function HomePage() {
             <div className="rounded-md border border-border bg-surface p-6 shadow-[8px_8px_0_0_var(--brand-blue-soft)]">
               <div className="border-l-4 border-brand-yellow pl-5">
                 <p className="text-sm font-semibold uppercase text-muted">Focused consult</p>
-                <p className="mt-3 text-2xl font-semibold text-foreground">One project problem.</p>
+                <p className="mt-3 text-2xl font-semibold text-foreground">One focused next step.</p>
                 <p className="mt-4 leading-7 text-muted">
                   A practical session for code, bugs, systems, architecture, scope, or next-step
                   clarity.
@@ -162,7 +162,8 @@ export function HomePage() {
                 </h2>
                 <p className="mt-4 text-lg text-muted">60 minutes. $150 USD. Online.</p>
                 <p className="mt-3 text-sm text-muted">
-                  Bring one main problem. We&apos;ll focus the session around that.
+                  Bring one blocker or a list of smaller issues. We&apos;ll focus on the
+                  highest-value next step.
                 </p>
               </div>
               <BookingLink className="w-full md:w-auto">Book now</BookingLink>
