@@ -15,18 +15,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gamedevglory.com"),
-  title: "Game Dev Glory | Unity Consults",
+  title: "Unity Project Rescue Consult | Game Dev Glory",
   description:
-    "Book a focused consult for a stuck Unity project: 60 minutes, $150 USD.",
+    "Book a focused Unity project rescue consult with Matt Noone, a commercial game programmer and educator.",
   icons: {
     icon: "/logo-icon.png",
     shortcut: "/logo-icon.png",
     apple: "/logo-icon.png",
   },
   openGraph: {
-    title: "Game Dev Glory | Unity Consults",
+    title: "Unity Project Rescue Consult | Game Dev Glory",
     description:
-      "Focused 1-on-1 coaching for Unity developers who need a clearer next step.",
+      "Focused 1-on-1 help for Unity developers blocked by code, systems, architecture, bugs, or scope.",
     type: "website",
     images: [
       {
