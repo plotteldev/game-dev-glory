@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 const privacyItems = [
   {
     title: "What is collected",
-    body: "When you book an enrolment call, the booking system may collect details such as your name, email address, answers to booking questions, timezone, meeting details, and technical information needed to provide the booking service.",
+    body: "When you book an application call, the booking system may collect details such as your name, email address, answers to booking questions, timezone, meeting details, and technical information needed to provide the booking service.",
   },
   {
     title: "Why it is collected",
-    body: "This information is used to assess whether Game Programming Fundamentals is a suitable fit, schedule the enrolment call, communicate about enrolment, and deliver coaching if you enrol.",
+    body: "This information is used to understand whether Game Programming Fundamentals is a suitable fit, schedule the application call, communicate about joining, and deliver coaching if you join.",
   },
   {
     title: "Where it is handled",
@@ -22,7 +22,7 @@ const privacyItems = [
   },
   {
     title: "How it is used",
-    body: "Your information is not sold. It may be used to respond to your enquiry, run the enrolment call, manage enrolment, provide support, and keep basic business records.",
+    body: "Your information is not sold. It may be used to respond to your enquiry, run the application call, manage your place in the program, provide support, and keep basic business records.",
   },
   {
     title: "Questions",
@@ -33,7 +33,7 @@ const privacyItems = [
 export default function PrivacyPage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Apply For 1-on-1 Coaching" />
+      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Apply for 1-on-1 Coaching" />
       <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <section className="mx-auto max-w-4xl">
           <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">

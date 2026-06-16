@@ -20,7 +20,7 @@ function getNavItems(bookHref: string) {
 export function SiteHeader({
   bookHref = "/book",
   ctaHref = "/book",
-  ctaLabel = "Apply For 1-on-1 Coaching",
+  ctaLabel = "Apply for 1-on-1 Coaching",
 }: SiteHeaderProps) {
   const navItems = getNavItems(bookHref);
 

@@ -4,12 +4,12 @@ import { LandingSection } from "@/components/landing-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
-const ctaLabel = "Apply For 1-on-1 Coaching";
+const ctaLabel = "Apply for 1-on-1 Coaching";
 
 const buildMilestones = [
   {
     title: "Week 1 console project",
-    body: "Set up your C# workflow and write small programs that make variables, input, conditions, loops, functions, and debugging concrete.",
+    body: "Set up your C# workflow and write small programs that make variables, input, conditions, loops, functions, and debugging feel concrete.",
   },
   {
     title: "Week 2 game window",
@@ -35,20 +35,20 @@ const fitItems = [
 
 const notFitItems = [
   "You want a finished commercial game in 4 weeks",
-  "You specifically need engine-first training right now",
+  "You specifically want a course that starts inside Unity or Unreal right now",
   "You want 3D, multiplayer, advanced tooling, art, marketing, or publishing help",
   "You want someone else to build the game for you",
-  "You cannot protect weekly practice time during the program",
+  "You cannot set aside weekly practice time during the program",
 ];
 
 const includedItems = [
   "4 private weekly coaching calls",
-  "Beginner-safe C# starter projects",
+  "Beginner-friendly C# starter projects",
   "Weekly project feedback",
   "A small task ladder so each week has a clear finish line",
   "Same-day chat support between weekly calls",
   "Final review of the playable project",
-  "Up to two extra weekly coaching calls if you do the work and still cannot get a minimum playable project running",
+  "Up to two extra weekly coaching calls if you complete the weekly tasks and still do not have a small playable project running",
 ];
 
 const faqs = [
@@ -65,12 +65,12 @@ const faqs = [
   {
     question: "Can I build my own game idea?",
     answer:
-      "Your interests matter, but the 4-week project must stay small. We will shape the idea into a tiny playable version that teaches the right programming skills without turning into an oversized dream project.",
+      "Your interests matter, but the 4-week project must stay small. We will shape the idea into a tiny playable version that teaches the right programming skills without letting the scope take over.",
   },
   {
     question: "How much time do I need?",
     answer:
-      "Plan for one private call each week plus 3-5 focused practice sessions. If you cannot protect that time for the next 4 weeks, it is better to wait.",
+      "Plan for one private call each week plus 3-5 focused practice sessions. If you cannot make that time over the next 4 weeks, it is better to wait.",
   },
   {
     question: "Is this a video course?",
@@ -80,7 +80,7 @@ const faqs = [
   {
     question: "What happens if I get stuck?",
     answer:
-      "Bring the error, code, screenshot, or description through the support process. The point of the coaching is to help you learn how to diagnose problems instead of silently staying blocked.",
+      "Send the error, code, screenshot, or a clear description of what happened. The point of the coaching is to help you learn how to diagnose problems instead of staying blocked on your own.",
   },
   {
     question: "What do I finish with?",
@@ -90,7 +90,7 @@ const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "Places are available by application. The enrolment call confirms goals, schedule, expectations, and whether the program is the right next step before enrolment.",
+      "Places are available by application. The free application call confirms your goals, schedule, expectations, and whether the program is the right next step before payment.",
   },
 ];
 
@@ -178,8 +178,8 @@ export function HomePage() {
         <LandingSection id="build" title="What You Will Build">
           <div className="mt-8 max-w-3xl text-lg leading-8 text-muted">
             <p>
-              The goal is not a huge dream game. The goal is a small playable C# game that proves
-              you understand the core programming pieces well enough to keep learning.
+              The goal is not a huge game. The goal is a small playable C# game that proves you
+              understand the core programming pieces well enough to keep learning.
             </p>
           </div>
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -253,10 +253,10 @@ export function HomePage() {
         <LandingSection id="guarantee" title="Guarantee">
           <div className="mt-8 max-w-3xl rounded-md border border-brand-yellow/35 bg-surface p-6 shadow-[6px_6px_0_0_var(--brand-yellow-soft)]">
             <p className="text-lg leading-8 text-muted">
-              If you attend the calls, submit the weekly tasks, ask for help using the support
-              process, and still cannot get a small playable C# project running by the end of Week
+              If you attend the calls, complete the weekly tasks, ask for help when you get stuck,
+              and still do not have a small playable C# project running by the end of Week
               4, I will keep coaching you for up to two additional weekly calls at no extra cost
-              until you have a running minimum playable project.
+              until you have a running playable project.
             </p>
           </div>
         </LandingSection>
@@ -279,12 +279,12 @@ export function HomePage() {
           <div className="mx-auto max-w-6xl rounded-md border border-brand-yellow/35 bg-surface-raised p-8 shadow-[8px_8px_0_0_var(--brand-yellow-soft)] sm:p-10">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase text-brand-yellow">Final CTA</p>
+                <p className="text-sm font-semibold uppercase text-brand-yellow">Ready to apply</p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
                   Apply for the next coaching place
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg text-muted">
-                  Book a free 15-minute enrolment call so we can confirm your goal, schedule, setup,
+                  Book a free 15-minute application call so we can confirm your goal, schedule, setup,
                   and whether private coaching is the right next step.
                 </p>
                 <p className="mt-3 text-sm text-muted">

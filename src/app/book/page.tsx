@@ -5,32 +5,32 @@ import { SiteHeader } from "@/components/site-header";
 const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
 
 const policyPoints = [
-  "Payment is arranged only after the enrolment call if both sides agree the program is a fit.",
-  "Your place is confirmed by payment, not by booking the enrolment call.",
-  "The enrolment call is not a free lesson or code review.",
+  "Payment is arranged only after the application call if we both agree the program is a fit.",
+  "Your place is confirmed by payment, not by booking the application call.",
+  "The application call is not a free lesson or code review.",
 ];
 
 export const metadata: Metadata = {
-  title: "Apply For 1-on-1 Coaching | Game Dev Glory",
+  title: "Apply for 1-on-1 Coaching | Game Dev Glory",
   description:
-    "Book a free 15-minute enrolment call for Game Programming Fundamentals private coaching.",
+    "Book a free 15-minute application call for Game Programming Fundamentals private coaching.",
 };
 
 export default function BookPage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Apply For 1-on-1 Coaching" />
+      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Apply for 1-on-1 Coaching" />
       <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <section className="mx-auto max-w-5xl">
           <div className="mb-8 max-w-3xl">
             <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
-              Free 15-Minute Enrolment Call
+              Free 15-Minute Application Call
             </p>
             <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">
               Apply for Game Programming Fundamentals
             </h1>
             <p className="mt-4 text-lg leading-8 text-muted">
-              Book a free 15-minute enrolment call and answer the intake questions so we can
+              Book a free 15-minute application call and answer a few questions so we can
               confirm your goal, schedule, and whether 1-on-1 coaching is the right next step.
             </p>
           </div>
@@ -50,21 +50,21 @@ export default function BookPage() {
             )}
             <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
               Founding-student price: <span className="font-semibold text-foreground">USD $900</span>.
-              Payment is only arranged after the enrolment call if the program is a fit.
+              Payment is only arranged after the application call if the program is a fit.
             </p>
           </div>
 
           <section className="rounded-md border border-brand-yellow/35 bg-surface p-5 shadow-[6px_6px_0_0_var(--brand-yellow-soft)]">
             <h2 className="text-xl font-semibold text-foreground">Guarantee</h2>
             <p className="mt-4 text-sm leading-6 text-muted">
-              If you attend the calls, submit the weekly tasks, ask for help through the support
-              process, and still cannot get a small playable C# project running by the end of
+              If you attend the calls, complete the weekly tasks, ask for help when you get stuck, and
+              still do not have a small playable C# project running by the end of
               Week 4, you receive up to two additional weekly coaching calls at no extra cost.
             </p>
           </section>
 
           <section className="mt-8 border-t border-border pt-6">
-            <h2 className="text-xl font-semibold text-foreground">Program and booking policies</h2>
+            <h2 className="text-xl font-semibold text-foreground">Program and booking details</h2>
             <ul className="mt-4 grid gap-3 text-sm leading-6 text-muted">
               {policyPoints.map((point) => (
                 <li key={point} className="border-l-4 border-border pl-3">
