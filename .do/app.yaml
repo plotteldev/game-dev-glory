@@ -26,6 +26,6 @@ services:
       http_path: /
     envs:
       - key: NEXT_PUBLIC_BOOKING_URL
-        value: https://cal.com/matt-noone-avjm8m/60min
+        value: https://cal.com/matt-noone-avjm8m/15min
         scope: RUN_AND_BUILD_TIME
         type: GENERAL

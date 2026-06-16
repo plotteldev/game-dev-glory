@@ -4,102 +4,100 @@ import { LandingSection } from "@/components/landing-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
-const projectCredits = [
-  "Age of Mythology: Retold",
-  "Cities: Skylines",
-  "WWZ: Aftermath",
-  "LEGO 2K Drive",
-];
+const ctaLabel = "Apply For 1-on-1 Coaching";
 
-const experienceHighlights = [
-  ...projectCredits,
-  "Taught game programming at Swinburne",
-];
-
-const blockerExamples = [
-  "My gameplay system works, but every new feature breaks something.",
-  "I have a bug that makes no sense from the tutorials I have watched.",
-  "My prototype is growing, but the code structure is starting to collapse.",
-  "I do not know whether to rewrite, refactor, cut scope, or keep pushing.",
+const buildMilestones = [
+  {
+    title: "Week 1 console project",
+    body: "Set up your C# workflow and write small programs that make variables, input, conditions, loops, functions, and debugging concrete.",
+  },
+  {
+    title: "Week 2 game window",
+    body: "Move those same ideas into a simple 2D window so you can draw, update, and respond to player input.",
+  },
+  {
+    title: "Week 3 playable prototype",
+    body: "Add movement, collision, state, timers, scoring, and rules inside a deliberately small project.",
+  },
+  {
+    title: "Week 4 mini-capstone",
+    body: "Finish a scoped playable C# game you can run, explain, debug, and improve after the program.",
+  },
 ];
 
 const fitItems = [
-  "You already have a Unity project or prototype",
-  "You are blocked by code, systems, architecture, bugs, or scope",
-  "You want expert diagnosis, not another generic tutorial",
+  "You are new to programming or have only copied tutorial code",
+  "You want coding fundamentals before taking on a heavy engine",
+  "You can attend one private coaching call each week for 4 weeks",
+  "You can complete 3-5 focused practice sessions between calls",
+  "You want direct feedback instead of another recorded video course",
 ];
 
 const notFitItems = [
-  "You want someone to build the whole game for you",
-  "You need art, marketing, publishing, or legal advice",
-  "You are looking for a complete course instead of a focused consult",
+  "You want a finished commercial game in 4 weeks",
+  "You specifically need engine-first training right now",
+  "You want 3D, multiplayer, advanced tooling, art, marketing, or publishing help",
+  "You want someone else to build the game for you",
+  "You cannot protect weekly practice time during the program",
 ];
 
-const deliverables = [
-  "A direct diagnosis of the highest-priority issue",
-  "A practical explanation of what is happening",
-  "Tradeoffs explained in plain language",
-  "A prioritized next step you can act on",
-  "A short written action plan after the session",
-];
-
-const processSteps = [
-  {
-    title: "Before the call",
-    body: "Send the project context, screenshots, code snippets, repo link, build, notes, or a rough explanation of what is going wrong.",
-  },
-  {
-    title: "During the call",
-    body: "We prioritize the problems, inspect the relevant code or system, and work through the most important decision or bug together.",
-  },
-  {
-    title: "After the call",
-    body: "You leave with what to change, what to avoid, and what to do next so the project can move again.",
-  },
+const includedItems = [
+  "4 private weekly coaching calls",
+  "Beginner-safe C# starter projects",
+  "Weekly project feedback",
+  "A small task ladder so each week has a clear finish line",
+  "Same-day chat support between weekly calls",
+  "Final review of the playable project",
+  "Up to two extra weekly coaching calls if you do the work and still cannot get a minimum playable project running",
 ];
 
 const faqs = [
   {
-    question: "Do I need to be advanced?",
+    question: "I am a total beginner. Is that okay?",
     answer:
-      "No. You need a Unity project and a real problem. I can meet you at your current level.",
+      "Yes. The program starts with coding fundamentals before graphics, engines, or large project structure. You do need to write code, make mistakes, ask questions, and practise between calls.",
   },
   {
-    question: "Will you write the code for me?",
+    question: "Why not Unity or Unreal?",
     answer:
-      "This is a consult, not a done-for-you development service. I can review code, explain issues, suggest fixes, and help you reason through implementation.",
+      "Unity and Unreal are useful later, but they add engine complexity before the programming basics are clear. This program teaches fundamentals first, then uses lightweight C# projects for fast visual feedback.",
   },
   {
-    question: "Can you help with non-Unity problems?",
+    question: "Can I build my own game idea?",
     answer:
-      "The main offer is for Unity projects, but I can also help with general game programming, architecture, AI, gameplay systems, and scope decisions.",
+      "Your interests matter, but the 4-week project must stay small. We will shape the idea into a tiny playable version that teaches the right programming skills without turning into an oversized dream project.",
   },
   {
-    question: "What should I bring?",
+    question: "How much time do I need?",
     answer:
-      "Bring the project, code, screenshots, error messages, notes, or a clear description of what is going wrong. If the problem is vague, clarifying it can be part of the session.",
+      "Plan for one private call each week plus 3-5 focused practice sessions. If you cannot protect that time for the next 4 weeks, it is better to wait.",
   },
   {
-    question: "What if I have several problems?",
+    question: "Is this a video course?",
     answer:
-      "Bring the list. We will prioritize the issue that is blocking the most progress.",
+      "No. This is private 1-on-1 coaching with starter projects, feedback, support, and a small weekly build target. It is not a recorded video course.",
   },
   {
-    question: "Is this for beginners?",
+    question: "What happens if I get stuck?",
     answer:
-      "It can be, but it works best when you have already started something and are stuck. If you have no project yet, we can use the session to choose a realistic first project and learning path.",
+      "Bring the error, code, screenshot, or description through the support process. The point of the coaching is to help you learn how to diagnose problems instead of silently staying blocked.",
   },
   {
-    question: "What is the refund policy?",
+    question: "What do I finish with?",
     answer:
-      "Cancellations should be made at least 24 hours before the session. If I do not think I can help with the problem, I will say so.",
+      "You finish with a small playable C# project you can run and explain, plus a clearer understanding of input, loops, functions, state, collision, debugging, and scope control.",
+  },
+  {
+    question: "How much does it cost?",
+    answer:
+      "Places are available by application. The enrolment call confirms goals, schedule, expectations, and whether the program is the right next step before enrolment.",
   },
 ];
 
 export function HomePage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader />
+      <SiteHeader ctaHref="/book" ctaLabel={ctaLabel} />
       <main>
         <section className="relative overflow-hidden px-5 py-16 sm:px-6 sm:py-24 lg:px-8">
           <div className="absolute right-6 top-10 hidden grid-cols-4 gap-2 opacity-70 md:grid">
@@ -107,7 +105,7 @@ export function HomePage() {
               <span
                 key={index}
                 className={`h-2.5 w-2.5 ${
-                  index % 5 === 0 ? "bg-brand-yellow" : "bg-surface-raised"
+                  index % 4 === 0 ? "bg-brand-yellow" : "bg-surface-raised"
                 }`}
               />
             ))}
@@ -115,21 +113,25 @@ export function HomePage() {
 
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="max-w-3xl">
+              <p className="mb-5 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
+                Game Programming Fundamentals
+              </p>
               <h1 className="text-4xl font-semibold text-foreground sm:text-6xl">
-                Stuck on your Unity game?
+                Game Programming Fundamentals, Taught 1-on-1
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-                Book a 1-on-1 consult with Matt Noone, a commercial game programmer and university
-                educator.
+                Build your first small playable C# game in 4 weeks with private 1-on-1 coaching.
               </p>
               <p className="mt-5 max-w-2xl text-base leading-7 text-muted">
-                Bring your code, prototype, bug, design problem, or architecture issue. We will sort
-                the highest-impact problems and leave you with a clear action plan.
+                Start with programming fundamentals, move into a simple 2D game loop, and finish
+                with a scoped project you can run, debug, and explain.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <BookingLink className="w-full sm:w-auto">Book a Unity consult</BookingLink>
+                <BookingLink href="/book" className="w-full sm:w-auto">
+                  {ctaLabel}
+                </BookingLink>
                 <p className="text-sm text-muted">
-                  Bring the issues slowing the project down. Leave with a plan.
+                  Places are available by application.
                 </p>
               </div>
             </div>
@@ -147,19 +149,25 @@ export function HomePage() {
                   />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold uppercase text-muted">Experience</p>
+                  <p className="text-sm font-semibold uppercase text-muted">Private coaching</p>
                   <p className="mt-3 text-2xl font-semibold text-foreground">
-                    Shipped games. University teaching.
+                    Learn the programming underneath the game.
                   </p>
                   <ul className="mt-6 space-y-3">
-                    {experienceHighlights.map((credit) => (
-                      <li
-                        key={credit}
-                        className="border-l-4 border-brand-yellow pl-4 text-sm font-semibold text-foreground"
-                      >
-                        {credit}
-                      </li>
-                    ))}
+                    {[
+                      "One call per week",
+                      "Same-day chat support",
+                      "Starter projects",
+                      "Project feedback",
+                      "Small playable finish",
+                    ].map((item) => (
+                        <li
+                          key={item}
+                          className="border-l-4 border-brand-yellow pl-4 text-sm font-semibold text-foreground"
+                        >
+                          {item}
+                        </li>
+                      ))}
                   </ul>
                 </div>
               </div>
@@ -167,36 +175,36 @@ export function HomePage() {
           </div>
         </section>
 
-        <LandingSection id="help" title="When tutorials stop helping">
-          <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-muted">
+        <LandingSection id="build" title="What You Will Build">
+          <div className="mt-8 max-w-3xl text-lg leading-8 text-muted">
             <p>
-              Tutorials can teach the basics, but they rarely cover the exact code, systems, and
-              tradeoffs in front of you.
-            </p>
-            <p>
-              If your next technical decision is unclear, we can use the session to sort the issues,
-              inspect the relevant system, and decide what to do next.
+              The goal is not a huge dream game. The goal is a small playable C# game that proves
+              you understand the core programming pieces well enough to keep learning.
             </p>
           </div>
-          <ul className="mt-10 grid gap-x-8 gap-y-4 md:grid-cols-2">
-            {blockerExamples.map((item) => (
-              <li
-                key={item}
-                className="border-l-4 border-brand-yellow pl-4 text-sm font-medium leading-6 text-foreground"
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {buildMilestones.map((item) => (
+              <article
+                key={item.title}
+                className="rounded border border-border bg-surface p-5 shadow-[3px_3px_0_0_var(--brand-blue-soft)]"
               >
-                {item}
-              </li>
+                <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted">{item.body}</p>
+              </article>
             ))}
-          </ul>
+          </div>
         </LandingSection>
 
-        <LandingSection id="fit" title="Who this is for" className="bg-brand-blue-pale/80">
+        <LandingSection id="fit" title="Who This Is For" className="bg-brand-blue-pale/80">
           <div className="mt-10 grid gap-4 lg:grid-cols-2">
             <div className="rounded-md border border-border bg-surface p-5">
-              <h3 className="text-lg font-semibold text-foreground">Best fit if</h3>
+              <h3 className="text-lg font-semibold text-foreground">Good fit if</h3>
               <ul className="mt-5 space-y-3">
                 {fitItems.map((item) => (
-                  <li key={item} className="border-l-4 border-brand-yellow pl-4 text-sm text-muted">
+                  <li
+                    key={item}
+                    className="border-l-4 border-brand-yellow pl-4 text-sm text-muted"
+                  >
                     {item}
                   </li>
                 ))}
@@ -215,15 +223,9 @@ export function HomePage() {
           </div>
         </LandingSection>
 
-        <LandingSection id="deliverables" title="What you get in the session">
-          <div className="mt-8 max-w-3xl text-lg leading-8 text-muted">
-            <p>
-              A focused 60-minute session using your project, constraints, and questions. We find
-              the highest-priority issue and turn it into a practical next-step plan.
-            </p>
-          </div>
+        <LandingSection id="included" title="What Is Included">
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {deliverables.map((item) => (
+            {includedItems.map((item) => (
               <li
                 key={item}
                 className="border-l-4 border-brand-yellow bg-surface px-4 py-4 text-sm font-medium text-foreground"
@@ -234,43 +236,32 @@ export function HomePage() {
           </ul>
         </LandingSection>
 
-        <LandingSection id="process" title="How it works">
-          <div className="mt-10 grid gap-3 lg:grid-cols-3">
-            {processSteps.map((step, index) => (
-              <article
-                key={step.title}
-                className="rounded border border-border bg-surface p-5 shadow-[3px_3px_0_0_var(--brand-blue-soft)]"
-              >
-                <p className="text-sm font-semibold text-brand-yellow">Step {index + 1}</p>
-                <h3 className="mt-3 text-lg font-semibold text-foreground">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted">{step.body}</p>
-              </article>
-            ))}
+        <LandingSection id="not-unity" title="Why This Is Not A Unity Course" className="bg-brand-blue-pale/80">
+          <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-muted">
+            <p>
+              Engines are useful, but they can hide the fundamentals beginners most need: state,
+              loops, input, collision, functions, debugging, and scope control.
+            </p>
+            <p>
+              This program teaches the programming first, then gives you fast visual feedback in a
+              small C# game project. That foundation makes engine work easier later because you
+              understand more of the code underneath.
+            </p>
           </div>
         </LandingSection>
 
-        <section id="book" className="scroll-mt-10 px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mx-auto max-w-6xl rounded-md border border-brand-yellow/35 bg-surface-raised p-8 shadow-[8px_8px_0_0_var(--brand-yellow-soft)] sm:p-10">
-            <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
-              <div>
-                <p className="text-sm font-semibold uppercase text-brand-yellow">
-                  Unity Project Rescue Consult
-                </p>
-                <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
-                  Stop guessing through tutorials
-                </h2>
-                <p className="mt-4 text-lg text-muted">60 minutes. Online.</p>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
-                  Bring the issues slowing the project down. We will focus on the ones that matter
-                  most.
-                </p>
-              </div>
-              <BookingLink className="w-full md:w-auto">Book a Unity consult</BookingLink>
-            </div>
+        <LandingSection id="guarantee" title="Guarantee">
+          <div className="mt-8 max-w-3xl rounded-md border border-brand-yellow/35 bg-surface p-6 shadow-[6px_6px_0_0_var(--brand-yellow-soft)]">
+            <p className="text-lg leading-8 text-muted">
+              If you attend the calls, submit the weekly tasks, ask for help using the support
+              process, and still cannot get a small playable C# project running by the end of Week
+              4, I will keep coaching you for up to two additional weekly calls at no extra cost
+              until you have a running minimum playable project.
+            </p>
           </div>
-        </section>
+        </LandingSection>
 
-        <LandingSection id="faq" title="FAQ">
+        <LandingSection id="faq" title="FAQ" className="bg-brand-blue-pale/80">
           <div className="mt-8 divide-y divide-border border-y border-border">
             {faqs.map((faq) => (
               <details key={faq.question} className="group py-5">
@@ -283,6 +274,29 @@ export function HomePage() {
             ))}
           </div>
         </LandingSection>
+
+        <section id="book" className="scroll-mt-10 px-5 py-16 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto max-w-6xl rounded-md border border-brand-yellow/35 bg-surface-raised p-8 shadow-[8px_8px_0_0_var(--brand-yellow-soft)] sm:p-10">
+            <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase text-brand-yellow">Final CTA</p>
+                <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
+                  Apply for the next coaching place
+                </h2>
+                <p className="mt-4 max-w-2xl text-lg text-muted">
+                  Book a free 15-minute enrolment call so we can confirm your goal, schedule, setup,
+                  and whether private coaching is the right next step.
+                </p>
+                <p className="mt-3 text-sm text-muted">
+                  Places are available by application.
+                </p>
+              </div>
+              <BookingLink href="/book" className="w-full md:w-auto">
+                {ctaLabel}
+              </BookingLink>
+            </div>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

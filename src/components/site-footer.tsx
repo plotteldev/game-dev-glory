@@ -18,6 +18,14 @@ export function SiteFooter() {
           <a className="transition hover:text-foreground" href="mailto:info@gamedevglory.com">
             Contact: info@gamedevglory.com
           </a>
+          <div className="flex gap-4">
+            <a className="transition hover:text-foreground" href="/terms">
+              Terms
+            </a>
+            <a className="transition hover:text-foreground" href="/privacy">
+              Privacy
+            </a>
+          </div>
         </div>
       </div>
     </footer>

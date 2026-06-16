@@ -3,39 +3,39 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Booking Confirmed | Game Dev Glory",
+  title: "Enrolment Call Confirmed | Game Dev Glory",
   description:
-    "Confirmation and preparation details for a Unity Project Rescue Consult with Game Dev Glory.",
+    "Confirmation and preparation details for a Game Programming Fundamentals enrolment call with Game Dev Glory.",
 };
 
 const prepItems = [
-  "Code snippets or a repo link",
-  "Screenshots, video, build link, or error logs",
-  "Notes on anything that has changed since booking",
+  "What you have already tried when learning programming",
+  "What you would like to build by the end of the 4 weeks",
+  "Whether you can protect weekly call and practice time",
 ];
 
 export default function BookingConfirmedPage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" />
+      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Apply For 1-on-1 Coaching" />
       <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <section className="mx-auto max-w-3xl rounded-md border border-border bg-surface p-6 sm:p-8">
           <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
-            Booking confirmed
+            Enrolment call confirmed
           </p>
           <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">
-            Your session is booked
+            Your enrolment call is booked
           </h1>
           <p className="mt-4 text-lg leading-8 text-muted">
-            Your confirmation email will include the calendar invite, call link, and booking
-            details. If you have extra context, send it before the session.
+            Your confirmation email will include the calendar invite and call link. The call is a
+            short enrolment call for Game Programming Fundamentals private coaching.
           </p>
 
           <div className="mt-8 rounded border border-border bg-background/45 p-5">
             <h2 className="text-xl font-semibold text-foreground">Optional prep</h2>
             <p className="mt-2 text-sm leading-6 text-muted">
-              The intake form already covers the basics. Add anything else that would make the
-              problem easier to inspect.
+              No code setup is needed. Come ready to discuss your goal, current experience,
+              schedule, and whether the 4-week coaching program fits your next step.
             </p>
             <ul className="mt-4 grid gap-3 text-sm leading-6 text-muted">
               {prepItems.map((item) => (
@@ -47,7 +47,6 @@ export default function BookingConfirmedPage() {
           </div>
 
           <p className="mt-6 text-sm leading-6 text-muted">
-            The session works best when we can look at the real problem, not just talk around it.
             Use the confirmation email or calendar invite for rescheduling or cancellation.
           </p>
         </section>

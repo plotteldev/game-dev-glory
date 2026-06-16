@@ -1,7 +1,9 @@
 # Game Dev Glory
 
-A minimal landing page for game development coaching: a focused Unity consult funnel and a
-separate beginner game programming starter funnel. Sessions are 60 minutes, $150 USD.
+A minimal landing page for the Game Programming Fundamentals private coaching offer.
+
+The site sends qualified beginners to apply through a free 15-minute enrolment call. It does not collect
+payment or show a public price.
 
 ## Getting Started
 
@@ -17,9 +19,12 @@ Create a local environment file:
 cp .env.example .env.local
 ```
 
-Set `NEXT_PUBLIC_BOOKING_URL` in `.env.local` to the paid Unity consult Cal.com URL.
-Set `NEXT_PUBLIC_START_LEARNING_BOOKING_URL` to the beginner starter session booking URL.
-If it is omitted, `/book/start-learning` falls back to `NEXT_PUBLIC_BOOKING_URL`.
+Set `NEXT_PUBLIC_BOOKING_URL` in `.env.local` to the Cal.com enrolment-call URL:
+
+```bash
+NEXT_PUBLIC_BOOKING_URL=https://cal.com/matt-noone-avjm8m/15min
+```
+
 Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready.
 
 Run the development server:
@@ -42,22 +47,16 @@ npm run lint
 ## Notes
 
 - The site does not use a database.
-- Unity consult CTAs route to `/book`.
-- Beginner game programming CTAs route to `/book/start-learning`.
-- The beginner landing page is `/start-learning-game-programming`.
-- Unity consult booking reads from `NEXT_PUBLIC_BOOKING_URL`.
-- Starter session booking reads from `NEXT_PUBLIC_START_LEARNING_BOOKING_URL`, then falls back
-  to `NEXT_PUBLIC_BOOKING_URL`.
-- The `/book` page sends buyers to the external paid Cal.com booking flow.
-- Configure the Unity consult Cal.com event to collect a short intake and require $150 USD
-  payment before booking confirmation.
-- Recommended required intake questions: "What are you building?", "What is currently stuck or
-  unclear?", and "What would make the session useful for you?"
-- Recommended optional intake questions: project links/files/notes, and Unity version/platform/tools.
-- If available in Cal.com, set the successful booking redirect to `/book/confirmed`.
-- The `/book/start-learning` page embeds Cal.com and pushes `starter_booker_viewed` and
-  `starter_session_booked` events to Google Tag Manager's `dataLayer`.
-- The consult price is $150 USD and the duration is 60 minutes.
+- Primary CTAs use `Apply For 1-on-1 Coaching`.
+- Application CTAs route to `/book`.
+- `/apply` redirects to `/book` for old links.
+- `/book` links to the Cal.com free 15-minute enrolment call.
+- The enrolment call is used to confirm goal, experience, setup, schedule, effort
+  level, and readiness to enrol.
+- The page uses public pricing language: "Places are available by application."
+- Payment and enrolment details happen after the enrolment call when the program is a fit.
+- Cal.com can use its own confirmation flow. The site keeps `/book/confirmed` available if a
+  custom redirect is added later.
 
 ## DigitalOcean App Platform
 
@@ -68,8 +67,8 @@ Use it to deploy as a Node.js web service:
 - Build command: `npm run build`
 - Run command: `npm run start`
 - HTTP port: `3000`
-- Environment variable: `NEXT_PUBLIC_BOOKING_URL=https://cal.com/matt-noone-avjm8m/60min`
-- Environment variable: `NEXT_PUBLIC_START_LEARNING_BOOKING_URL=https://cal.com/...`
+- Environment variable: `NEXT_PUBLIC_BOOKING_URL=https://cal.com/matt-noone-avjm8m/15min`
 - Environment variable: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX`
 
-After the app is live, connect the production domain in DigitalOcean and run a real booking test through Cal.com.
+After the app is live, connect the production domain in DigitalOcean and run a real enrolment-call
+booking test through Cal.com.
