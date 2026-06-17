@@ -13,14 +13,14 @@ function getNavItems(bookHref: string) {
     { href: "/#build", label: "Build" },
     { href: "/#fit", label: "Fit" },
     { href: "/#included", label: "Included" },
-    { href: bookHref, label: "Apply" },
+    { href: bookHref, label: "Book" },
   ];
 }
 
 export function SiteHeader({
   bookHref = "/book",
   ctaHref = "/book",
-  ctaLabel = "Apply for 1-on-1 Coaching",
+  ctaLabel = "Book a 15-minute call",
 }: SiteHeaderProps) {
   const navItems = getNavItems(bookHref);
 

@@ -4,7 +4,7 @@ import { LandingSection } from "@/components/landing-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
-const ctaLabel = "Apply for 1-on-1 Coaching";
+const ctaLabel = "Book a 15-minute call";
 
 const buildMilestones = [
   {
@@ -90,7 +90,7 @@ const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "Places are available by application. The free application call confirms your goals, schedule, expectations, and whether the program is the right next step before payment.",
+      "We talk through goals, schedule, and whether the program is a good match before anything is confirmed.",
   },
 ];
 
@@ -131,7 +131,7 @@ export function HomePage() {
                   {ctaLabel}
                 </BookingLink>
                 <p className="text-sm text-muted">
-                  Places are available by application.
+                  A quick call helps us decide whether this is the right next step.
                 </p>
               </div>
             </div>
@@ -279,16 +279,16 @@ export function HomePage() {
           <div className="mx-auto max-w-6xl rounded-md border border-brand-yellow/35 bg-surface-raised p-8 shadow-[8px_8px_0_0_var(--brand-yellow-soft)] sm:p-10">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase text-brand-yellow">Ready to apply</p>
+                <p className="text-sm font-semibold uppercase text-brand-yellow">Ready to talk?</p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
-                  Apply for the next coaching place
+                  Book a short call
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg text-muted">
-                  Book a free 15-minute application call so we can confirm your goal, schedule, setup,
-                  and whether private coaching is the right next step.
+                  We will talk through your goal, schedule, setup, and whether 1-on-1 coaching
+                  makes sense for where you are now.
                 </p>
                 <p className="mt-3 text-sm text-muted">
-                  Places are available by application.
+                  A quick call helps us decide whether this is the right next step.
                 </p>
               </div>
               <BookingLink href="/book" className="w-full md:w-auto">

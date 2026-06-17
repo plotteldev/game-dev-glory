@@ -13,12 +13,12 @@ const terms = [
     body: "Game Programming Fundamentals is a 4-week private coaching program for beginners learning C# programming through a small playable 2D project.",
   },
   {
-    title: "Founding-student price",
-    body: "The founding-student price is USD $900. Payment is arranged after the application call if the program is a fit. A place is confirmed only after payment is complete.",
+    title: "Payment",
+    body: "Payment is handled after the call if the program is a good match. A coaching spot is confirmed once payment is complete.",
   },
   {
-    title: "Application call",
-    body: "The application call is a short conversation to confirm goals, schedule, setup, expectations, and whether the program is the right fit. It is not a free lesson, code review, or general consulting session.",
+    title: "Intro call",
+    body: "The call is a short conversation about goals, schedule, setup, expectations, and whether the program is a good match. It is not a lesson, code review, or consulting session.",
   },
   {
     title: "Student responsibilities",
@@ -41,7 +41,7 @@ const terms = [
 export default function TermsPage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Apply for 1-on-1 Coaching" />
+      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute call" />
       <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <section className="mx-auto max-w-4xl">
           <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
