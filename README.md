@@ -2,7 +2,7 @@
 
 A minimal landing page for the Game Programming Fundamentals private coaching offer.
 
-The site sends qualified beginners to apply through a free 15-minute enrolment call. It does not collect
+The site sends qualified beginners to book a free 15-minute intro call. It does not collect
 payment or show a public price.
 
 ## Getting Started
@@ -47,14 +47,14 @@ npm run lint
 ## Notes
 
 - The site does not use a database.
-- Primary CTAs use `Apply For 1-on-1 Coaching`.
-- Application CTAs route to `/book`.
+- Primary CTAs use `Book a 15-minute call`.
+- Booking CTAs route to `/book`.
 - `/apply` redirects to `/book` for old links.
-- `/book` links to the Cal.com free 15-minute enrolment call.
-- The enrolment call is used to confirm goal, experience, setup, schedule, effort
-  level, and readiness to enrol.
-- The page uses public pricing language: "Places are available by application."
-- Payment and enrolment details happen after the enrolment call when the program is a fit.
+- `/book` links to the Cal.com free 15-minute intro call.
+- The intro call is used to understand goal, experience, setup, schedule, effort
+  level, and whether the program is a good match.
+- The page does not show a public price.
+- Payment and enrolment details happen after the intro call when the program is a good match.
 - Cal.com can use its own confirmation flow. The site keeps `/book/confirmed` available if a
   custom redirect is added later.
 
@@ -70,5 +70,5 @@ Use it to deploy as a Node.js web service:
 - Environment variable: `NEXT_PUBLIC_BOOKING_URL=https://cal.com/matt-noone-avjm8m/15min`
 - Environment variable: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX`
 
-After the app is live, connect the production domain in DigitalOcean and run a real enrolment-call
+After the app is live, connect the production domain in DigitalOcean and run a real intro-call
 booking test through Cal.com.
