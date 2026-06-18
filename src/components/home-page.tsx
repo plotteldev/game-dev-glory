@@ -119,7 +119,7 @@ const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "The 4-week program price is USD $900. Payment is arranged after the start call when you are ready to join.",
+      "We talk through goals, schedule, setup, and next steps on the start call. Payment details are handled after the call if you want to join.",
   },
 ];
 
@@ -373,10 +373,6 @@ export function HomePage() {
                 <p className="mt-4 max-w-2xl text-lg text-muted">
                   We will talk through your goal, schedule, setup, and what happens next if you want
                   to join.
-                </p>
-                <p className="mt-3 text-sm text-muted">
-                  4-week program price: <span className="font-semibold text-foreground">USD $900</span>.
-                  Payment is arranged after the call when you are ready to join.
                 </p>
               </div>
               <BookingLink href="/book" className="w-full md:w-auto">

@@ -13,8 +13,8 @@ const terms = [
     body: "Game Programming Fundamentals is a 4-week private coaching program for beginners learning C# programming through a small playable 2D project.",
   },
   {
-    title: "4-week program price",
-    body: "The 4-week program price is USD $900. Payment is handled after the start call when you are ready to join. A coaching spot is confirmed once payment is complete.",
+    title: "Payment",
+    body: "Payment is handled after the start call if you want to join. A coaching spot is confirmed once payment is complete.",
   },
   {
     title: "Start call",

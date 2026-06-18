@@ -49,10 +49,6 @@ export default function BookPage() {
                 Booking is not configured yet.
               </p>
             )}
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-              4-week program price: <span className="font-semibold text-foreground">USD $900</span>.
-              Payment is arranged after the call when you are ready to join.
-            </p>
           </div>
 
           <section className="rounded-md border border-brand-yellow/35 bg-surface p-5 shadow-[6px_6px_0_0_var(--brand-yellow-soft)]">
