@@ -13,12 +13,12 @@ const terms = [
     body: "Game Programming Fundamentals is a 4-week private coaching program for beginners learning C# programming through a small playable 2D project.",
   },
   {
-    title: "Founding-student price",
-    body: "The founding-student price is USD $900. Payment is handled after the call if the program is a good match. A coaching spot is confirmed once payment is complete.",
+    title: "4-week program price",
+    body: "The 4-week program price is USD $900. Payment is handled after the start call when you are ready to join. A coaching spot is confirmed once payment is complete.",
   },
   {
-    title: "Intro call",
-    body: "The call is a short conversation about goals, schedule, setup, expectations, and whether the program is a good match. It is not a lesson, code review, or consulting session.",
+    title: "Start call",
+    body: "The call is a short conversation about goals, schedule, setup, expectations, and next steps. It is not a lesson, code review, or consulting session.",
   },
   {
     title: "Student responsibilities",
@@ -41,7 +41,7 @@ const terms = [
 export default function TermsPage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute call" />
+      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute start call" />
       <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <section className="mx-auto max-w-4xl">
           <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
@@ -49,8 +49,7 @@ export default function TermsPage() {
           </p>
           <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">Terms</h1>
           <p className="mt-4 text-lg leading-8 text-muted">
-            These terms summarize how the founding-student version of Game Programming
-            Fundamentals works.
+            These terms summarize how the 4-week Game Programming Fundamentals program works.
           </p>
 
           <div className="mt-8 divide-y divide-border border-y border-border">

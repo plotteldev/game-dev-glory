@@ -7,33 +7,32 @@ const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
 const policyPoints = [
   "This call is for people considering the paid 4-week Game Programming Fundamentals program.",
   "Booking the call does not reserve a coaching spot; a spot is confirmed only after payment.",
-  "The call is for goals, schedule, and fit rather than a lesson, code review, or consulting session.",
+  "The call is for goals, schedule, setup, and next steps rather than a lesson, code review, or consulting session.",
 ];
 
 export const metadata: Metadata = {
-  title: "Book a 15-Minute Call | Game Dev Glory",
+  title: "Book a 15-Minute Start Call | Game Dev Glory",
   description:
-    "Book a free 15-minute fit call for the paid Game Programming Fundamentals private coaching program.",
+    "Book a free 15-minute start call for the paid Game Programming Fundamentals private coaching program.",
 };
 
 export default function BookPage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute call" />
+      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute start call" />
       <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <section className="mx-auto max-w-5xl">
           <div className="mb-8 max-w-3xl">
             <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
-              Free 15-Minute Fit Call
+              Free 15-Minute Start Call
             </p>
             <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">
-              Book a fit call for Game Programming Fundamentals
+              Book a start call for Game Programming Fundamentals
             </h1>
             <p className="mt-4 text-lg leading-8 text-muted">
               This call is for people considering the paid 4-week Game Programming Fundamentals
-              program. We will talk through your goal, current experience, available practice time,
-              and whether the program is the right fit. If it is not a good match, I will tell you
-              directly.
+              program. We will talk through your goals, current experience, schedule, setup, and
+              what happens next if you want to join.
             </p>
           </div>
 
@@ -51,8 +50,8 @@ export default function BookPage() {
               </p>
             )}
             <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-              Founding-student price: <span className="font-semibold text-foreground">USD $900</span>.
-              Payment is only arranged after the call if the program is a fit.
+              4-week program price: <span className="font-semibold text-foreground">USD $900</span>.
+              Payment is arranged after the call when you are ready to join.
             </p>
           </div>
 

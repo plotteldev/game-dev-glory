@@ -4,7 +4,7 @@ import { LandingSection } from "@/components/landing-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
-const ctaLabel = "Book a 15-minute call";
+const ctaLabel = "Book a 15-minute start call";
 
 const buildMilestones = [
   {
@@ -119,7 +119,7 @@ const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "The founding-student price is USD $900. Payment is only arranged after the call if the program is a good match.",
+      "The 4-week program price is USD $900. Payment is arranged after the start call when you are ready to join.",
   },
 ];
 
@@ -261,10 +261,10 @@ export function HomePage() {
           </div>
         </LandingSection>
 
-        <LandingSection id="fit" title="Who This Is For" className="bg-brand-blue-pale/80">
+        <LandingSection id="fit" title="Who This Helps" className="bg-brand-blue-pale/80">
           <div className="mt-10 grid gap-4 lg:grid-cols-2">
             <div className="rounded-md border border-border bg-surface p-5">
-              <h3 className="text-lg font-semibold text-foreground">Good fit if</h3>
+              <h3 className="text-lg font-semibold text-foreground">Best for</h3>
               <ul className="mt-5 space-y-3">
                 {fitItems.map((item) => (
                   <li
@@ -277,7 +277,7 @@ export function HomePage() {
               </ul>
             </div>
             <div className="rounded-md border border-border bg-background/55 p-5">
-              <h3 className="text-lg font-semibold text-foreground">Not a fit if</h3>
+              <h3 className="text-lg font-semibold text-foreground">Not for</h3>
               <ul className="mt-5 space-y-3">
                 {notFitItems.map((item) => (
                   <li key={item} className="border-l-4 border-border pl-4 text-sm text-muted">
@@ -365,18 +365,18 @@ export function HomePage() {
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase text-brand-yellow">
-                  Ready to apply?
+                  Ready to start?
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
-                  Book a fit call for the paid program
+                  Book a start call for the paid program
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg text-muted">
-                  We will talk through your goal, schedule, setup, and whether the 4-week coaching
-                  program makes sense for where you are now.
+                  We will talk through your goal, schedule, setup, and what happens next if you want
+                  to join.
                 </p>
                 <p className="mt-3 text-sm text-muted">
-                  Founding-student price: <span className="font-semibold text-foreground">USD $900</span>.
-                  Payment is only arranged after the call if the program is a fit.
+                  4-week program price: <span className="font-semibold text-foreground">USD $900</span>.
+                  Payment is arranged after the call when you are ready to join.
                 </p>
               </div>
               <BookingLink href="/book" className="w-full md:w-auto">
