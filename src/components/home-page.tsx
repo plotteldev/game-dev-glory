@@ -46,9 +46,38 @@ const includedItems = [
   "Beginner-friendly C# starter projects",
   "Weekly project feedback",
   "A small task ladder so each week has a clear finish line",
-  "Same-day chat support between weekly calls",
+  "Daily chat support for all 28 days",
   "Final review of the playable project",
   "Up to two extra weekly coaching calls if you complete the weekly tasks and still do not have a small playable project running",
+];
+
+const authorityItems = [
+  {
+    title: "Professional game development experience",
+    body: "I have been making games professionally since 2018 across different engines, languages, project sizes, and stages of development.",
+  },
+  {
+    title: "Five years teaching beginners",
+    body: "I spent five years teaching university computer science and games development, helping students break down problems, debug code, and build confidence with fundamentals.",
+  },
+  {
+    title: "Focused feedback, not passive videos",
+    body: "You are not left guessing whether your code is right. You get weekly goals, private coaching, project feedback, and daily chat support for all 28 days.",
+  },
+];
+
+const coachingValueItems = [
+  "You get feedback on your actual mistakes, not generic examples.",
+  "You learn how to debug and reason through problems instead of copying fixes.",
+  "The project is deliberately scoped so you finish something playable.",
+  "You have 28 days of daily chat support, so you are not waiting a week every time you get stuck.",
+];
+
+const programFlowItems = [
+  "One private coaching call each week",
+  "Structured tasks at your own pace",
+  "Daily chat support for all 28 days",
+  "Final review of your playable project",
 ];
 
 const faqs = [
@@ -75,7 +104,7 @@ const faqs = [
   {
     question: "Is this a video course?",
     answer:
-      "No. This is private 1-on-1 coaching with starter projects, feedback, support, and a small weekly build target. It is not a recorded video course.",
+      "No. This is private 1-on-1 coaching with starter projects, feedback, support, and a small weekly goal. It is not a recorded video course.",
   },
   {
     question: "What happens if I get stuck?",
@@ -90,7 +119,7 @@ const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "We talk through goals, schedule, and whether the program is a good match before anything is confirmed.",
+      "The founding-student price is USD $900. Payment is only arranged after the call if the program is a good match.",
   },
 ];
 
@@ -111,8 +140,8 @@ export function HomePage() {
             ))}
           </div>
 
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="max-w-3xl">
+          <div className="mx-auto max-w-6xl">
+            <div className="max-w-4xl">
               <p className="mb-5 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
                 Game Programming Fundamentals
               </p>
@@ -130,48 +159,64 @@ export function HomePage() {
                 <BookingLink href="/book" className="w-full sm:w-auto">
                   {ctaLabel}
                 </BookingLink>
-                <p className="text-sm text-muted">
-                  A quick call helps us decide whether this is the right next step.
-                </p>
               </div>
             </div>
 
-            <aside className="rounded-md border border-border bg-surface p-6 shadow-[8px_8px_0_0_var(--brand-blue-soft)]">
-              <div className="grid gap-5 sm:grid-cols-[160px_1fr] sm:items-stretch">
-                <div className="relative min-h-56 w-full max-w-40 overflow-hidden rounded-md border border-border sm:h-full sm:max-w-none">
+          </div>
+        </section>
+
+        <section className="px-5 pb-14 sm:px-6 sm:pb-16 lg:px-8">
+          <div className="mx-auto max-w-6xl border-y border-border py-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_0.65fr] lg:items-start">
+              <div>
+                <p className="text-sm font-semibold uppercase text-brand-yellow">
+                  How the program works
+                </p>
+                <h2 className="mt-2 max-w-2xl text-2xl font-semibold leading-tight text-foreground">
+                  Four weeks of small project goals, feedback, and daily support.
+                </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-muted">
+                  The 28 days are structured around one small playable C# game. Weekly calls set the
+                  next step, starter projects keep the scope controlled, and chat support helps you
+                  keep moving between calls.
+                </p>
+              </div>
+
+              <aside className="flex items-start gap-5 border-l-4 border-brand-yellow bg-surface px-5 py-4">
+                <div className="w-24 shrink-0 overflow-hidden rounded-md border border-border">
                   <Image
                     src="/headshot.jpg"
                     alt="Matt Noone"
-                    fill
-                    sizes="160px"
-                    className="object-cover object-[50%_34%]"
+                    width={1536}
+                    height={2048}
+                    sizes="96px"
+                    className="block h-auto w-full"
                     priority
                   />
                 </div>
-                <div>
-                  <p className="text-sm font-semibold uppercase text-muted">Private coaching</p>
-                  <p className="mt-3 text-2xl font-semibold text-foreground">
-                    Learn the programming underneath the game.
+
+                <div className="max-w-md">
+                  <p className="text-sm font-semibold uppercase text-brand-yellow">
+                    Coached by Matt Noone
                   </p>
-                  <ul className="mt-6 space-y-3">
-                    {[
-                      "One call per week",
-                      "Same-day chat support",
-                      "Starter projects",
-                      "Project feedback",
-                      "Small playable finish",
-                    ].map((item) => (
-                        <li
-                          key={item}
-                          className="border-l-4 border-brand-yellow pl-4 text-sm font-semibold text-foreground"
-                        >
-                          {item}
-                        </li>
-                      ))}
-                  </ul>
+                  <p className="mt-2 text-sm leading-6 text-muted">
+                    Game development professional since 2018. Five years teaching university
+                    computer science and games development.
+                  </p>
                 </div>
-              </div>
-            </aside>
+              </aside>
+            </div>
+
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {programFlowItems.map((item) => (
+                <li
+                  key={item}
+                  className="border-l-4 border-brand-yellow bg-surface px-4 py-3 text-sm font-semibold text-foreground"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -190,6 +235,27 @@ export function HomePage() {
               >
                 <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </LandingSection>
+
+        <LandingSection id="why-me" title="Why Learn With Me" className="bg-brand-blue-pale/80">
+          <div className="mt-8 max-w-3xl text-lg leading-8 text-muted">
+            <p>
+              Most beginners do not need another giant tutorial playlist. They need someone to help
+              them understand what the code is doing, spot the real blocker, and keep the project
+              small enough to finish.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {authorityItems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-md border border-border bg-surface p-6 shadow-[5px_5px_0_0_var(--brand-blue-soft)]"
+              >
+                <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-3 leading-7 text-muted">{item.body}</p>
               </article>
             ))}
           </div>
@@ -226,6 +292,25 @@ export function HomePage() {
         <LandingSection id="included" title="What Is Included">
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {includedItems.map((item) => (
+              <li
+                key={item}
+                className="border-l-4 border-brand-yellow bg-surface px-4 py-4 text-sm font-medium text-foreground"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </LandingSection>
+
+        <LandingSection id="coaching-value" title="Why 1-on-1 Coaching Instead Of Another Course">
+          <div className="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-muted">
+            <p>
+              A recorded course can show you the happy path. Coaching helps when your code does not
+              behave, your idea is too big, or you are not sure what to practise next.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+            {coachingValueItems.map((item) => (
               <li
                 key={item}
                 className="border-l-4 border-brand-yellow bg-surface px-4 py-4 text-sm font-medium text-foreground"
@@ -279,16 +364,19 @@ export function HomePage() {
           <div className="mx-auto max-w-6xl rounded-md border border-brand-yellow/35 bg-surface-raised p-8 shadow-[8px_8px_0_0_var(--brand-yellow-soft)] sm:p-10">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase text-brand-yellow">Ready to talk?</p>
+                <p className="text-sm font-semibold uppercase text-brand-yellow">
+                  Ready to apply?
+                </p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground sm:text-4xl">
-                  Book a short call
+                  Book a fit call for the paid program
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg text-muted">
-                  We will talk through your goal, schedule, setup, and whether 1-on-1 coaching
-                  makes sense for where you are now.
+                  We will talk through your goal, schedule, setup, and whether the 4-week coaching
+                  program makes sense for where you are now.
                 </p>
                 <p className="mt-3 text-sm text-muted">
-                  A quick call helps us decide whether this is the right next step.
+                  Founding-student price: <span className="font-semibold text-foreground">USD $900</span>.
+                  Payment is only arranged after the call if the program is a fit.
                 </p>
               </div>
               <BookingLink href="/book" className="w-full md:w-auto">

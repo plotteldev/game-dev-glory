@@ -11,6 +11,7 @@ type SiteHeaderProps = {
 function getNavItems(bookHref: string) {
   return [
     { href: "/#build", label: "Build" },
+    { href: "/#why-me", label: "Why me" },
     { href: "/#fit", label: "Fit" },
     { href: "/#included", label: "Included" },
     { href: bookHref, label: "Book" },

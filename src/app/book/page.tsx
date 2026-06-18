@@ -5,15 +5,15 @@ import { SiteHeader } from "@/components/site-header";
 const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
 
 const policyPoints = [
-  "The call will help us decide whether the program is the right next step for you.",
-  "Booking the call does not reserve a coaching spot.",
-  "The call is for goals, schedule, and fit rather than a lesson or code review.",
+  "This call is for people considering the paid 4-week Game Programming Fundamentals program.",
+  "Booking the call does not reserve a coaching spot; a spot is confirmed only after payment.",
+  "The call is for goals, schedule, and fit rather than a lesson, code review, or consulting session.",
 ];
 
 export const metadata: Metadata = {
   title: "Book a 15-Minute Call | Game Dev Glory",
   description:
-    "Book a free 15-minute call for Game Programming Fundamentals private coaching.",
+    "Book a free 15-minute fit call for the paid Game Programming Fundamentals private coaching program.",
 };
 
 export default function BookPage() {
@@ -24,14 +24,16 @@ export default function BookPage() {
         <section className="mx-auto max-w-5xl">
           <div className="mb-8 max-w-3xl">
             <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
-              Free 15-Minute Call
+              Free 15-Minute Fit Call
             </p>
             <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">
-              Book a call for Game Programming Fundamentals
+              Book a fit call for Game Programming Fundamentals
             </h1>
             <p className="mt-4 text-lg leading-8 text-muted">
-              Book a free 15-minute call and answer a few questions so we can understand
-              your goal, schedule, and current experience.
+              This call is for people considering the paid 4-week Game Programming Fundamentals
+              program. We will talk through your goal, current experience, available practice time,
+              and whether the program is the right fit. If it is not a good match, I will tell you
+              directly.
             </p>
           </div>
 
@@ -48,6 +50,10 @@ export default function BookPage() {
                 Booking is not configured yet.
               </p>
             )}
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
+              Founding-student price: <span className="font-semibold text-foreground">USD $900</span>.
+              Payment is only arranged after the call if the program is a fit.
+            </p>
           </div>
 
           <section className="rounded-md border border-brand-yellow/35 bg-surface p-5 shadow-[6px_6px_0_0_var(--brand-yellow-soft)]">
