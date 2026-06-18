@@ -17,7 +17,7 @@ const prepItems = [
 export default function BookingConfirmedPage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute call" />
+      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute start call" />
       <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <section className="mx-auto max-w-3xl rounded-md border border-border bg-surface p-6 sm:p-8">
           <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
@@ -35,7 +35,7 @@ export default function BookingConfirmedPage() {
             <h2 className="text-xl font-semibold text-foreground">Optional prep</h2>
             <p className="mt-2 text-sm leading-6 text-muted">
               No code setup is needed. Come ready to discuss your goal, current experience,
-              schedule, and whether the 4-week coaching program fits your next step.
+              schedule, and what happens next if you want to join the 4-week coaching program.
             </p>
             <ul className="mt-4 grid gap-3 text-sm leading-6 text-muted">
               {prepItems.map((item) => (

@@ -11,7 +11,8 @@ type SiteHeaderProps = {
 function getNavItems(bookHref: string) {
   return [
     { href: "/#build", label: "Build" },
-    { href: "/#fit", label: "Fit" },
+    { href: "/#why-me", label: "Why me" },
+    { href: "/#fit", label: "For you" },
     { href: "/#included", label: "Included" },
     { href: bookHref, label: "Book" },
   ];
@@ -20,7 +21,7 @@ function getNavItems(bookHref: string) {
 export function SiteHeader({
   bookHref = "/book",
   ctaHref = "/book",
-  ctaLabel = "Book a 15-minute call",
+  ctaLabel = "Book a 15-minute start call",
 }: SiteHeaderProps) {
   const navItems = getNavItems(bookHref);
 

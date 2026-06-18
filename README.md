@@ -2,8 +2,8 @@
 
 A minimal landing page for the Game Programming Fundamentals private coaching offer.
 
-The site sends qualified beginners to book a free 15-minute intro call. It does not collect
-payment or show a public price.
+The site sends beginners to book a free 15-minute start call. It does not collect
+payment directly on the site.
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ Create a local environment file:
 cp .env.example .env.local
 ```
 
-Set `NEXT_PUBLIC_BOOKING_URL` in `.env.local` to the Cal.com enrolment-call URL:
+Set `NEXT_PUBLIC_BOOKING_URL` in `.env.local` to the Cal.com start-call URL:
 
 ```bash
 NEXT_PUBLIC_BOOKING_URL=https://cal.com/matt-noone-avjm8m/15min
@@ -47,14 +47,14 @@ npm run lint
 ## Notes
 
 - The site does not use a database.
-- Primary CTAs use `Book a 15-minute call`.
+- Primary CTAs use `Book a 15-minute start call`.
 - Booking CTAs route to `/book`.
 - `/apply` redirects to `/book` for old links.
-- `/book` links to the Cal.com free 15-minute intro call.
-- The intro call is used to understand goal, experience, setup, schedule, effort
-  level, and whether the program is a good match.
-- The page does not show a public price.
-- Payment and enrolment details happen after the intro call when the program is a good match.
+- `/book` links to the Cal.com free 15-minute start call.
+- The start call is used to understand goal, experience, setup, schedule, effort
+  level, and what happens next if the student wants to join.
+- The page shows the 4-week program price.
+- Payment and joining details happen after the start call.
 - Cal.com can use its own confirmation flow. The site keeps `/book/confirmed` available if a
   custom redirect is added later.
 
@@ -70,5 +70,5 @@ Use it to deploy as a Node.js web service:
 - Environment variable: `NEXT_PUBLIC_BOOKING_URL=https://cal.com/matt-noone-avjm8m/15min`
 - Environment variable: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX`
 
-After the app is live, connect the production domain in DigitalOcean and run a real intro-call
+After the app is live, connect the production domain in DigitalOcean and run a real start-call
 booking test through Cal.com.
