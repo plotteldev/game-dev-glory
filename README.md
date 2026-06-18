@@ -53,7 +53,7 @@ npm run lint
 - `/book` links to the Cal.com free 15-minute start call.
 - The start call is used to understand goal, experience, setup, schedule, effort
   level, and what happens next if the student wants to join.
-- The page shows the 4-week program price.
+- The page does not show a public price.
 - Payment and joining details happen after the start call.
 - Cal.com can use its own confirmation flow. The site keeps `/book/confirmed` available if a
   custom redirect is added later.
