@@ -7,7 +7,7 @@ type BookingLinkProps = {
 };
 
 export function getBookingUrl() {
-  return "/book";
+  return process.env.NEXT_PUBLIC_BOOKING_URL || "/book";
 }
 
 export function BookingLink({ children, className = "", href = getBookingUrl() }: BookingLinkProps) {

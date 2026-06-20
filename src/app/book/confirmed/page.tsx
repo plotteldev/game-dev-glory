@@ -5,19 +5,19 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Call Confirmed | Game Dev Glory",
   description:
-    "Confirmation and preparation details for a Game Programming Fundamentals call with Game Dev Glory.",
+    "Confirmation and preparation details for a Game Dev Glory start call.",
 };
 
 const prepItems = [
   "What you have already tried when learning programming",
-  "What you would like to build by the end of the 4 weeks",
-  "Whether you can set aside weekly call and practice time",
+  "Where you want game development to take you",
+  "How much focused practice time you can protect each week",
 ];
 
 export default function BookingConfirmedPage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute start call" />
+      <SiteHeader />
       <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <section className="mx-auto max-w-3xl rounded-md border border-border bg-surface p-6 sm:p-8">
           <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
@@ -28,14 +28,14 @@ export default function BookingConfirmedPage() {
           </h1>
           <p className="mt-4 text-lg leading-8 text-muted">
             Your confirmation email will include the calendar invite and call link. The call is a
-            short conversation about Game Programming Fundamentals private coaching.
+            short conversation about the right way to start with Game Dev Glory private coaching.
           </p>
 
           <div className="mt-8 rounded border border-border bg-background/45 p-5">
             <h2 className="text-xl font-semibold text-foreground">Optional prep</h2>
             <p className="mt-2 text-sm leading-6 text-muted">
               No code setup is needed. Come ready to discuss your goal, current experience,
-              schedule, and what happens next if you want to join the 4-week coaching program.
+              schedule, and what happens next if private coaching is the right move.
             </p>
             <ul className="mt-4 grid gap-3 text-sm leading-6 text-muted">
               {prepItems.map((item) => (

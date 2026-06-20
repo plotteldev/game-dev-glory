@@ -1,78 +1,78 @@
 import type { Metadata } from "next";
-import { SiteFooter } from "@/components/site-footer";
+import { redirect } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
 
 const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
 
-const policyPoints = [
-  "This call is for people considering the paid 4-week Game Programming Fundamentals program.",
-  "Booking the call does not reserve a coaching spot; a spot is confirmed only after payment.",
-  "The call is for goals, schedule, setup, and next steps rather than a lesson, code review, or consulting session.",
+const valuePoints = [
+  "Private 1:1 coaching",
+  "Daily support",
+  "Focused practice",
 ];
 
 export const metadata: Metadata = {
-  title: "Book a 15-Minute Start Call | Game Dev Glory",
+  title: "Book a Start Call | Game Dev Glory",
   description:
-    "Book a free 15-minute start call for the paid Game Programming Fundamentals private coaching program.",
+    "Book a start call for the Private Game Programming Track from Game Dev Glory.",
 };
 
 export default function BookPage() {
+  if (bookingUrl) {
+    redirect(bookingUrl);
+  }
+
   return (
-    <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute start call" />
-      <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <section className="mx-auto max-w-5xl">
-          <div className="mb-8 max-w-3xl">
+    <div id="top" className="min-h-dvh bg-background text-foreground">
+      <SiteHeader ctaLabel="Book a Start Call" />
+      <main className="px-5 py-7 sm:px-6 sm:py-9 lg:px-8">
+        <section className="mx-auto max-w-6xl">
+          <div className="max-w-4xl">
             <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
-              Free 15-Minute Start Call
+              The Private Game Programming Track
             </p>
-            <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">
-              Book a start call for Game Programming Fundamentals
+            <h1 className="text-4xl font-semibold leading-tight text-foreground sm:text-6xl">
+              Book a start call.
             </h1>
-            <p className="mt-4 text-lg leading-8 text-muted">
-              This call is for people considering the paid 4-week Game Programming Fundamentals
-              program. We will talk through your goals, current experience, schedule, setup, and
-              what happens next if you want to join.
+            <p className="mt-6 max-w-3xl text-xl leading-8 text-muted">
+              We will look at where you are now, where you want game development to take you, and
+              the right way to start.
             </p>
-          </div>
 
-          <div className="mb-8">
-            {bookingUrl ? (
-              <a
-                className="inline-flex min-h-12 w-full items-center justify-center whitespace-nowrap rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-sm font-semibold text-background shadow-[4px_4px_0_0_var(--brand-blue)] transition hover:-translate-y-0.5 hover:bg-[#ffd95f] hover:shadow-[5px_5px_0_0_var(--brand-blue)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow sm:w-auto"
-                href={bookingUrl}
+            <div className="mt-7">
+              {bookingUrl ? (
+                <a
+                  className="inline-flex min-h-12 w-full items-center justify-center whitespace-nowrap rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-sm font-semibold text-background shadow-[4px_4px_0_0_var(--brand-blue)] transition hover:-translate-y-0.5 hover:bg-[#ffd95f] hover:shadow-[5px_5px_0_0_var(--brand-blue)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow sm:w-auto"
+                  href={bookingUrl}
+                >
+                  Book a Start Call
+                </a>
+              ) : (
+                <p className="rounded border border-border bg-surface px-4 py-3 text-sm text-muted">
+                  Booking is not configured yet.
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto mt-6 max-w-6xl border-t border-border pt-5">
+          <ul className="grid gap-3 text-sm font-semibold text-foreground sm:grid-cols-3">
+            {valuePoints.map((item) => (
+              <li
+                key={item}
+                className="border-l-4 border-brand-yellow pl-3 leading-6"
               >
-                Choose a Time
-              </a>
-            ) : (
-              <p className="rounded border border-border bg-surface px-4 py-3 text-sm text-muted">
-                Booking is not configured yet.
-              </p>
-            )}
-          </div>
+                {item}
+              </li>
+            ))}
+          </ul>
 
-          <section className="rounded-md border border-brand-yellow/35 bg-surface p-5 shadow-[6px_6px_0_0_var(--brand-yellow-soft)]">
-            <h2 className="text-xl font-semibold text-foreground">Guarantee</h2>
-            <p className="mt-4 text-sm leading-6 text-muted">
-              If you attend the calls, complete the weekly tasks, ask for help when you get stuck, and
-              still do not have a small playable C# project running by the end of
-              Week 4, you receive up to two additional weekly coaching calls at no extra cost.
-            </p>
-          </section>
-
-          <section className="mt-8 border-t border-border pt-6">
-            <h2 className="text-xl font-semibold text-foreground">Program and booking details</h2>
-            <ul className="mt-4 grid gap-3 text-sm leading-6 text-muted">
-              {policyPoints.map((point) => (
-                <li key={point} className="border-l-4 border-border pl-3">
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </section>
+          <p className="mt-6 max-w-3xl text-base leading-7 text-muted">
+            Coached by Matt Noone: commercial game programmer since 2018, with five years teaching
+            university game development and computer science.
+          </p>
         </section>
       </main>
-      <SiteFooter />
     </div>
   );
 }

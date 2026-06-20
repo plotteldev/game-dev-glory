@@ -1,27 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookingLink } from "@/components/booking-link";
+import { BookingLink, getBookingUrl } from "@/components/booking-link";
 
 type SiteHeaderProps = {
   bookHref?: string;
   ctaHref?: string;
   ctaLabel?: string;
+  showNav?: boolean;
 };
 
 function getNavItems(bookHref: string) {
   return [
-    { href: "/#build", label: "Build" },
-    { href: "/#why-me", label: "Why me" },
-    { href: "/#fit", label: "For you" },
-    { href: "/#included", label: "Included" },
+    { href: "/", label: "Home" },
     { href: bookHref, label: "Book" },
   ];
 }
 
 export function SiteHeader({
-  bookHref = "/book",
-  ctaHref = "/book",
-  ctaLabel = "Book a 15-minute start call",
+  bookHref = getBookingUrl(),
+  ctaHref = getBookingUrl(),
+  ctaLabel = "Book a Start Call",
+  showNav = true,
 }: SiteHeaderProps) {
   const navItems = getNavItems(bookHref);
 
@@ -40,20 +39,22 @@ export function SiteHeader({
           <span className="text-base font-semibold text-foreground">Game Dev Glory</span>
         </Link>
 
-        <nav
-          className="hidden items-center gap-8 text-sm font-medium text-muted md:flex"
-          aria-label="Main navigation"
-        >
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              className="relative transition hover:text-foreground after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-0 after:bg-brand-yellow after:transition-all hover:after:w-full"
-              href={item.href}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        {showNav ? (
+          <nav
+            className="hidden items-center gap-8 text-sm font-medium text-muted md:flex"
+            aria-label="Main navigation"
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                className="relative transition hover:text-foreground after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-0 after:bg-brand-yellow after:transition-all hover:after:w-full"
+                href={item.href}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        ) : null}
 
         <div className="hidden sm:block">
           <BookingLink href={ctaHref}>{ctaLabel}</BookingLink>

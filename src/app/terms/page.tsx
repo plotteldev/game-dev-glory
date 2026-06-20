@@ -4,13 +4,13 @@ import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: "Terms | Game Dev Glory",
-  description: "Program terms for Game Programming Fundamentals private coaching.",
+  description: "Program terms for Game Dev Glory private coaching.",
 };
 
 const terms = [
   {
     title: "Program",
-    body: "Game Programming Fundamentals is a 4-week private coaching program for beginners learning C# programming through a small playable 2D project.",
+    body: "The Private Game Programming Track is private coaching for people learning game programming through focused practice, direct feedback, and small playable projects.",
   },
   {
     title: "Payment",
@@ -22,15 +22,15 @@ const terms = [
   },
   {
     title: "Student responsibilities",
-    body: "Students need to attend weekly calls, complete weekly tasks, ask for help when blocked, and set aside time for 3-5 focused practice sessions each week.",
+    body: "Students need to attend scheduled calls, complete assigned practice, ask for help when blocked, and protect enough focused time to make progress between calls.",
   },
   {
     title: "Scope",
-    body: "The program covers beginner C# programming fundamentals and small raylib-C# projects. It does not cover Unity, Unreal, 3D, multiplayer, publishing, art production, marketing, or commercial game development.",
+    body: "The coaching focuses on game programming skill, debugging, project scope, and small playable projects. Specific tools, topics, schedule, support, and deliverables are confirmed before payment.",
   },
   {
-    title: "Guarantee",
-    body: "If a student attends the calls, completes the weekly tasks, asks for help when blocked, and still does not have a small playable C# project running by the end of Week 4, Game Dev Glory will provide up to two additional weekly coaching calls at no extra cost.",
+    title: "Guarantees",
+    body: "Any guarantee or additional support terms must be confirmed in writing before payment. No employment, income, portfolio, or admission outcome is guaranteed.",
   },
   {
     title: "Missed calls and rescheduling",
@@ -41,7 +41,7 @@ const terms = [
 export default function TermsPage() {
   return (
     <div id="top" className="min-h-screen bg-background text-foreground">
-      <SiteHeader bookHref="/book" ctaHref="/book" ctaLabel="Book a 15-minute start call" />
+      <SiteHeader />
       <main className="px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <section className="mx-auto max-w-4xl">
           <p className="mb-4 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-sm font-semibold text-brand-yellow">
@@ -49,7 +49,7 @@ export default function TermsPage() {
           </p>
           <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">Terms</h1>
           <p className="mt-4 text-lg leading-8 text-muted">
-            These terms summarize how the 4-week Game Programming Fundamentals program works.
+            These terms summarize how Game Dev Glory private coaching works.
           </p>
 
           <div className="mt-8 divide-y divide-border border-y border-border">
