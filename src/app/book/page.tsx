@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { getBookingUrl } from "@/components/booking-link";
 import { SiteHeader } from "@/components/site-header";
 
-const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? "";
+const bookingUrl = getBookingUrl();
 
 const valuePoints = [
   "Private 1:1 coaching",

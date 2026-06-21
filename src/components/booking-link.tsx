@@ -6,8 +6,11 @@ type BookingLinkProps = {
   href?: string;
 };
 
+const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
+const canonicalBookingUrl = "https://cal.com/matt-noone-avjm8m/15min";
+
 export function getBookingUrl() {
-  return process.env.NEXT_PUBLIC_BOOKING_URL || "/book";
+  return bookingUrl || canonicalBookingUrl;
 }
 
 export function BookingLink({ children, className = "", href = getBookingUrl() }: BookingLinkProps) {
