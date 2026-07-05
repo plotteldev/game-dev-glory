@@ -6,6 +6,7 @@ type SiteHeaderProps = {
   bookHref?: string;
   ctaHref?: string;
   ctaLabel?: string;
+  showCta?: boolean;
   showNav?: boolean;
 };
 
@@ -19,7 +20,8 @@ function getNavItems(bookHref: string) {
 export function SiteHeader({
   bookHref = getBookingUrl(),
   ctaHref = getBookingUrl(),
-  ctaLabel = "Book a Start Call",
+  ctaLabel = "Book a Free Portfolio Roadmap Call",
+  showCta = true,
   showNav = true,
 }: SiteHeaderProps) {
   const navItems = getNavItems(bookHref);
@@ -56,9 +58,11 @@ export function SiteHeader({
           </nav>
         ) : null}
 
-        <div className="hidden sm:block">
-          <BookingLink href={ctaHref}>{ctaLabel}</BookingLink>
-        </div>
+        {showCta ? (
+          <div className="hidden sm:block">
+            <BookingLink href={ctaHref}>{ctaLabel}</BookingLink>
+          </div>
+        ) : null}
       </div>
     </header>
   );

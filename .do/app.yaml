@@ -25,7 +25,19 @@ services:
     health_check:
       http_path: /
     envs:
-      - key: NEXT_PUBLIC_BOOKING_URL
-        value: https://cal.com/matt-noone-avjm8m/15min
-        scope: RUN_AND_BUILD_TIME
+      - key: POSTMARK_SERVER_TOKEN
+        value: set-in-digitalocean
+        scope: RUN_TIME
+        type: SECRET
+      - key: POSTMARK_MESSAGE_STREAM
+        value: outbound
+        scope: RUN_TIME
+        type: GENERAL
+      - key: BOOKING_TO_EMAIL
+        value: info@gamedevglory.com
+        scope: RUN_TIME
+        type: GENERAL
+      - key: BOOKING_FROM_EMAIL
+        value: Game Dev Glory <bookings@gamedevglory.com>
+        scope: RUN_TIME
         type: GENERAL

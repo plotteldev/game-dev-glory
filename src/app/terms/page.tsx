@@ -14,11 +14,11 @@ const terms = [
   },
   {
     title: "Payment",
-    body: "Payment is handled after the start call if you want to join. A coaching spot is confirmed once payment is complete.",
+    body: "Payment is handled after the portfolio roadmap call if you want to join. A coaching spot is confirmed once payment is complete.",
   },
   {
-    title: "Start call",
-    body: "The call is a short conversation about goals, schedule, setup, expectations, and next steps. It is not a lesson, code review, or consulting session.",
+    title: "Portfolio roadmap call",
+    body: "The free 15-minute portfolio roadmap call is a short conversation about goals, schedule, setup, expectations, and next steps. It is not a lesson, code review, or consulting session.",
   },
   {
     title: "Student responsibilities",

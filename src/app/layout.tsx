@@ -15,18 +15,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gamedevglory.com"),
-  title: "Learn Game Programming with 1:1 Coaching | Game Dev Glory",
+  title: "Build a Game Programming Portfolio | Game Dev Glory",
   description:
-    "Private coaching for beginners who want to learn game programming, get unstuck, build small playable projects, and make faster progress with direct feedback.",
+    "Escape tutorial loops and build portfolio-ready game projects with 1:1 coaching from a games programmer who broke in without a degree.",
   icons: {
     icon: "/logo-icon.png",
     shortcut: "/logo-icon.png",
     apple: "/logo-icon.png",
   },
   openGraph: {
-    title: "Learn Game Programming with 1:1 Coaching | Game Dev Glory",
+    title: "Build a Game Programming Portfolio | Game Dev Glory",
     description:
-      "Private coaching for beginners who want to learn game programming, get unstuck, build small playable projects, and make faster progress with direct feedback.",
+      "Escape tutorial loops and build portfolio-ready game projects with 1:1 coaching from a games programmer who broke in without a degree.",
     type: "website",
     images: [
       {
