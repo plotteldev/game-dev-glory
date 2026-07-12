@@ -248,7 +248,7 @@ export function HomePage() {
                 <p>
                   I&apos;ve spent 10+ years making games in Unity, other
                   engines, proprietary tech, and plenty of languages. I&apos;ve
-                  taken projects from rough prototypes to shipped commercial
+                  worked on projects from day one prototypes to shipped AAA
                   games. My credits include Cities: Skylines (Unity) and Age
                   of Mythology: Retold.
                 </p>
