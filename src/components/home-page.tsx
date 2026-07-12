@@ -235,8 +235,8 @@ export function HomePage() {
             <Image
               src="/headshot-transparent.png"
               alt="Matt from Game Dev Glory"
-              width={900}
-              height={1200}
+              width={1200}
+              height={1600}
               className="h-auto w-40 border border-border sm:w-48"
             />
             <div className="max-w-3xl">
