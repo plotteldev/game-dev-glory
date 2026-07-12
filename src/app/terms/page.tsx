@@ -4,37 +4,41 @@ import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: "Terms | Game Dev Glory",
-  description: "Program terms for Game Dev Glory private coaching.",
+  description: "Program terms for Game Dev Glory async Unity coaching.",
 };
 
 const terms = [
   {
-    title: "Program",
-    body: "The Private Game Programming Track is private coaching for people learning game programming through focused practice, direct feedback, and small playable projects.",
+    title: "Offer",
+    body: "Async Unity coaching is delivered through a private Discord channel for Unity and C# questions, debugging direction, code feedback, project planning, architecture feedback, and practical next steps while you build.",
   },
   {
     title: "Payment",
-    body: "Payment is handled after the portfolio roadmap call if you want to join. A coaching spot is confirmed once payment is complete.",
+    body: "Async Unity coaching is offered at $99/month USD. Payment, subscription billing, invoices, card updates, and receipts are handled by Stripe.",
   },
   {
-    title: "Portfolio roadmap call",
-    body: "The free 15-minute portfolio roadmap call is a short conversation about goals, schedule, setup, expectations, and next steps. It is not a lesson, code review, or consulting session.",
+    title: "Response time",
+    body: "Coaching questions receive a response within 12 hours. If an active question goes unanswered for 48 hours, a free call will be offered to discuss that question.",
   },
   {
-    title: "Student responsibilities",
-    body: "Students need to attend scheduled calls, complete assigned practice, ask for help when blocked, and protect enough focused time to make progress between calls.",
+    title: "Member responsibilities",
+    body: "Members should provide enough context to answer questions, such as Unity version, platform, screenshots, relevant code snippets, exact errors, and what has already been tried.",
   },
   {
     title: "Scope",
-    body: "The coaching focuses on game programming skill, debugging, project scope, and small playable projects. Specific tools, topics, schedule, support, and deliverables are confirmed before payment.",
+    body: "Support is guidance-focused. Full feature implementation, production ownership, emergency support, and guaranteed same-hour responses are outside the monthly async coaching scope.",
   },
   {
-    title: "Guarantees",
-    body: "Any guarantee or additional support terms must be confirmed in writing before payment. No employment, income, portfolio, or admission outcome is guaranteed.",
+    title: "Refund window",
+    body: "The first month includes a 7-day refund window. If async coaching is the wrong fit, email info@gamedevglory.com within 7 days of subscribing to request a refund.",
   },
   {
-    title: "Missed calls and rescheduling",
-    body: "Students should give as much notice as possible when rescheduling. Missed calls may not be replaced when there is no reasonable notice.",
+    title: "Outcomes",
+    body: "Coaching is designed to improve decisions, direction, and project momentum. Employment, income, portfolio, publishing, and technical outcomes are not guaranteed.",
+  },
+  {
+    title: "Cancellation",
+    body: "Async coaching can be cancelled anytime through the Stripe customer portal. Cancellation takes effect at the end of the current paid billing period unless otherwise confirmed in writing.",
   },
 ];
 
@@ -49,7 +53,7 @@ export default function TermsPage() {
           </p>
           <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">Terms</h1>
           <p className="mt-4 text-lg leading-8 text-muted">
-            These terms summarize how Game Dev Glory private coaching works.
+            These terms summarize how Game Dev Glory async Unity coaching works.
           </p>
 
           <div className="mt-8 divide-y divide-border border-y border-border">

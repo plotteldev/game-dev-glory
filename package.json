@@ -9,6 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "obs:overlays": "node scripts/generate-obs-overlays.mjs",
     "lint": "eslint"
   },
   "dependencies": {

@@ -1,9 +1,10 @@
 # Game Dev Glory
 
-A minimal landing page for the Game Programming Fundamentals private coaching offer.
+A minimal landing page for the Game Dev Glory async Unity coaching offer.
 
-The site sends beginners to request a free 15-minute portfolio roadmap call. It
-does not collect payment directly on the site.
+The site sends students to a Stripe Payment Link for the $99/month USD coaching
+subscription. Stripe handles checkout, invoices, payment methods, subscription
+status, and cancellation.
 
 ## Getting Started
 
@@ -19,13 +20,12 @@ Create a local environment file:
 cp .env.example .env.local
 ```
 
-Set the booking email delivery variables in `.env.local`:
+Set the Stripe-hosted billing links in `.env.local`:
 
 ```bash
-POSTMARK_SERVER_TOKEN=postmark-server-token
-POSTMARK_MESSAGE_STREAM=outbound
-BOOKING_TO_EMAIL=info@gamedevglory.com
-BOOKING_FROM_EMAIL=Game Dev Glory <bookings@gamedevglory.com>
+NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK=https://buy.stripe.com/3cIfZi2oT2YYet3flr1kA01
+NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL=https://billing.stripe.com/p/login/14AeVegfJeHGacNehn1kA00
+NEXT_PUBLIC_DISCORD_INVITE_URL=https://discord.gg/NQeegWAAJM
 ```
 
 Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready.
@@ -47,20 +47,40 @@ npm run start
 npm run lint
 ```
 
+## OBS Image Overlays
+
+Transparent 1920x1080 PNG overlays live in `public/obs/`:
+
+- `taskbar-mask-64px-1920x1080.png` for the usual always-on taskbar cover.
+- `taskbar-mask-48px-1920x1080.png` for a tighter taskbar cover.
+- `lower-third-title-1920x1080.png` for video starts or section breaks.
+- `corner-logo-bug-1920x1080.png` for subtle persistent branding.
+
+Add them to OBS as Image sources above the display/window capture. Use one
+taskbar mask as an always-on source, and toggle the lower-third or corner bug
+only when useful. The unused canvas area in each PNG is transparent.
+
+Regenerate them with:
+
+```bash
+npm run obs:overlays
+```
+
 ## Notes
 
 - The site does not use a database.
-- Primary CTAs use `Book a Free Portfolio Roadmap Call`.
-- Booking CTAs route to `/book`.
-- `/apply` redirects to `/book` for old links.
-- `/book` collects portfolio-roadmap-call details, emails them to
-  `BOOKING_TO_EMAIL`, and sends the applicant a confirmation email.
-- The portfolio roadmap call is used to understand goal, experience, setup,
-  schedule, effort level, and what happens next if the student wants to join.
-- The page does not show a public price.
-- Payment, joining details, and calendar links happen by email after the request.
-- Email delivery uses Postmark. `BOOKING_FROM_EMAIL` must be a confirmed
-  sender signature or a sender on a verified Postmark domain.
+- The site does not use Stripe SDK, webhooks, API routes, local accounts, or
+  local subscription state.
+- Stripe is the source of truth for subscribers, cancellations, invoices,
+  refunds, and failed payments.
+- Primary coaching CTAs point to `NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK`.
+- `/book` is a lightweight join page for old links.
+- `/apply` and `/book/start-learning` redirect to the configured coaching
+  Payment Link.
+- `/join/confirmed` is the post-payment success page configured in Stripe.
+- `/billing` links customers to the hosted Stripe Customer Portal.
+- Cancellations happen in Stripe and take effect at the end of the current paid
+  billing period.
 
 ## DigitalOcean App Platform
 
@@ -71,14 +91,17 @@ Use it to deploy as a Node.js web service:
 - Build command: `npm run build`
 - Run command: `npm run start`
 - HTTP port: `3000`
-- Environment variable: `POSTMARK_SERVER_TOKEN=postmark-server-token`
-- Environment variable: `POSTMARK_MESSAGE_STREAM=outbound`
-- Environment variable: `BOOKING_TO_EMAIL=info@gamedevglory.com`
-- Environment variable: `BOOKING_FROM_EMAIL=Game Dev Glory <bookings@gamedevglory.com>`
 - Environment variable: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX`
+- Environment variable: `NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK=https://buy.stripe.com/3cIfZi2oT2YYet3flr1kA01`
+- Environment variable: `NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL=https://billing.stripe.com/p/login/14AeVegfJeHGacNehn1kA00`
+- Environment variable: `NEXT_PUBLIC_DISCORD_INVITE_URL=https://discord.gg/NQeegWAAJM`
 
-Before going live, confirm `BOOKING_FROM_EMAIL` in Postmark, set the live
-`POSTMARK_SERVER_TOKEN` in DigitalOcean, then run a real `/book` form submission
-test. Postmark domain authentication uses the DNS records shown in Postmark's
-sender signature or domain settings; keep Google Workspace MX records in place
-for normal inbox email.
+Before going live, create the Stripe product, recurring price, Payment Link, and
+Customer Portal link. Configure the Payment Link success redirect to
+`https://gamedevglory.com/join/confirmed`, then run a Stripe test-mode checkout
+and customer portal cancellation test.
+
+The Customer Portal value must be the activated hosted login URL, not the
+`bpc_...` portal configuration ID shown in some Stripe settings screens.
+If the hosted portal is not ready, leave `NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL`
+empty so billing links fall back to email instead of a broken placeholder URL.

@@ -13,14 +13,14 @@ type SiteHeaderProps = {
 function getNavItems(bookHref: string) {
   return [
     { href: "/", label: "Home" },
-    { href: bookHref, label: "Book" },
+    { href: bookHref, label: "Coaching" },
   ];
 }
 
 export function SiteHeader({
   bookHref = getBookingUrl(),
   ctaHref = getBookingUrl(),
-  ctaLabel = "Book a Free Portfolio Roadmap Call",
+  ctaLabel = "Join for $99/month",
   showCta = true,
   showNav = true,
 }: SiteHeaderProps) {

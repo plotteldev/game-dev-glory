@@ -1,231 +1,319 @@
-import { BookingLink } from "@/components/booking-link";
+import Image from "next/image";
+import { BookingLink, getBookingUrl } from "@/components/booking-link";
 import { SiteHeader } from "@/components/site-header";
 
-const ctaLabel = "Book a Free Portfolio Roadmap Call";
+const ctaLabel = "Join for $99/month";
 
-const offerBullets = [
-  "Personalized roadmap for your current level and goal",
-  "Personalized game project scoped so you can finish",
-  "Weekly 1:1 calls",
-  "Daily 1:1 chat support",
-  "2-week finish-line guarantee if the project needs a final push",
-  "Fundamentals-first learning through real project work",
+const credibilityPoints = [
+  "10+ years with Unity",
+  "5 years teaching game dev",
+  "Hundreds of student projects",
 ];
 
-const proofPoints = [
-  "Cities: Skylines",
-  "Age of Mythology: Retold",
-  "University CS/game dev teaching",
-  "Beginner-to-first-job path",
+const coachingSteps = [
+  {
+    title: "Private Discord channel",
+    copy: "You get a private Discord channel for your Unity project.",
+  },
+  {
+    title: "Send useful context",
+    copy: "Send code, screenshots, clips, logs, notes, or rough questions.",
+  },
+  {
+    title: "Clear next steps",
+    copy: "Get code feedback, debug help, planning help, or a better way to build the system.",
+  },
 ];
 
-const firstWeeks = [
-  "Scope a small portfolio-focused game you can finish.",
-  "Build the mechanics while learning the fundamentals.",
-  "Polish it into something you can show people.",
+const offerCards = [
+  {
+    title: "Plan systems that can grow",
+    copy: "Build systems that can grow without constant rewrites.",
+  },
+  {
+    title: "Go beyond tutorial code",
+    copy: "Turn tutorial ideas into systems that fit your game.",
+  },
+  {
+    title: "Make prototypes playable",
+    copy: "Turn rough mechanics into something people can test.",
+  },
+  {
+    title: "Get unstuck faster",
+    copy: "Bring bugs, weird Unity issues, or confusing code. I will help you find the next step.",
+  },
 ];
 
-const nextPath = [
-  "Programming fundamentals",
-  "Game systems and debugging",
-  "Architecture and workflow",
-  "Portfolio and industry direction",
+const guarantees = [
+  "Reply within 12 hours",
+  "Free call if an active question goes unanswered for 48 hours",
+  "7-day refund window",
+];
+
+const faqs = [
+  {
+    question: "What happens after I pay?",
+    answer:
+      "You get the Discord invite and your own private channel. Send project context and your first question when you are ready.",
+  },
+  {
+    question: "Where does coaching happen?",
+    answer:
+      "In Discord. After you join, you get your own private channel.",
+  },
+  {
+    question: "What can I send?",
+    answer:
+      "Code, screenshots, clips, errors, logs, design questions, or rough notes.",
+  },
+  {
+    question: "Who is this for?",
+    answer:
+      "Unity devs, indie builders, students, and solo devs who want feedback on their real project.",
+  },
+  {
+    question: "How does debugging fit in?",
+    answer:
+      "Debug help is included, along with code review, planning, and feedback while you build.",
+  },
+  {
+    question: "Can I cancel anytime?",
+    answer:
+      "Yes. Billing is handled through Stripe, and you can cancel through the customer portal.",
+  },
 ];
 
 function Eyebrow({ children }: { children: string }) {
   return (
-    <p className="mb-3 inline-flex rounded border border-brand-yellow/35 bg-brand-yellow-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand-yellow sm:text-sm">
+    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow sm:text-sm">
       {children}
     </p>
   );
 }
 
-function CompactCard({
+function SectionTitle({
   eyebrow,
   title,
-  children,
+  copy,
 }: {
   eyebrow: string;
   title: string;
-  children: React.ReactNode;
+  copy?: string;
 }) {
   return (
-    <article className="rounded-md border border-border bg-background/55 p-3 shadow-[4px_4px_0_0_var(--brand-blue)] sm:p-5">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-yellow">
-        {eyebrow}
-      </p>
-      <h2 className="mt-2 text-xl font-semibold leading-tight text-foreground">
+    <div className="mx-auto max-w-3xl text-center">
+      <Eyebrow>{eyebrow}</Eyebrow>
+      <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
         {title}
       </h2>
-      {children}
-    </article>
+      {copy ? (
+        <p className="mt-4 text-base leading-7 text-muted sm:text-lg sm:leading-8">
+          {copy}
+        </p>
+      ) : null}
+    </div>
   );
 }
 
 export function HomePage() {
+  const joinUrl = getBookingUrl();
+
   return (
     <div id="top" className="min-h-dvh overflow-x-hidden bg-background text-foreground">
+      <a
+        className="block border-b border-border bg-brand-yellow px-5 py-2 text-center text-xs font-semibold uppercase tracking-[0.14em] text-background transition hover:bg-[#ffd95f]"
+        href={joinUrl}
+      >
+        New: private Discord coaching for Unity devs
+      </a>
       <SiteHeader ctaLabel={ctaLabel} showNav={false} />
+
       <main>
-        <section className="relative flex min-h-[calc(100dvh-81px)] items-center px-5 py-8 sm:px-6 sm:py-10 lg:px-8">
-          <div className="absolute right-5 top-6 hidden grid-cols-4 gap-2 opacity-70 md:grid">
-            {Array.from({ length: 12 }).map((_, index) => (
-              <span
-                key={index}
-                className={`h-2.5 w-2.5 ${
-                  index % 4 === 0 ? "bg-brand-yellow" : "bg-surface-raised"
-                }`}
-              />
-            ))}
-          </div>
+        <section className="px-5 py-16 sm:px-6 sm:py-24 lg:px-8">
+          <div className="mx-auto max-w-5xl text-center">
+            <Eyebrow>Async Unity Coaching</Eyebrow>
+            <h1 className="mt-4 text-4xl font-semibold leading-[1.03] text-foreground sm:text-6xl lg:text-7xl">
+              Want to actually finish your Unity game?
+            </h1>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
+              Send what you&apos;re stuck on and get clear Unity feedback
+              within 12 hours.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
+              <BookingLink className="w-full sm:w-auto">{ctaLabel}</BookingLink>
+              <a
+                className="inline-flex min-h-12 items-center justify-center rounded-md border border-border px-5 py-3 text-sm font-semibold text-foreground transition hover:border-brand-yellow hover:text-brand-yellow"
+                href="#faq"
+              >
+                Read FAQ
+              </a>
+            </div>
+            <div className="mx-auto mt-5 flex max-w-3xl flex-wrap justify-center gap-x-4 gap-y-2 text-sm font-semibold leading-6 text-muted">
+              <span>Reply within 12 hours</span>
+              <span>Free call if I miss 48 hours</span>
+              <span>7-day refund window</span>
+            </div>
 
-          <div className="mx-auto w-full max-w-6xl">
-            <section className="max-w-5xl">
-              <Eyebrow>Portfolio-first game programming coaching</Eyebrow>
-              <h1 className="max-w-5xl text-4xl font-semibold leading-[1.04] text-foreground sm:text-6xl lg:text-7xl">
-                Escape tutorial hell.
-                <br />
-                Finish a game project.
-              </h1>
-
-              <p className="mt-5 max-w-3xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
-                I used a portfolio to get my first game programming job. If you
-                are anywhere from &quot;I&apos;ve never coded&quot; to
-                &quot;I&apos;m applying for my first games role,&quot; I help
-                you build the proof your next step needs.
-              </p>
-
-              <p className="mt-4 max-w-3xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-                You will build a small finished game, learn the programming
-                fundamentals behind it, and avoid the oversized scope that keeps
-                projects stuck in limbo.
-              </p>
-
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <BookingLink className="w-full sm:w-auto">{ctaLabel}</BookingLink>
+            <div className="mt-10 border-y border-border py-4 text-sm font-semibold text-muted">
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+                {credibilityPoints.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
               </div>
+            </div>
+          </div>
+        </section>
 
-              <ul className="mt-6 grid max-w-5xl gap-3 text-sm font-semibold text-foreground sm:grid-cols-2">
-                {offerBullets.map((item) => (
-                  <li key={item} className="border-l-4 border-brand-yellow pl-3 leading-6">
+        <section className="border-t border-border px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <SectionTitle
+              eyebrow="How It Works"
+              title="Private Discord coaching built around your project."
+            />
+
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {coachingSteps.map((step) => (
+                <article key={step.title} className="border border-border bg-background/55 p-5">
+                  <h3 className="text-xl font-semibold leading-tight text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">{step.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-border px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <SectionTitle
+              eyebrow="What You Get"
+              title="Help when tutorials stop helping."
+              copy="I help you decide what to build next, how to build it, and what to avoid."
+            />
+
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {offerCards.map((card) => (
+                <article key={card.title} className="border border-border bg-background/55 p-5">
+                  <h3 className="text-lg font-semibold leading-tight text-foreground">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">{card.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-border px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start">
+            <div>
+              <Eyebrow>Why $99/month</Eyebrow>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+                Founding member price.
+              </h2>
+            </div>
+            <div>
+              <p className="text-lg leading-8 text-muted sm:text-xl sm:leading-9">
+                Early members pay $99/month. That is less than a 1-hour call.
+                Keep this rate while you stay subscribed. The price will go up
+                later.
+              </p>
+              <ul className="mt-6 grid gap-3 text-sm leading-6 text-muted">
+                {guarantees.map((item) => (
+                  <li key={item} className="border-l-4 border-brand-yellow pl-3">
                     {item}
                   </li>
                 ))}
               </ul>
-            </section>
+            </div>
           </div>
         </section>
 
-        <section className="border-y border-border bg-surface/35 px-5 py-6 sm:px-6 sm:py-10 lg:px-8">
-          <div className="mx-auto max-w-6xl">
-            <div className="mb-8 border-b border-border pb-6">
-              <div className="flex flex-wrap gap-x-3 gap-y-2 text-sm font-semibold leading-6 text-brand-yellow">
-                {proofPoints.map((item, index) => (
-                  <span key={item} className="inline-flex items-center gap-3">
-                    {index > 0 ? (
-                      <span aria-hidden="true" className="text-brand-yellow">
-                        &bull;
-                      </span>
-                    ) : null}
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-6 grid gap-5 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:items-start">
-                <h2 className="text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
-                  The route I teach is the route I used.
-                </h2>
-
-                <div className="grid gap-4 text-base leading-7 text-muted sm:text-lg sm:leading-8">
-                  <p>
-                    I got my first game programming job without a degree because
-                    I could show finished work.
-                  </p>
-                  <p>
-                    Since then I&apos;ve programmed on games including Cities:
-                    Skylines and Age of Mythology: Retold, and taught computer
-                    science and game development at university level.
-                  </p>
-                  <p>
-                    You do not need a degree. You do not need another tutorial.
-                  </p>
-                  <p>
-                    Degrees are expensive and take years. Tutorials can leave
-                    you stranded when it is time to move beyond the lesson and
-                    apply it to your own game.
-                  </p>
-                  <p>
-                    1:1 coaching gives you a project, a roadmap, and direct
-                    help every step of the way.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid gap-4 lg:grid-cols-2">
-              <CompactCard eyebrow="First 6 weeks" title="Finish the first project.">
-                <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted">
-                  {firstWeeks.map((item) => (
-                    <li key={item} className="border-l-4 border-brand-yellow pl-3">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </CompactCard>
-
-              <CompactCard eyebrow="Then keep going" title="Build real programming depth.">
-                <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted sm:grid-cols-2 lg:grid-cols-1">
-                  {nextPath.map((item) => (
-                    <li key={item} className="border-l-4 border-brand-yellow pl-3">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </CompactCard>
-            </div>
-
-            <div className="mt-4 rounded-md border border-border bg-background/45 p-3 sm:p-5">
-              <p className="text-sm leading-6 text-muted">
-                Best for complete beginners, self-taught programmers, students,
-                and first-job applicants who want structure, practical projects,
-                and direct feedback. Not for passive video-only learners or
-                anyone looking for a job guarantee.
-              </p>
-            </div>
-
-            <div className="mt-6 grid gap-4 border-t border-border pt-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
-              <div>
-                <h2 className="text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
-                  Get unstuck. Make faster progress. Finish something you can
-                  show.
-                </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
-                  Book a free 15-minute portfolio roadmap call and share where
-                  you are now, what you want to build, and where you want game
-                  development to take you.
+        <section className="border-t border-border px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-center">
+            <Image
+              src="/headshot-transparent.png"
+              alt="Matt from Game Dev Glory"
+              width={1530}
+              height={2040}
+              className="h-auto w-40 border border-border sm:w-48"
+            />
+            <div className="max-w-3xl">
+              <Eyebrow>Who You&apos;re Learning From</Eyebrow>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+                I&apos;m Matt.
+              </h2>
+              <div className="mt-5 grid gap-4 text-base leading-7 text-muted sm:text-lg sm:leading-8">
+                <p>
+                  I&apos;ve spent 10+ years making games in Unity, other
+                  engines, proprietary tech, and plenty of languages. I&apos;ve
+                  taken projects from rough prototypes to shipped commercial
+                  games. My credits include Cities: Skylines (Unity) and Age
+                  of Mythology: Retold.
+                </p>
+                <p>
+                  I also taught game dev at university for 5 years. Hundreds of
+                  students built portfolio projects in my classes.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="scroll-mt-10 border-t border-border px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <SectionTitle eyebrow="FAQs" title="Common questions" />
+
+            <div className="mt-10 divide-y divide-border border-y border-border">
+              {faqs.map((item) => (
+                <section key={item.question} className="py-6">
+                  <h3 className="text-xl font-semibold text-foreground">
+                    {item.question}
+                  </h3>
+                  <p className="mt-3 text-base leading-7 text-muted">{item.answer}</p>
+                </section>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-border px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <Eyebrow>Join Async Unity Coaching</Eyebrow>
+            <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-5xl">
+              Ready to build with feedback?
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+              Join for $99/month and get a private Discord coaching channel for
+              your Unity project.
+            </p>
+            <div className="mt-8">
               <BookingLink className="w-full sm:w-auto">{ctaLabel}</BookingLink>
             </div>
-
-            <footer className="mt-4 flex flex-col gap-2 border-t border-border pt-3 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-              <p className="font-medium text-foreground">Game Dev Glory</p>
-              <div className="flex flex-col gap-2 sm:items-end">
-                <a className="transition hover:text-foreground" href="mailto:info@gamedevglory.com">
-                  Contact: info@gamedevglory.com
-                </a>
-                <div className="flex gap-4">
-                  <a className="transition hover:text-foreground" href="/terms">
-                    Terms
-                  </a>
-                  <a className="transition hover:text-foreground" href="/privacy">
-                    Privacy
-                  </a>
-                </div>
-              </div>
-            </footer>
           </div>
+        </section>
+
+        <section className="border-t border-border px-5 py-10 sm:px-6 sm:py-12 lg:px-8">
+          <footer className="mx-auto flex max-w-6xl flex-col gap-2 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-medium text-foreground">Game Dev Glory</p>
+            <div className="flex flex-col gap-2 sm:items-end">
+              <a className="transition hover:text-foreground" href="mailto:info@gamedevglory.com">
+                Contact: info@gamedevglory.com
+              </a>
+              <div className="flex gap-4">
+                <a className="transition hover:text-foreground" href="/terms">
+                  Terms
+                </a>
+                <a className="transition hover:text-foreground" href="/privacy">
+                  Privacy
+                </a>
+                <a className="transition hover:text-foreground" href="/billing">
+                  Billing
+                </a>
+              </div>
+            </div>
+          </footer>
         </section>
       </main>
     </div>

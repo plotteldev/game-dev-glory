@@ -22,11 +22,14 @@ export function SiteFooter() {
             <a className="transition hover:text-foreground" href="/terms">
               Terms
             </a>
-            <a className="transition hover:text-foreground" href="/privacy">
-              Privacy
-            </a>
+              <a className="transition hover:text-foreground" href="/privacy">
+                Privacy
+              </a>
+              <a className="transition hover:text-foreground" href="/billing">
+                Billing
+              </a>
+            </div>
           </div>
-        </div>
       </div>
     </footer>
   );
