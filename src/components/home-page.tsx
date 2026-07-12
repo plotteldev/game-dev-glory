@@ -39,7 +39,7 @@ const offerCards = [
     copy: "Turn rough mechanics into something people can test.",
   },
   {
-    title: "Get unstuck faster",
+    title: "Find the next step",
     copy: "Bring bugs, weird Unity issues, or confusing code. I will help you find the next step.",
   },
 ];
@@ -133,7 +133,7 @@ export function HomePage() {
           <div className="mx-auto max-w-5xl text-center">
             <Eyebrow>Async Unity Coaching</Eyebrow>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.03] text-foreground sm:text-6xl lg:text-7xl">
-              Want to actually finish your Unity game?
+              Make steady progress on your Unity game.
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
               Send what you&apos;re stuck on and get clear Unity feedback
@@ -188,8 +188,8 @@ export function HomePage() {
           <div className="mx-auto max-w-6xl">
             <SectionTitle
               eyebrow="What You Get"
-              title="Help when tutorials stop helping."
-              copy="I help you decide what to build next, how to build it, and what to avoid."
+              title="When the tutorial ends, adapt it to your project."
+              copy="I help you decide what to build next, how to build it, and what to leave out."
             />
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -216,8 +216,7 @@ export function HomePage() {
             <div>
               <p className="text-lg leading-8 text-muted sm:text-xl sm:leading-9">
                 Early members pay $99/month. That is less than a 1-hour call.
-                Keep this rate while you stay subscribed. The price will go up
-                later.
+                Keep this rate while you stay subscribed.
               </p>
               <ul className="mt-6 grid gap-3 text-sm leading-6 text-muted">
                 {guarantees.map((item) => (
