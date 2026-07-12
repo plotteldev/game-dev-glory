@@ -18,7 +18,7 @@ const terms = [
   },
   {
     title: "Response time",
-    body: "Coaching questions receive a response within 12 hours. If an active question goes unanswered for 48 hours, a free call will be offered to discuss that question.",
+    body: "Coaching questions receive a response within 12 hours. If an active question goes unanswered for 48 hours, a free 1:1 call up to 1 hour will be offered to discuss that question.",
   },
   {
     title: "Member responsibilities",

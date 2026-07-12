@@ -63,7 +63,7 @@ export default function JoinPage() {
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-muted">
                   I reply within 12 hours. If I miss an active question for 48
-                  hours, you get a free call.
+                  hours, you get a free 1:1 call up to 1 hour.
                 </p>
               </article>
               <article className="border border-border bg-background/55 p-5">

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { BookingLink, getBookingUrl } from "@/components/booking-link";
 import { SiteHeader } from "@/components/site-header";
 
-const ctaLabel = "Join for $99/month";
+const ctaLabel = "Start coaching for $99/month";
 
 const credibilityPoints = [
   "10+ years with Unity",
@@ -45,8 +45,7 @@ const offerCards = [
 ];
 
 const guarantees = [
-  "Reply within 12 hours",
-  "Free call if an active question goes unanswered for 48 hours",
+  "12-hour replies, with a free 1-hour 1:1 if I do not reply within 48h",
   "7-day refund window",
 ];
 
@@ -133,10 +132,10 @@ export function HomePage() {
           <div className="mx-auto max-w-5xl text-center">
             <Eyebrow>Async Unity Coaching</Eyebrow>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.03] text-foreground sm:text-6xl lg:text-7xl">
-              Make steady progress on your Unity game.
+              Do you want to finish your Unity game?
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
-              Send what you&apos;re stuck on and get clear Unity feedback
+              Send the problem. Get clear Unity feedback and your next step
               within 12 hours.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
@@ -148,11 +147,9 @@ export function HomePage() {
                 Read FAQ
               </a>
             </div>
-            <div className="mx-auto mt-5 flex max-w-3xl flex-wrap justify-center gap-x-4 gap-y-2 text-sm font-semibold leading-6 text-muted">
-              <span>Reply within 12 hours</span>
-              <span>Free call if I miss 48 hours</span>
-              <span>7-day refund window</span>
-            </div>
+            <p className="mx-auto mt-5 max-w-3xl text-sm font-semibold leading-6 text-muted">
+              12-hour replies, with a free 1-hour 1:1 if I do not reply within 48h.
+            </p>
 
             <div className="mt-10 border-y border-border py-4 text-sm font-semibold text-muted">
               <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
