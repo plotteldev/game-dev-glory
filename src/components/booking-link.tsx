@@ -7,6 +7,7 @@ type BookingLinkProps = {
 };
 
 const joinPath = "/join";
+const freeQuestionPath = "/free-question";
 const fallbackBillingUrl =
   "mailto:info@gamedevglory.com?subject=Manage%20my%20Game%20Dev%20Glory%20subscription";
 const stripePaymentLink =
@@ -24,6 +25,10 @@ function isUsableHref(value: string) {
 
 export function getBookingUrl() {
   return joinPath;
+}
+
+export function getFreeQuestionUrl() {
+  return freeQuestionPath;
 }
 
 export function getStripeCheckoutUrl() {

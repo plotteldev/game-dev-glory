@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { BookingLink, getBookingUrl } from "@/components/booking-link";
+import { BookingLink, getBookingUrl, getFreeQuestionUrl } from "@/components/booking-link";
 import { SiteHeader } from "@/components/site-header";
 
 const ctaLabel = "Start coaching for $99/month";
+const freeQuestionLabel = "Ask one Unity question free";
 
 const credibilityPoints = [
   "10+ years with Unity",
@@ -116,6 +117,7 @@ function SectionTitle({
 
 export function HomePage() {
   const joinUrl = getBookingUrl();
+  const freeQuestionUrl = getFreeQuestionUrl();
 
   return (
     <div id="top" className="min-h-dvh overflow-x-hidden bg-background text-foreground">
@@ -142,13 +144,17 @@ export function HomePage() {
               <BookingLink className="w-full sm:w-auto">{ctaLabel}</BookingLink>
               <a
                 className="inline-flex min-h-12 items-center justify-center rounded-md border border-border px-5 py-3 text-sm font-semibold text-foreground transition hover:border-brand-yellow hover:text-brand-yellow"
-                href="#faq"
+                href={freeQuestionUrl}
               >
-                Read FAQ
+                {freeQuestionLabel}
               </a>
             </div>
             <p className="mx-auto mt-5 max-w-3xl text-sm font-semibold leading-6 text-muted">
               12-hour replies, with a free 1-hour 1:1 if I do not reply within 48h.
+            </p>
+            <p className="mx-auto mt-2 max-w-3xl text-sm leading-6 text-muted">
+              Not ready to join? Send one Unity problem and I&apos;ll show you
+              the next step.
             </p>
 
             <div className="mt-10 border-y border-border py-4 text-sm font-semibold text-muted">
@@ -213,7 +219,6 @@ export function HomePage() {
             <div>
               <p className="text-lg leading-8 text-muted sm:text-xl sm:leading-9">
                 Early members pay $99/month. That is less than a 1-hour call.
-                Keep this rate while you stay subscribed.
               </p>
               <ul className="mt-6 grid gap-3 text-sm leading-6 text-muted">
                 {guarantees.map((item) => (

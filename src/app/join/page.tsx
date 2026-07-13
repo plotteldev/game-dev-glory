@@ -92,8 +92,7 @@ export default function JoinPage() {
 
             <p className="mt-5 text-sm leading-6 text-muted">
               Founding member price. A full month costs less than a 1-hour
-              call. Keep this rate while you stay subscribed. The price will go
-              up later.
+              call.
             </p>
 
             <ul className="mt-6 grid gap-3 text-sm leading-6 text-muted">

@@ -28,6 +28,15 @@ NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL=https://billing.stripe.com/p/login/14AeVe
 NEXT_PUBLIC_DISCORD_INVITE_URL=https://discord.gg/NQeegWAAJM
 ```
 
+Set Postmark for the free Unity question form:
+
+```bash
+POSTMARK_SERVER_TOKEN=your-postmark-server-token
+POSTMARK_FROM_EMAIL=Game Dev Glory <info@gamedevglory.com>
+POSTMARK_MESSAGE_STREAM=outbound
+FREE_QUESTION_TO_EMAIL=info@gamedevglory.com
+```
+
 Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready.
 
 Run the development server:
@@ -71,6 +80,8 @@ npm run obs:overlays
 - The site does not use a database.
 - The site does not use Stripe SDK, webhooks, API routes, local accounts, or
   local subscription state.
+- `/free-question` uses a Server Action and Postmark to email one free Unity
+  question. Files are shared as links rather than uploaded to the site.
 - Stripe is the source of truth for subscribers, cancellations, invoices,
   refunds, and failed payments.
 - Primary coaching CTAs point to `NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK`.
@@ -95,6 +106,10 @@ Use it to deploy as a Node.js web service:
 - Environment variable: `NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK=https://buy.stripe.com/3cIfZi2oT2YYet3flr1kA01`
 - Environment variable: `NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL=https://billing.stripe.com/p/login/14AeVegfJeHGacNehn1kA00`
 - Environment variable: `NEXT_PUBLIC_DISCORD_INVITE_URL=https://discord.gg/NQeegWAAJM`
+- Secret environment variable: `POSTMARK_SERVER_TOKEN=...`
+- Environment variable: `POSTMARK_FROM_EMAIL=Game Dev Glory <info@gamedevglory.com>`
+- Environment variable: `POSTMARK_MESSAGE_STREAM=outbound`
+- Environment variable: `FREE_QUESTION_TO_EMAIL=info@gamedevglory.com`
 
 Before going live, create the Stripe product, recurring price, Payment Link, and
 Customer Portal link. Configure the Payment Link success redirect to
