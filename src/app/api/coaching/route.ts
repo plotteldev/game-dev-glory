@@ -111,6 +111,8 @@ export async function POST(request: Request) {
         currentProgress,
         coachingSummary,
         submittedAt,
+        DATA_VARIABLEcoachingSummary: coachingSummary,
+        DATA_VARIABLEsubmittedAt: submittedAt,
       },
     });
 

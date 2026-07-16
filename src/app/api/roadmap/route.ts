@@ -1,5 +1,6 @@
 import {
   getFormString,
+  getPublicUrl,
   isValidEmail,
   redirectTo,
   redirectWithError,
@@ -33,9 +34,9 @@ export async function POST(request: Request) {
       eventProperties: {
         source,
         leadMagnet: "gamer-to-game-dev-roadmap",
-        pdfUrl: new URL(
+        pdfUrl: getPublicUrl(
+          request,
           "/downloads/gamer-to-game-dev-roadmap.pdf",
-          request.url,
         ).toString(),
         submittedAt: new Date().toISOString(),
       },

@@ -34,8 +34,28 @@ export function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function getFirstHeaderValue(value: string | null) {
+  return value?.split(",")[0]?.trim() || "";
+}
+
+export function getPublicOrigin(request: Request) {
+  const forwardedHost = getFirstHeaderValue(request.headers.get("x-forwarded-host"));
+  const forwardedProto = getFirstHeaderValue(request.headers.get("x-forwarded-proto"));
+  const requestUrl = new URL(request.url);
+
+  if (forwardedHost) {
+    return `${forwardedProto || requestUrl.protocol.replace(":", "")}://${forwardedHost}`;
+  }
+
+  return requestUrl.origin;
+}
+
+export function getPublicUrl(request: Request, pathname: string) {
+  return new URL(pathname, getPublicOrigin(request));
+}
+
 export function redirectTo(request: Request, pathname: string) {
-  return NextResponse.redirect(new URL(pathname, request.url), { status: 303 });
+  return NextResponse.redirect(getPublicUrl(request, pathname), { status: 303 });
 }
 
 export function redirectWithError(
@@ -43,7 +63,7 @@ export function redirectWithError(
   pathname: string,
   error: SubmissionError,
 ) {
-  const url = new URL(pathname, request.url);
+  const url = getPublicUrl(request, pathname);
   url.searchParams.set("error", error);
 
   return NextResponse.redirect(url, { status: 303 });
