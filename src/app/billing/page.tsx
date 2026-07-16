@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Manage Subscription | Game Dev Glory",
   description:
-    "Manage Game Dev Glory async Unity coaching billing, invoices, payment methods, and cancellations through Stripe.",
+    "Manage Game Dev Glory billing, invoices, payment methods, and cancellations through Stripe.",
 };
 
 export default function BillingPage() {
@@ -25,7 +25,7 @@ export default function BillingPage() {
           </h1>
           <p className="mt-4 text-lg leading-8 text-muted">
             Stripe handles billing, invoices, payment methods, and cancellation
-            for Game Dev Glory async Unity coaching.
+            for legacy Game Dev Glory subscriptions.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">

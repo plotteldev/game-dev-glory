@@ -25,6 +25,26 @@ services:
     health_check:
       http_path: /
     envs:
+      - key: LOOPS_ROADMAP_EVENT_NAME
+        value: roadmap_signup
+        scope: RUN_TIME
+        type: GENERAL
+      - key: LOOPS_COACHING_REQUEST_EVENT_NAME
+        value: coaching_request_submitted
+        scope: RUN_TIME
+        type: GENERAL
+      - key: LOOPS_COACHING_NOTIFICATION_TRANSACTIONAL_ID
+        value: cmrn0ldad0oaj0j4jtb9k51o9
+        scope: RUN_TIME
+        type: GENERAL
+      - key: LOOPS_COACHING_CONFIRMATION_TRANSACTIONAL_ID
+        value: cmrn0pamx0oe70j18il6d1xuk
+        scope: RUN_TIME
+        type: GENERAL
+      - key: COACHING_REQUEST_RECIPIENT_EMAIL
+        value: info@gamedevglory.com
+        scope: RUN_TIME
+        type: GENERAL
       - key: NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK
         value: https://buy.stripe.com/3cIfZi2oT2YYet3flr1kA01
         scope: RUN_AND_BUILD_TIME

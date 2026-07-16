@@ -4,25 +4,25 @@ import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: "Privacy | Game Dev Glory",
-  description: "Privacy notice for Game Dev Glory async coaching enquiries.",
+  description: "Privacy notice for Game Dev Glory roadmap and coaching enquiries.",
 };
 
 const privacyItems = [
   {
     title: "What is collected",
-    body: "When you join or contact Game Dev Glory, the site may collect details such as your name, email address, project context, coaching questions, screenshots, code snippets, and technical information needed to provide async support.",
+    body: "When you join, book, apply, or contact Game Dev Glory, the site may collect details such as your name, email address, game idea, project context, coaching questions, screenshots, code snippets, and technical information needed to provide support.",
   },
   {
     title: "Why it is collected",
-    body: "This information is used to understand what you are building, respond to your questions, manage coaching communication, and provide async support.",
+    body: "This information is used to deliver roadmap access, understand what you are building, respond to enquiries, review coaching requests, and provide coaching support.",
   },
   {
     title: "Where it is handled",
-    body: "Coaching communication may happen through Discord and the email address shown on this site. Payment details, invoices, billing updates, and cancellation are handled by Stripe.",
+    body: "Communication may happen through email, Loops email services, discussion tools, or the contact address shown on this site. Payment details, invoices, billing updates, and cancellations may be handled by third-party checkout or billing providers.",
   },
   {
     title: "How it is used",
-    body: "Your information is not sold. It may be used to provide support, respond to enquiries, manage coaching communication, and keep basic business records.",
+    body: "Your information is not sold. It may be used to provide access, respond to enquiries, manage coaching communication, improve support, and keep basic business records.",
   },
   {
     title: "Questions",
@@ -41,7 +41,8 @@ export default function PrivacyPage() {
           </p>
           <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">Privacy</h1>
           <p className="mt-4 text-lg leading-8 text-muted">
-            This notice explains how async coaching enquiry information is used for Game Dev Glory.
+            This notice explains how roadmap and coaching enquiry
+            information is used for Game Dev Glory.
           </p>
 
           <div className="mt-8 divide-y divide-border border-y border-border">

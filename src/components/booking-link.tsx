@@ -6,8 +6,9 @@ type BookingLinkProps = {
   href?: string;
 };
 
-const joinPath = "/join";
-const freeQuestionPath = "/free-question";
+const roadmapPath = "/roadmap";
+const coachingPath = "/coaching";
+const gamerRoadmapPdfPath = "/downloads/gamer-to-game-dev-roadmap.pdf";
 const fallbackBillingUrl =
   "mailto:info@gamedevglory.com?subject=Manage%20my%20Game%20Dev%20Glory%20subscription";
 const stripePaymentLink =
@@ -19,16 +20,37 @@ function isUsableHref(value: string) {
     !value.includes("...") &&
     (value.startsWith("https://") ||
       value.startsWith("http://") ||
-      value.startsWith("mailto:"))
+      value.startsWith("mailto:") ||
+      value.startsWith("/"))
   );
 }
 
 export function getBookingUrl() {
-  return joinPath;
+  return roadmapPath;
 }
 
 export function getFreeQuestionUrl() {
-  return freeQuestionPath;
+  return roadmapPath;
+}
+
+export function getGamerRoadmapPdfUrl() {
+  return gamerRoadmapPdfPath;
+}
+
+export function getGamerRoadmapSignupUrl() {
+  return "/api/roadmap";
+}
+
+export function getRoadmapSessionUrl() {
+  return roadmapPath;
+}
+
+export function getCoachingUrl() {
+  return coachingPath;
+}
+
+export function getCoachingRequestUrl() {
+  return "/api/coaching";
 }
 
 export function getStripeCheckoutUrl() {
@@ -55,7 +77,11 @@ export function getDiscordInviteUrl() {
   return fallbackDiscordInviteUrl;
 }
 
-export function BookingLink({ children, className = "", href = getBookingUrl() }: BookingLinkProps) {
+export function BookingLink({
+  children,
+  className = "",
+  href = roadmapPath,
+}: BookingLinkProps) {
   return (
     <a
       className={`inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-sm font-semibold text-background transition hover:bg-[#ffd95f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow ${className}`}

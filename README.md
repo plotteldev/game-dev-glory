@@ -1,10 +1,13 @@
 # Game Dev Glory
 
-A minimal landing page for the Game Dev Glory async Unity coaching offer.
+Game Dev Glory is a beginner game programming funnel:
 
-The site sends students to a Stripe Payment Link for the $99/month USD coaching
-subscription. Stripe handles checkout, invoices, payment methods, subscription
-status, and cancellation.
+- Free Gamer to Game Dev Roadmap PDF
+- 1-on-1 coaching request
+- First Game Coaching
+
+The site is a Next.js App Router app with static funnel pages, native website
+forms, and server-side Loops integration points.
 
 ## Getting Started
 
@@ -20,24 +23,33 @@ Create a local environment file:
 cp .env.example .env.local
 ```
 
-Set the Stripe-hosted billing links in `.env.local`:
+Set the Loops funnel values:
 
 ```bash
-NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK=https://buy.stripe.com/3cIfZi2oT2YYet3flr1kA01
-NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL=https://billing.stripe.com/p/login/14AeVegfJeHGacNehn1kA00
-NEXT_PUBLIC_DISCORD_INVITE_URL=https://discord.gg/NQeegWAAJM
+LOOPS_API_KEY=
+LOOPS_ROADMAP_EVENT_NAME=roadmap_signup
+LOOPS_ROADMAP_MAILING_LIST_ID=
+LOOPS_COACHING_REQUEST_EVENT_NAME=coaching_request_submitted
+LOOPS_COACHING_REQUEST_MAILING_LIST_ID=
+LOOPS_COACHING_NOTIFICATION_TRANSACTIONAL_ID=
+LOOPS_COACHING_CONFIRMATION_TRANSACTIONAL_ID=
+COACHING_REQUEST_RECIPIENT_EMAIL=info@gamedevglory.com
 ```
 
-Set Postmark for the free Unity question form:
-
-```bash
-POSTMARK_SERVER_TOKEN=your-postmark-server-token
-POSTMARK_FROM_EMAIL=Game Dev Glory <info@gamedevglory.com>
-POSTMARK_MESSAGE_STREAM=outbound
-FREE_QUESTION_TO_EMAIL=info@gamedevglory.com
-```
+The public forms submit to local API routes (`/api/roadmap` and `/api/coaching`).
+No embedded third-party forms are used. Until Loops is configured, form
+submissions redirect back with a configuration message.
 
 Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready.
+
+Legacy Stripe and Discord variables are still supported for existing billing and
+post-payment support pages:
+
+```bash
+NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK=
+NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL=
+NEXT_PUBLIC_DISCORD_INVITE_URL=
+```
 
 Run the development server:
 
@@ -56,6 +68,19 @@ npm run start
 npm run lint
 ```
 
+## Funnel Routes
+
+- `/` is the main coaching offer page.
+- `/roadmap` is the free Gamer to Game Dev Roadmap PDF opt-in.
+- `/roadmap/confirmed` confirms the roadmap request.
+- `/coaching` is the 1-on-1 coaching request form.
+- `/coaching/confirmed` confirms coaching details were received.
+- `/dream-game-roadmap-session`, `/blueprint`, `/book`, and `/book/start-learning` redirect to the roadmap.
+- `/first-playable-coaching` redirects to the homepage.
+- `/join` redirects to the coaching request page.
+- `/breakout-mini-course`, `/free-question`, and `/start-learning-game-programming` redirect to the roadmap.
+- `/billing` and `/join/confirmed` remain for legacy Stripe subscription support.
+
 ## OBS Image Overlays
 
 Transparent 1920x1080 PNG overlays live in `public/obs/`:
@@ -65,33 +90,11 @@ Transparent 1920x1080 PNG overlays live in `public/obs/`:
 - `lower-third-title-1920x1080.png` for video starts or section breaks.
 - `corner-logo-bug-1920x1080.png` for subtle persistent branding.
 
-Add them to OBS as Image sources above the display/window capture. Use one
-taskbar mask as an always-on source, and toggle the lower-third or corner bug
-only when useful. The unused canvas area in each PNG is transparent.
-
 Regenerate them with:
 
 ```bash
 npm run obs:overlays
 ```
-
-## Notes
-
-- The site does not use a database.
-- The site does not use Stripe SDK, webhooks, API routes, local accounts, or
-  local subscription state.
-- `/free-question` uses a Server Action and Postmark to email one free Unity
-  question. Files are shared as links rather than uploaded to the site.
-- Stripe is the source of truth for subscribers, cancellations, invoices,
-  refunds, and failed payments.
-- Primary coaching CTAs point to `NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK`.
-- `/book` is a lightweight join page for old links.
-- `/apply` and `/book/start-learning` redirect to the configured coaching
-  Payment Link.
-- `/join/confirmed` is the post-payment success page configured in Stripe.
-- `/billing` links customers to the hosted Stripe Customer Portal.
-- Cancellations happen in Stripe and take effect at the end of the current paid
-  billing period.
 
 ## DigitalOcean App Platform
 
@@ -103,20 +106,15 @@ Use it to deploy as a Node.js web service:
 - Run command: `npm run start`
 - HTTP port: `3000`
 - Environment variable: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX`
-- Environment variable: `NEXT_PUBLIC_STRIPE_COACHING_PAYMENT_LINK=https://buy.stripe.com/3cIfZi2oT2YYet3flr1kA01`
-- Environment variable: `NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL=https://billing.stripe.com/p/login/14AeVegfJeHGacNehn1kA00`
-- Environment variable: `NEXT_PUBLIC_DISCORD_INVITE_URL=https://discord.gg/NQeegWAAJM`
-- Secret environment variable: `POSTMARK_SERVER_TOKEN=...`
-- Environment variable: `POSTMARK_FROM_EMAIL=Game Dev Glory <info@gamedevglory.com>`
-- Environment variable: `POSTMARK_MESSAGE_STREAM=outbound`
-- Environment variable: `FREE_QUESTION_TO_EMAIL=info@gamedevglory.com`
+- Runtime secret: `LOOPS_API_KEY`
+- Runtime variable: `LOOPS_ROADMAP_EVENT_NAME=roadmap_signup`
+- Runtime variable: `LOOPS_ROADMAP_MAILING_LIST_ID=<optional Loops list id>`
+- Runtime variable: `LOOPS_COACHING_REQUEST_EVENT_NAME=coaching_request_submitted`
+- Runtime variable: `LOOPS_COACHING_REQUEST_MAILING_LIST_ID=<optional Loops list id>`
+- Runtime variable: `LOOPS_COACHING_NOTIFICATION_TRANSACTIONAL_ID=<Loops transactional email id>`
+- Runtime variable: `LOOPS_COACHING_CONFIRMATION_TRANSACTIONAL_ID=<optional Loops transactional email id>`
+- Runtime variable: `COACHING_REQUEST_RECIPIENT_EMAIL=info@gamedevglory.com`
 
-Before going live, create the Stripe product, recurring price, Payment Link, and
-Customer Portal link. Configure the Payment Link success redirect to
-`https://gamedevglory.com/join/confirmed`, then run a Stripe test-mode checkout
-and customer portal cancellation test.
-
-The Customer Portal value must be the activated hosted login URL, not the
-`bpc_...` portal configuration ID shown in some Stripe settings screens.
-If the hosted portal is not ready, leave `NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL`
-empty so billing links fall back to email instead of a broken placeholder URL.
+Before going live, create the Loops events/workflows, create the coaching
+notification transactional email, set the runtime values, and submit live tests
+through `/roadmap` and `/coaching`.

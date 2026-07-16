@@ -4,41 +4,41 @@ import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: "Terms | Game Dev Glory",
-  description: "Program terms for Game Dev Glory async Unity coaching.",
+  description: "Program terms for Game Dev Glory roadmap resources and coaching.",
 };
 
 const terms = [
   {
-    title: "Offer",
-    body: "Async Unity coaching is delivered through a private Discord channel for Unity and C# questions, debugging direction, code feedback, project planning, architecture feedback, and practical next steps while you build.",
+    title: "Offers",
+    body: "Game Dev Glory offers beginner game programming resources and coaching focused on helping students build small, complete first games.",
   },
   {
     title: "Payment",
-    body: "Async Unity coaching is offered at $99/month USD. Payment, subscription billing, invoices, card updates, and receipts are handled by Stripe.",
+    body: "Paid coaching packages may be handled through third-party checkout, payment links, or invoicing tools. The price and terms shown at checkout or in writing for the specific offer apply.",
   },
   {
-    title: "Response time",
-    body: "Coaching questions receive a response within 12 hours. If an active question goes unanswered for 48 hours, a free 1:1 call up to 1 hour will be offered to discuss that question.",
+    title: "Roadmap",
+    body: "The free Gamer to Game Dev Roadmap is an educational resource. It is not personalized coaching, career advice, or a guarantee of results.",
   },
   {
-    title: "Member responsibilities",
-    body: "Members should provide enough context to answer questions, such as Unity version, platform, screenshots, relevant code snippets, exact errors, and what has already been tried.",
+    title: "Coaching",
+    body: "First Game Coaching is guidance-focused support. It can include scope planning, project feedback, code review, debugging help, check-ins, and roadmap support while you build.",
+  },
+  {
+    title: "Student responsibilities",
+    body: "Students should provide enough context to make support useful, such as their goal, current code, screenshots, errors, what they tried, and where they are stuck.",
   },
   {
     title: "Scope",
-    body: "Support is guidance-focused. Full feature implementation, production ownership, emergency support, and guaranteed same-hour responses are outside the monthly async coaching scope.",
-  },
-  {
-    title: "Refund window",
-    body: "The first month includes a 7-day refund window. If async coaching is the wrong fit, email info@gamedevglory.com within 7 days of subscribing to request a refund.",
+    body: "Support does not include promised full feature implementation, production ownership, emergency response, publishing services, or completion of a project on the student's behalf unless separately agreed in writing.",
   },
   {
     title: "Outcomes",
-    body: "Coaching is designed to improve decisions, direction, and project momentum. Employment, income, portfolio, publishing, and technical outcomes are not guaranteed.",
+    body: "Resources and coaching are designed to improve clarity, understanding, decisions, and project momentum. Employment, income, publishing, portfolio, and technical outcomes are not promised.",
   },
   {
-    title: "Cancellation",
-    body: "Async coaching can be cancelled anytime through the Stripe customer portal. Cancellation takes effect at the end of the current paid billing period unless otherwise confirmed in writing.",
+    title: "Questions",
+    body: "For terms, payment, or access questions, email info@gamedevglory.com.",
   },
 ];
 
@@ -53,7 +53,8 @@ export default function TermsPage() {
           </p>
           <h1 className="text-4xl font-semibold text-foreground sm:text-5xl">Terms</h1>
           <p className="mt-4 text-lg leading-8 text-muted">
-            These terms summarize how Game Dev Glory async Unity coaching works.
+            These terms summarize how Game Dev Glory beginner game programming
+            resources and coaching work.
           </p>
 
           <div className="mt-8 divide-y divide-border border-y border-border">

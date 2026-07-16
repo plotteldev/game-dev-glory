@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function StartLearningGameProgramming() {
+export default function DreamGameRoadmapSessionPage() {
   redirect("/roadmap");
 }

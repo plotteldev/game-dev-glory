@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function SiteFooter() {
   return (
@@ -18,18 +19,24 @@ export function SiteFooter() {
           <a className="transition hover:text-foreground" href="mailto:info@gamedevglory.com">
             Contact: info@gamedevglory.com
           </a>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 sm:justify-end">
+            <Link className="transition hover:text-foreground" href="/roadmap">
+              Roadmap
+            </Link>
+            <Link className="transition hover:text-foreground" href="/coaching">
+              Coaching
+            </Link>
             <a className="transition hover:text-foreground" href="/terms">
               Terms
             </a>
-              <a className="transition hover:text-foreground" href="/privacy">
-                Privacy
-              </a>
-              <a className="transition hover:text-foreground" href="/billing">
-                Billing
-              </a>
-            </div>
+            <a className="transition hover:text-foreground" href="/privacy">
+              Privacy
+            </a>
+            <a className="transition hover:text-foreground" href="/billing">
+              Billing
+            </a>
           </div>
+        </div>
       </div>
     </footer>
   );

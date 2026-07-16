@@ -1,30 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookingLink, getBookingUrl } from "@/components/booking-link";
+import { BookingLink } from "@/components/booking-link";
 
 type SiteHeaderProps = {
-  bookHref?: string;
   ctaHref?: string;
   ctaLabel?: string;
   showCta?: boolean;
   showNav?: boolean;
 };
 
-function getNavItems(bookHref: string) {
+function getNavItems() {
   return [
     { href: "/", label: "Home" },
-    { href: bookHref, label: "Coaching" },
+    { href: "/roadmap", label: "Roadmap" },
+    { href: "/coaching", label: "Coaching" },
   ];
 }
 
 export function SiteHeader({
-  bookHref = getBookingUrl(),
-  ctaHref = getBookingUrl(),
-  ctaLabel = "Join for $99/month",
+  ctaHref = "/coaching",
+  ctaLabel = "I'm Ready To Build Games",
   showCta = true,
   showNav = true,
 }: SiteHeaderProps) {
-  const navItems = getNavItems(bookHref);
+  const navItems = getNavItems();
 
   return (
     <header className="border-b border-border bg-background/90 backdrop-blur">

@@ -1,0 +1,17 @@
+Campaign,Ad group,Ad group status,Keyword,Match type,Status,Final URL,Path 1,Path 2,Headline 1,Headline 2,Headline 3,Headline 4,Headline 5,Headline 6,Headline 7,Headline 8,Headline 9,Headline 10,Headline 11,Headline 12,Headline 13,Headline 14,Headline 15,Description 1,Description 2,Description 3,Description 4
+Search - Unity Coaching,Free Unity Question,Enabled,,,,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity help,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity bug help,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity c# help,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity coding help,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity debugging help,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity project help,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,stuck on unity,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity error help,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity script help,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity code review,Phrase,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity help,Exact,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity bug help,Exact,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,unity c# help,Exact,Enabled,,,,,,,,,,,,,,,,,,,,,,
+Search - Unity Coaching,Free Unity Question,,,,Enabled,https://gamedevglory.com/free-question,unity,help,Ask A Unity Question,Get The Next Step,Free Unity Help,Stuck In Unity?,Send One Problem,Unity Code Help,Game Dev Glory,Debug Your Unity Issue,Free Project Feedback,One Concrete Next Step,Unity Problem Help,Learn What To Try Next,Help With Your Game,Unity Debugging Help,Ask Matt For Help,Send one Unity problem and get a concrete next step from Game Dev Glory.,"Paste code, errors, screenshots, or clip links in the form.","Get help when you are stuck on a Unity project, script, bug, or next step.",Not ready for coaching yet? Ask one question free.
+Search - Unity Coaching,Free Unity Question,,,,Enabled,https://gamedevglory.com/free-question,unity,question,Stuck On A Unity Bug,Get Unity Help Free,Ask One Unity Problem,Send Your Unity Issue,Need The Next Step?,Unity C# Problem?,Fix Your Next Blocker,Help For Indie Devs,Unity Project Stuck?,Fast Unity Direction,One Free Unity Reply,Ask A Game Dev Teacher,Unity Error Help,Turn Stuck Into Next Step,Simple Unity Guidance,Tell me what is broken or confusing. I will reply with the next step.,"Good for Unity scripts, errors, scope questions, prototypes, and project blockers.",Send your problem free before joining private Discord coaching.,"Built for solo devs, students, and beginners working on real Unity projects."

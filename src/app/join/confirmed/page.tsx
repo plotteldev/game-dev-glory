@@ -6,13 +6,13 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "You Are In | Game Dev Glory",
   description:
-    "Confirmation page for Game Dev Glory async Unity coaching subscriptions.",
+    "Confirmation page for Game Dev Glory coaching subscriptions.",
 };
 
 const nextSteps = [
   "Check your inbox for the Stripe receipt and subscription email.",
   "Join Discord using the invite below.",
-  "Post your Unity version, project context, and first question in your private channel.",
+  "Post your project context and first question in your private channel.",
   "Add screenshots, code, errors, logs, or short clips if they help.",
 ];
 
@@ -32,9 +32,9 @@ export default function JoinConfirmedPage() {
             You are in.
           </h1>
           <p className="mt-4 text-lg leading-8 text-muted">
-            Thanks for joining Game Dev Glory async Unity coaching. Stripe has
-            handled your payment and billing. Join Discord and send your first
-            project question when you are ready.
+            Thanks for joining Game Dev Glory coaching. Stripe has handled your
+            payment and billing. Join Discord and send your first project
+            question when you are ready.
           </p>
 
           <div className="mt-8 rounded border border-border bg-background/45 p-5">
