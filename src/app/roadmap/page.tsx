@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { RoadmapLeadForm } from "@/components/roadmap-lead-form";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -49,17 +48,6 @@ export default async function RoadmapPage({ searchParams }: RoadmapPageProps) {
             errorMessage={errorMessage}
             source="roadmap"
           />
-
-          <div className="mt-12 overflow-hidden rounded-lg border border-border bg-surface shadow-2xl shadow-black/25">
-            <Image
-              src="/downloads/gamer-to-game-dev-roadmap.png"
-              alt="From Gamer to Game Dev portfolio and tech demo roadmap"
-              width={2400}
-              height={1600}
-              className="h-auto w-full"
-              priority
-            />
-          </div>
         </section>
       </main>
       <SiteFooter />
