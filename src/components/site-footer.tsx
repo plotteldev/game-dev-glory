@@ -23,17 +23,14 @@ export function SiteFooter() {
             <Link className="transition hover:text-foreground" href="/roadmap">
               Roadmap
             </Link>
-            <Link className="transition hover:text-foreground" href="/coaching">
-              Coaching
+            <Link className="transition hover:text-foreground" href="/book">
+              Build
             </Link>
             <a className="transition hover:text-foreground" href="/terms">
               Terms
             </a>
             <a className="transition hover:text-foreground" href="/privacy">
               Privacy
-            </a>
-            <a className="transition hover:text-foreground" href="/billing">
-              Billing
             </a>
           </div>
         </div>

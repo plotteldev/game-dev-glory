@@ -15,18 +15,16 @@ export async function POST(request: Request) {
     return redirectTo(request, "/roadmap/confirmed");
   }
 
-  const name = getFormString(formData, "name");
   const email = getFormString(formData, "email").toLowerCase();
   const source = getFormString(formData, "source") || "roadmap";
 
-  if (!name || !isValidEmail(email)) {
+  if (!isValidEmail(email)) {
     return redirectWithError(request, "/roadmap", "validation");
   }
 
   try {
     await sendLoopsEvent({
       email,
-      firstName: name,
       source: "website-roadmap",
       userGroup: "Roadmap",
       eventName: process.env.LOOPS_ROADMAP_EVENT_NAME || "roadmap_signup",

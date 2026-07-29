@@ -40,19 +40,7 @@ export function RoadmapLeadForm({
           {errorMessage}
         </p>
       ) : null}
-      <div className="mt-3 grid gap-2 sm:grid-cols-2">
-        <label className="sr-only" htmlFor={`${source}-roadmap-name`}>
-          Name
-        </label>
-        <input
-          id={`${source}-roadmap-name`}
-          name="name"
-          type="text"
-          autoComplete="name"
-          required
-          className="min-h-12 rounded-md border border-border bg-background px-4 py-3 text-base font-normal text-foreground outline-none transition placeholder:text-muted focus:border-brand-yellow"
-          placeholder="Name"
-        />
+      <div className="mx-auto mt-3 max-w-xl">
         <label className="sr-only" htmlFor={`${source}-roadmap-email`}>
           Email
         </label>

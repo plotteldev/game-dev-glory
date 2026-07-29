@@ -7,8 +7,9 @@ type BookingLinkProps = {
 };
 
 const roadmapPath = "/roadmap";
-const coachingPath = "/coaching";
+const bookPath = "/book";
 const gamerRoadmapPdfPath = "/downloads/gamer-to-game-dev-roadmap.pdf";
+const fallbackAppointmentBookingUrl = "https://cal.com/matt-noone-avjm8m/60min";
 const fallbackBillingUrl =
   "mailto:info@gamedevglory.com?subject=Manage%20my%20Game%20Dev%20Glory%20subscription";
 const stripePaymentLink =
@@ -26,7 +27,7 @@ function isUsableHref(value: string) {
 }
 
 export function getBookingUrl() {
-  return roadmapPath;
+  return bookPath;
 }
 
 export function getFreeQuestionUrl() {
@@ -46,11 +47,21 @@ export function getRoadmapSessionUrl() {
 }
 
 export function getCoachingUrl() {
-  return coachingPath;
+  return bookPath;
 }
 
 export function getCoachingRequestUrl() {
   return "/api/coaching";
+}
+
+export function getAppointmentBookingUrl() {
+  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
+
+  if (bookingUrl && isUsableHref(bookingUrl)) {
+    return bookingUrl;
+  }
+
+  return fallbackAppointmentBookingUrl;
 }
 
 export function getStripeCheckoutUrl() {
@@ -80,7 +91,7 @@ export function getDiscordInviteUrl() {
 export function BookingLink({
   children,
   className = "",
-  href = roadmapPath,
+  href = bookPath,
 }: BookingLinkProps) {
   return (
     <a
