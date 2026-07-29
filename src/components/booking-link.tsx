@@ -26,6 +26,10 @@ function isUsableHref(value: string) {
   );
 }
 
+function normalizeAppointmentBookingUrl(value: string) {
+  return value.endsWith("/15min") ? `${value.slice(0, -"/15min".length)}/60min` : value;
+}
+
 export function getBookingUrl() {
   return bookPath;
 }
@@ -58,7 +62,7 @@ export function getAppointmentBookingUrl() {
   const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
 
   if (bookingUrl && isUsableHref(bookingUrl)) {
-    return bookingUrl;
+    return normalizeAppointmentBookingUrl(bookingUrl);
   }
 
   return fallbackAppointmentBookingUrl;
