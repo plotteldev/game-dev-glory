@@ -25,8 +25,13 @@ services:
     health_check:
       http_path: /
     envs:
-      - key: LOOPS_ROADMAP_EVENT_NAME
-        value: roadmap_signup
+      # Add POSTMARK_SERVER_TOKEN as an encrypted RUN_TIME secret in App Platform.
+      - key: POSTMARK_FROM_EMAIL
+        value: Game Dev Glory <info@gamedevglory.com>
+        scope: RUN_TIME
+        type: GENERAL
+      - key: POSTMARK_MESSAGE_STREAM
+        value: outbound
         scope: RUN_TIME
         type: GENERAL
       - key: LOOPS_COACHING_REQUEST_EVENT_NAME

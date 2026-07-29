@@ -5,7 +5,11 @@ import {
   redirectTo,
   redirectWithError,
 } from "@/lib/form-submissions";
-import { LoopsConfigurationError, sendLoopsEvent } from "@/lib/loops";
+import {
+  escapeHtml,
+  PostmarkConfigurationError,
+  sendPostmarkEmail,
+} from "@/lib/postmark";
 
 export async function POST(request: Request) {
   const formData = await request.formData();
@@ -16,28 +20,34 @@ export async function POST(request: Request) {
   }
 
   const email = getFormString(formData, "email").toLowerCase();
-  const source = getFormString(formData, "source") || "roadmap";
 
   if (!isValidEmail(email)) {
     return redirectWithError(request, "/roadmap", "validation");
   }
 
   try {
-    await sendLoopsEvent({
-      email,
-      source: "website-roadmap",
-      userGroup: "Roadmap",
-      eventName: process.env.LOOPS_ROADMAP_EVENT_NAME || "roadmap_signup",
-      mailingListId: process.env.LOOPS_ROADMAP_MAILING_LIST_ID,
-      eventProperties: {
-        source,
-        leadMagnet: "gamer-to-game-dev-roadmap",
-        pdfUrl: getPublicUrl(
-          request,
-          "/downloads/gamer-to-game-dev-roadmap.pdf",
-        ).toString(),
-        submittedAt: new Date().toISOString(),
-      },
+    const pdfUrl = getPublicUrl(
+      request,
+      "/downloads/gamer-to-game-dev-roadmap.pdf",
+    ).toString();
+
+    await sendPostmarkEmail({
+      to: email,
+      subject: "Your Game Dev Glory roadmap",
+      textBody: [
+        "Here is your free Gamer to Game Dev Roadmap:",
+        "",
+        pdfUrl,
+        "",
+        "Matt",
+        "Game Dev Glory",
+      ].join("\n"),
+      htmlBody: [
+        "<p>Here is your free Gamer to Game Dev Roadmap:</p>",
+        `<p><a href="${escapeHtml(pdfUrl)}">Download the roadmap</a></p>`,
+        "<p>Matt<br />Game Dev Glory</p>",
+      ].join(""),
+      replyTo: "info@gamedevglory.com",
     });
 
     return redirectTo(request, "/roadmap/confirmed");
@@ -47,7 +57,7 @@ export async function POST(request: Request) {
     return redirectWithError(
       request,
       "/roadmap",
-      error instanceof LoopsConfigurationError ? "configuration" : "delivery",
+      error instanceof PostmarkConfigurationError ? "configuration" : "delivery",
     );
   }
 }
