@@ -34,6 +34,10 @@ services:
         value: outbound
         scope: RUN_TIME
         type: GENERAL
+      - key: ROADMAP_SIGNUP_RECIPIENT_EMAIL
+        value: info@gamedevglory.com
+        scope: RUN_TIME
+        type: GENERAL
       - key: LOOPS_COACHING_REQUEST_EVENT_NAME
         value: coaching_request_submitted
         scope: RUN_TIME

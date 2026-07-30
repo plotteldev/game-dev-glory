@@ -29,6 +29,7 @@ Set the Postmark roadmap email values:
 POSTMARK_SERVER_TOKEN=
 POSTMARK_FROM_EMAIL=Game Dev Glory <info@gamedevglory.com>
 POSTMARK_MESSAGE_STREAM=outbound
+ROADMAP_SIGNUP_RECIPIENT_EMAIL=info@gamedevglory.com
 ```
 
 Legacy Loops values are only needed for old coaching request integrations:
@@ -43,8 +44,9 @@ COACHING_REQUEST_RECIPIENT_EMAIL=info@gamedevglory.com
 ```
 
 The public roadmap form submits to `/api/roadmap`, which sends the roadmap PDF
-link by email through Postmark. The legacy coaching request API remains for old
-integrations, but the public coaching path now redirects to the appointment
+link by email through Postmark and sends an internal signup notification to
+`ROADMAP_SIGNUP_RECIPIENT_EMAIL`. The legacy coaching request API remains for
+old integrations, but the public coaching path now redirects to the appointment
 booking page.
 
 Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready. Set
@@ -119,6 +121,7 @@ Use it to deploy as a Node.js web service:
 - Runtime secret: `POSTMARK_SERVER_TOKEN`
 - Runtime variable: `POSTMARK_FROM_EMAIL=Game Dev Glory <info@gamedevglory.com>`
 - Runtime variable: `POSTMARK_MESSAGE_STREAM=outbound`
+- Runtime variable: `ROADMAP_SIGNUP_RECIPIENT_EMAIL=info@gamedevglory.com`
 - Runtime secret: `LOOPS_API_KEY` for legacy coaching request integrations only
 - Runtime variable: `LOOPS_COACHING_REQUEST_EVENT_NAME=coaching_request_submitted`
 - Runtime variable: `LOOPS_COACHING_REQUEST_MAILING_LIST_ID=<optional Loops list id>`

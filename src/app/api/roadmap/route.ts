@@ -11,6 +11,10 @@ import {
   sendPostmarkEmail,
 } from "@/lib/postmark";
 
+function getRoadmapNotificationRecipient() {
+  return process.env.ROADMAP_SIGNUP_RECIPIENT_EMAIL || "info@gamedevglory.com";
+}
+
 export async function POST(request: Request) {
   const formData = await request.formData();
   const spamTrap = getFormString(formData, "website");
@@ -30,6 +34,7 @@ export async function POST(request: Request) {
       request,
       "/downloads/gamer-to-game-dev-roadmap.pdf",
     ).toString();
+    const submittedAt = new Date().toISOString();
 
     await sendPostmarkEmail({
       to: email,
@@ -48,6 +53,29 @@ export async function POST(request: Request) {
         "<p>Matt<br />Game Dev Glory</p>",
       ].join(""),
       replyTo: "info@gamedevglory.com",
+    });
+
+    await sendPostmarkEmail({
+      to: getRoadmapNotificationRecipient(),
+      subject: "New roadmap signup",
+      textBody: [
+        "New Gamer to Game Dev Roadmap signup",
+        "",
+        `Email: ${email}`,
+        `Roadmap: ${pdfUrl}`,
+        `Submitted: ${submittedAt}`,
+      ].join("\n"),
+      htmlBody: [
+        "<h1>New roadmap signup</h1>",
+        `<p><strong>Email:</strong> ${escapeHtml(email)}</p>`,
+        `<p><strong>Roadmap:</strong> <a href="${escapeHtml(pdfUrl)}">${escapeHtml(
+          pdfUrl,
+        )}</a></p>`,
+        `<p><strong>Submitted:</strong> ${escapeHtml(submittedAt)}</p>`,
+      ].join(""),
+      replyTo: email,
+    }).catch((error) => {
+      console.error("Roadmap signup notification failed", error);
     });
 
     return redirectTo(request, "/roadmap/confirmed");
