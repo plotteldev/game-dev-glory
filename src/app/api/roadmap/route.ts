@@ -45,7 +45,7 @@ export async function POST(request: Request) {
         "",
         pdfUrl,
         "",
-        "If game development still feels confusing after another tutorial, you can book a 1:1 coaching session here:",
+        "If you are looking at the roadmap thinking, \"okay, let's do this\", book a 1:1 coaching session and we will turn that energy into your next concrete step:",
         "",
         bookingUrl,
         "",
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
       htmlBody: [
         "<p>Here is your free Gamer to Game Dev Roadmap:</p>",
         `<p><a href="${escapeHtml(pdfUrl)}">Download the roadmap</a></p>`,
-        "<p>If game development still feels confusing after another tutorial, you can book a 1:1 coaching session here:</p>",
+        '<p>If you are looking at the roadmap thinking, "okay, let&apos;s do this", book a 1:1 coaching session and we will turn that energy into your next concrete step:</p>',
         `<p><a href="${escapeHtml(bookingUrl)}">Book a coaching session</a></p>`,
         "<p>Matt<br />Game Dev Glory</p>",
       ].join(""),
