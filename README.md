@@ -7,7 +7,7 @@ Game Dev Glory is a beginner game programming funnel:
 - First Game Coaching
 
 The site is a Next.js App Router app with static funnel pages, native website
-forms, and server-side Postmark email delivery for the roadmap lead magnet.
+forms, and server-side Loops integration points.
 
 ## Getting Started
 
@@ -23,19 +23,12 @@ Create a local environment file:
 cp .env.example .env.local
 ```
 
-Set the Postmark roadmap email values:
-
-```bash
-POSTMARK_SERVER_TOKEN=
-POSTMARK_FROM_EMAIL=Game Dev Glory <info@gamedevglory.com>
-POSTMARK_MESSAGE_STREAM=outbound
-ROADMAP_SIGNUP_RECIPIENT_EMAIL=info@gamedevglory.com
-```
-
-Legacy Loops values are only needed for old coaching request integrations:
+Set the Loops funnel values:
 
 ```bash
 LOOPS_API_KEY=
+LOOPS_ROADMAP_EVENT_NAME=roadmap_signup
+LOOPS_ROADMAP_MAILING_LIST_ID=
 LOOPS_COACHING_REQUEST_EVENT_NAME=coaching_request_submitted
 LOOPS_COACHING_REQUEST_MAILING_LIST_ID=
 LOOPS_COACHING_NOTIFICATION_TRANSACTIONAL_ID=
@@ -43,11 +36,11 @@ LOOPS_COACHING_CONFIRMATION_TRANSACTIONAL_ID=
 COACHING_REQUEST_RECIPIENT_EMAIL=info@gamedevglory.com
 ```
 
-The public roadmap form submits to `/api/roadmap`, which sends the roadmap PDF
-link by email through Postmark and sends an internal signup notification to
-`ROADMAP_SIGNUP_RECIPIENT_EMAIL`. The legacy coaching request API remains for
-old integrations, but the public coaching path now redirects to the appointment
-booking page.
+The public roadmap form submits to `/api/roadmap`, which sends the
+`roadmap_signup` event to Loops. The Loops workflow delivers the roadmap email
+and handles any signup notifications. The legacy coaching request API remains
+for old integrations, but the public coaching path now redirects to the
+appointment booking page.
 
 Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready. Set
 `NEXT_PUBLIC_BOOKING_URL` to the paid Cal.com event URL so payment and
@@ -118,17 +111,15 @@ Use it to deploy as a Node.js web service:
 - HTTP port: `3000`
 - Environment variable: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX`
 - Environment variable: `NEXT_PUBLIC_BOOKING_URL=<paid Cal.com event URL>`
-- Runtime secret: `POSTMARK_SERVER_TOKEN`
-- Runtime variable: `POSTMARK_FROM_EMAIL=Game Dev Glory <info@gamedevglory.com>`
-- Runtime variable: `POSTMARK_MESSAGE_STREAM=outbound`
-- Runtime variable: `ROADMAP_SIGNUP_RECIPIENT_EMAIL=info@gamedevglory.com`
-- Runtime secret: `LOOPS_API_KEY` for legacy coaching request integrations only
+- Runtime secret: `LOOPS_API_KEY`
+- Runtime variable: `LOOPS_ROADMAP_EVENT_NAME=roadmap_signup`
+- Runtime variable: `LOOPS_ROADMAP_MAILING_LIST_ID=<optional Loops list id>`
 - Runtime variable: `LOOPS_COACHING_REQUEST_EVENT_NAME=coaching_request_submitted`
 - Runtime variable: `LOOPS_COACHING_REQUEST_MAILING_LIST_ID=<optional Loops list id>`
 - Runtime variable: `LOOPS_COACHING_NOTIFICATION_TRANSACTIONAL_ID=<Loops transactional email id>`
 - Runtime variable: `LOOPS_COACHING_CONFIRMATION_TRANSACTIONAL_ID=<optional Loops transactional email id>`
 - Runtime variable: `COACHING_REQUEST_RECIPIENT_EMAIL=info@gamedevglory.com`
 
-Before going live, verify the Postmark sender signature/domain, set the runtime
-values, set `NEXT_PUBLIC_BOOKING_URL` to the paid Cal.com event, and submit live
-tests through `/roadmap` and `/book`.
+Before going live, verify the Loops sending domain and `roadmap_signup`
+workflow, set the runtime values, set `NEXT_PUBLIC_BOOKING_URL` to the paid
+Cal.com event, and submit live tests through `/roadmap` and `/book`.
