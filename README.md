@@ -29,6 +29,8 @@ Set the Loops funnel values:
 LOOPS_API_KEY=
 LOOPS_ROADMAP_EVENT_NAME=roadmap_signup
 LOOPS_ROADMAP_MAILING_LIST_ID=
+LOOPS_ROADMAP_NOTIFICATION_TRANSACTIONAL_ID=
+ROADMAP_SIGNUP_RECIPIENT_EMAIL=info@gamedevglory.com
 LOOPS_COACHING_REQUEST_EVENT_NAME=coaching_request_submitted
 LOOPS_COACHING_REQUEST_MAILING_LIST_ID=
 LOOPS_COACHING_NOTIFICATION_TRANSACTIONAL_ID=
@@ -37,10 +39,11 @@ COACHING_REQUEST_RECIPIENT_EMAIL=info@gamedevglory.com
 ```
 
 The public roadmap form submits to `/api/roadmap`, which sends the
-`roadmap_signup` event to Loops. The Loops workflow delivers the roadmap email
-and handles any signup notifications. The legacy coaching request API remains
-for old integrations, but the public coaching path now redirects to the
-appointment booking page.
+`roadmap_signup` event to Loops. The Loops workflow delivers the roadmap email,
+and a separate Loops transactional email notifies the configured internal
+recipient. Notification failures do not block subscriber delivery. The legacy
+coaching request API remains for old integrations, but the public coaching path
+now redirects to the appointment booking page.
 
 Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready. Set
 `NEXT_PUBLIC_BOOKING_URL` to the paid Cal.com event URL so payment and
@@ -114,6 +117,8 @@ Use it to deploy as a Node.js web service:
 - Runtime secret: `LOOPS_API_KEY`
 - Runtime variable: `LOOPS_ROADMAP_EVENT_NAME=roadmap_signup`
 - Runtime variable: `LOOPS_ROADMAP_MAILING_LIST_ID=<optional Loops list id>`
+- Runtime variable: `LOOPS_ROADMAP_NOTIFICATION_TRANSACTIONAL_ID=<Loops transactional email id>`
+- Runtime variable: `ROADMAP_SIGNUP_RECIPIENT_EMAIL=info@gamedevglory.com`
 - Runtime variable: `LOOPS_COACHING_REQUEST_EVENT_NAME=coaching_request_submitted`
 - Runtime variable: `LOOPS_COACHING_REQUEST_MAILING_LIST_ID=<optional Loops list id>`
 - Runtime variable: `LOOPS_COACHING_NOTIFICATION_TRANSACTIONAL_ID=<Loops transactional email id>`
