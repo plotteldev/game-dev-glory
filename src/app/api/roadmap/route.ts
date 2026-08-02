@@ -15,6 +15,16 @@ function getRoadmapNotificationRecipient() {
   return process.env.ROADMAP_SIGNUP_RECIPIENT_EMAIL || "info@gamedevglory.com";
 }
 
+async function getSignupIdempotencyKey(email: string, purpose: string) {
+  const value = new TextEncoder().encode(`roadmap:${purpose}:${email}`);
+  const digest = await crypto.subtle.digest("SHA-256", value);
+  const hash = Array.from(new Uint8Array(digest), (byte) =>
+    byte.toString(16).padStart(2, "0"),
+  ).join("");
+
+  return `roadmap-${purpose}-${hash}`;
+}
+
 export async function POST(request: Request) {
   const formData = await request.formData();
   const spamTrap = getFormString(formData, "website");
@@ -36,9 +46,15 @@ export async function POST(request: Request) {
       "/downloads/gamer-to-game-dev-roadmap.pdf",
     ).toString();
     const submittedAt = new Date().toISOString();
+    const [deliveryIdempotencyKey, notificationIdempotencyKey] =
+      await Promise.all([
+        getSignupIdempotencyKey(email, "delivery"),
+        getSignupIdempotencyKey(email, "notification"),
+      ]);
 
     await sendLoopsEvent({
       email,
+      idempotencyKey: deliveryIdempotencyKey,
       source: "website-roadmap",
       userGroup: "Roadmap",
       eventName: process.env.LOOPS_ROADMAP_EVENT_NAME || "roadmap_signup",
@@ -58,6 +74,7 @@ export async function POST(request: Request) {
       await sendLoopsTransactionalEmail({
         email: getRoadmapNotificationRecipient(),
         transactionalId: notificationTransactionalId,
+        idempotencyKey: notificationIdempotencyKey,
         dataVariables: {
           leadEmail: email,
           source,

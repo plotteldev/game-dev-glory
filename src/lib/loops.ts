@@ -9,6 +9,7 @@ type LoopsResponse = {
 type SendEventInput = {
   email: string;
   eventName: string;
+  idempotencyKey?: string;
   firstName?: string;
   source?: string;
   userGroup?: string;
@@ -19,6 +20,7 @@ type SendEventInput = {
 type SendTransactionalEmailInput = {
   email: string;
   transactionalId: string;
+  idempotencyKey?: string;
   addToAudience?: boolean;
   dataVariables?: Record<string, string | number>;
 };
@@ -67,7 +69,11 @@ function buildMailingLists(mailingListId?: string) {
   );
 }
 
-async function loopsRequest(path: string, init: RequestInit) {
+async function loopsRequest(
+  path: string,
+  init: RequestInit,
+  duplicateIsSuccess = false,
+) {
   const response = await fetch(`${loopsApiBaseUrl}${path}`, {
     ...init,
     headers: {
@@ -78,6 +84,12 @@ async function loopsRequest(path: string, init: RequestInit) {
   });
 
   const data = (await response.json().catch(() => ({}))) as LoopsResponse;
+
+  // Loops returns 409 when it has already processed this idempotency key.
+  // For deliberately stable keys, that means the requested work is done.
+  if (response.status === 409 && duplicateIsSuccess) {
+    return { success: true } satisfies LoopsResponse;
+  }
 
   if (!response.ok || data.success === false) {
     throw new LoopsApiError(
@@ -91,6 +103,7 @@ async function loopsRequest(path: string, init: RequestInit) {
 export async function sendLoopsEvent({
   email,
   eventName,
+  idempotencyKey,
   firstName,
   source,
   userGroup,
@@ -100,7 +113,7 @@ export async function sendLoopsEvent({
   return loopsRequest("/events/send", {
     method: "POST",
     headers: {
-      "Idempotency-Key": crypto.randomUUID(),
+      "Idempotency-Key": idempotencyKey || crypto.randomUUID(),
     },
     body: JSON.stringify(
       cleanObject({
@@ -113,19 +126,20 @@ export async function sendLoopsEvent({
         mailingLists: buildMailingLists(mailingListId),
       }),
     ),
-  });
+  }, Boolean(idempotencyKey));
 }
 
 export async function sendLoopsTransactionalEmail({
   email,
   transactionalId,
+  idempotencyKey,
   addToAudience = false,
   dataVariables,
 }: SendTransactionalEmailInput) {
   return loopsRequest("/transactional", {
     method: "POST",
     headers: {
-      "Idempotency-Key": crypto.randomUUID(),
+      "Idempotency-Key": idempotencyKey || crypto.randomUUID(),
     },
     body: JSON.stringify(
       cleanObject({
@@ -135,5 +149,5 @@ export async function sendLoopsTransactionalEmail({
         dataVariables: dataVariables ? cleanObject(dataVariables) : undefined,
       }),
     ),
-  });
+  }, Boolean(idempotencyKey));
 }
