@@ -45,10 +45,9 @@ recipient. Notification failures do not block subscriber delivery. The legacy
 coaching request API remains for old integrations, but the public coaching path
 now redirects to the appointment booking page.
 
-Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready. Set
-`NEXT_PUBLIC_BOOKING_URL` to the free Game Dev Chat Cal.com event URL
-(`https://cal.com/matt-noone-avjm8m/30min`). Keep payment disabled for this
-event so scheduling happens without checkout.
+Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready. The Free Game Dev
+Chat uses `https://cal.com/matt-noone-avjm8m/30min`; keep payment disabled for
+this event so scheduling happens without checkout.
 Keep the website invitation lightweight and collect qualification answers in
 Cal.com after someone chooses a time.
 
@@ -121,7 +120,6 @@ Use it to deploy as a Node.js web service:
 - Run command: `npm run start`
 - HTTP port: `3000`
 - Environment variable: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX`
-- Environment variable: `NEXT_PUBLIC_BOOKING_URL=<free Game Dev Chat Cal.com event URL>`
 - Runtime secret: `LOOPS_API_KEY`
 - Runtime variable: `LOOPS_ROADMAP_EVENT_NAME=roadmap_signup`
 - Runtime variable: `LOOPS_ROADMAP_MAILING_LIST_ID=<optional Loops list id>`
@@ -134,5 +132,5 @@ Use it to deploy as a Node.js web service:
 - Runtime variable: `COACHING_REQUEST_RECIPIENT_EMAIL=info@gamedevglory.com`
 
 Before going live, verify the Loops sending domain and `roadmap_signup`
-workflow, set the runtime values, set `NEXT_PUBLIC_BOOKING_URL` to the free Game
-Dev Chat event, and submit live tests through `/roadmap` and `/book`.
+workflow, set the runtime values, and submit live tests through `/roadmap` and
+`/book`.

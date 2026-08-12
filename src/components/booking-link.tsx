@@ -9,7 +9,7 @@ type BookingLinkProps = {
 const roadmapPath = "/roadmap";
 const bookPath = "/book";
 const gamerRoadmapPdfPath = "/downloads/gamer-to-game-dev-roadmap.pdf";
-const fallbackAppointmentBookingUrl = "https://cal.com/matt-noone-avjm8m/30min";
+const appointmentBookingUrl = "https://cal.com/matt-noone-avjm8m/30min";
 const fallbackBillingUrl =
   "mailto:info@gamedevglory.com?subject=Manage%20my%20Game%20Dev%20Glory%20subscription";
 const stripePaymentLink =
@@ -55,13 +55,7 @@ export function getCoachingRequestUrl() {
 }
 
 export function getAppointmentBookingUrl() {
-  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
-
-  if (bookingUrl && isUsableHref(bookingUrl)) {
-    return bookingUrl;
-  }
-
-  return fallbackAppointmentBookingUrl;
+  return appointmentBookingUrl;
 }
 
 export function getStripeCheckoutUrl() {
