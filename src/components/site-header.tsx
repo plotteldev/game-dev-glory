@@ -13,13 +13,13 @@ function getNavItems() {
   return [
     { href: "/", label: "Home" },
     { href: "/roadmap", label: "Roadmap" },
-    { href: "/book", label: "Build" },
+    { href: "/book", label: "Free Chat" },
   ];
 }
 
 export function SiteHeader({
   ctaHref = "/book",
-  ctaLabel = "Book 1:1 Coaching",
+  ctaLabel = "Book Your Free Chat",
   showCta = true,
   showNav = true,
 }: SiteHeaderProps) {

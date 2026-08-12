@@ -4,7 +4,7 @@ import { getBookingUrl } from "@/components/booking-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
-const applyLabel = "Book 1:1 Coaching";
+const applyLabel = "Book Your Free Chat";
 const bookingHref = getBookingUrl();
 
 function Eyebrow({ children }: { children: string }) {
@@ -53,25 +53,25 @@ export function HomePage() {
               </p>
 
               <p className="text-xl font-extrabold leading-8 text-foreground sm:text-2xl">
-                Only 1:1 coaching puts{" "}
+                You don&apos;t have to figure it out{" "}
                 <span className="underline decoration-brand-yellow decoration-4 underline-offset-4">
-                  you
-                </span>{" "}
-                first.
+                  alone
+                </span>.
               </p>
               <p className="text-sm leading-6 text-brand-yellow sm:text-base">
-                Build the kind of game projects that prove your skills, with
-                technical feedback instead of guessing through tutorials alone.
+                Talk through your goals, where you are on the roadmap, and what
+                to focus on next.
               </p>
             </div>
 
             <p className="mx-auto mt-5 max-w-2xl text-sm font-extrabold leading-6 text-foreground sm:text-base">
-              Learn how to build games now!
+              Let&apos;s chat about the game you want to build.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
               <Link
                 className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-sm font-semibold text-background transition hover:bg-[#ffd95f]"
+                data-analytics-event="free_chat_cta_click"
                 href={bookingHref}
               >
                 {applyLabel}
@@ -116,18 +116,19 @@ export function HomePage() {
 
         <section className="border-t border-border px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <Eyebrow>Build</Eyebrow>
+            <Eyebrow>Free Game Dev Chat</Eyebrow>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-5xl">
-              Get direct help learning game development.
+              Let&apos;s chat about your game dev goals.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-              Get direct technical feedback, project direction, and
-              beginner-friendly guidance so you can build game projects that
-              prove what you can do.
+              Tell me what you want to build, where you are on the roadmap, and
+              what&apos;s getting in your way. We&apos;ll talk it through and help you
+              get clearer on what to focus on next.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
               <Link
                 className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-sm font-semibold text-background transition hover:bg-[#ffd95f]"
+                data-analytics-event="free_chat_cta_click"
                 href={bookingHref}
               >
                 {applyLabel}

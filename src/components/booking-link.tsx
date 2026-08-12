@@ -9,7 +9,7 @@ type BookingLinkProps = {
 const roadmapPath = "/roadmap";
 const bookPath = "/book";
 const gamerRoadmapPdfPath = "/downloads/gamer-to-game-dev-roadmap.pdf";
-const fallbackAppointmentBookingUrl = "https://cal.com/matt-noone-avjm8m/60min";
+const fallbackAppointmentBookingUrl = "https://cal.com/matt-noone-avjm8m/30min";
 const fallbackBillingUrl =
   "mailto:info@gamedevglory.com?subject=Manage%20my%20Game%20Dev%20Glory%20subscription";
 const stripePaymentLink =
@@ -24,10 +24,6 @@ function isUsableHref(value: string) {
       value.startsWith("mailto:") ||
       value.startsWith("/"))
   );
-}
-
-function normalizeAppointmentBookingUrl(value: string) {
-  return value.endsWith("/15min") ? `${value.slice(0, -"/15min".length)}/60min` : value;
 }
 
 export function getBookingUrl() {
@@ -62,7 +58,7 @@ export function getAppointmentBookingUrl() {
   const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
 
   if (bookingUrl && isUsableHref(bookingUrl)) {
-    return normalizeAppointmentBookingUrl(bookingUrl);
+    return bookingUrl;
   }
 
   return fallbackAppointmentBookingUrl;
@@ -100,6 +96,7 @@ export function BookingLink({
   return (
     <a
       className={`inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-sm font-semibold text-background transition hover:bg-[#ffd95f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow ${className}`}
+      data-analytics-event="free_chat_cta_click"
       href={href}
     >
       {children}

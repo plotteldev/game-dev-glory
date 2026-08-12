@@ -3,7 +3,7 @@
 Game Dev Glory is a beginner game programming funnel:
 
 - Free Gamer to Game Dev Roadmap PDF
-- Paid Cal.com booking page
+- Free Game Dev Chat booking page
 - First Game Coaching
 
 The site is a Next.js App Router app with static funnel pages, native website
@@ -46,8 +46,16 @@ coaching request API remains for old integrations, but the public coaching path
 now redirects to the appointment booking page.
 
 Set `NEXT_PUBLIC_GTM_ID` when Google Tag Manager is ready. Set
-`NEXT_PUBLIC_BOOKING_URL` to the paid Cal.com event URL so payment and
-scheduling happen in one booking flow.
+`NEXT_PUBLIC_BOOKING_URL` to the free Game Dev Chat Cal.com event URL
+(`https://cal.com/matt-noone-avjm8m/30min`). Keep payment disabled for this
+event so scheduling happens without checkout.
+Keep the website invitation lightweight and collect qualification answers in
+Cal.com after someone chooses a time.
+
+The site pushes `free_chat_cta_click` when someone enters the chat funnel and
+`free_chat_booking_click` when they continue from `/book` to Cal.com. Configure
+these as GA4 events in Google Tag Manager. Booking completion, attendance, and
+coaching sales should be tracked from Cal.com and the sales workflow.
 
 Legacy Stripe and Discord variables are still supported for existing billing and
 post-payment support pages:
@@ -77,10 +85,10 @@ npm run lint
 
 ## Funnel Routes
 
-- `/` is the main coaching offer page.
+- `/` is the main Game Dev Glory landing page.
 - `/roadmap` is the free Gamer to Game Dev Roadmap PDF opt-in.
 - `/roadmap/confirmed` confirms the roadmap request.
-- `/book` sends people to the paid Cal.com coaching event.
+- `/book` introduces the Free Game Dev Chat and sends people to its Cal.com event.
 - `/coaching` and `/join` redirect to `/book`.
 - `/coaching/confirmed` remains for legacy coaching request confirmations.
 - `/dream-game-roadmap-session`, `/blueprint`, and `/book/start-learning` redirect to the roadmap.
@@ -113,7 +121,7 @@ Use it to deploy as a Node.js web service:
 - Run command: `npm run start`
 - HTTP port: `3000`
 - Environment variable: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX`
-- Environment variable: `NEXT_PUBLIC_BOOKING_URL=<paid Cal.com event URL>`
+- Environment variable: `NEXT_PUBLIC_BOOKING_URL=<free Game Dev Chat Cal.com event URL>`
 - Runtime secret: `LOOPS_API_KEY`
 - Runtime variable: `LOOPS_ROADMAP_EVENT_NAME=roadmap_signup`
 - Runtime variable: `LOOPS_ROADMAP_MAILING_LIST_ID=<optional Loops list id>`
@@ -126,5 +134,5 @@ Use it to deploy as a Node.js web service:
 - Runtime variable: `COACHING_REQUEST_RECIPIENT_EMAIL=info@gamedevglory.com`
 
 Before going live, verify the Loops sending domain and `roadmap_signup`
-workflow, set the runtime values, set `NEXT_PUBLIC_BOOKING_URL` to the paid
-Cal.com event, and submit live tests through `/roadmap` and `/book`.
+workflow, set the runtime values, set `NEXT_PUBLIC_BOOKING_URL` to the free Game
+Dev Chat event, and submit live tests through `/roadmap` and `/book`.

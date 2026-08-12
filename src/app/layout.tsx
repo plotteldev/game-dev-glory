@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gamedevglory.com"),
-  title: "Beginner Game Programming Coaching | Game Dev Glory",
+  title: "Game Development Help for Beginners | Game Dev Glory",
   description:
     "Game Dev Glory helps beginner game developers go from copying tutorials to building small, complete games with confidence.",
   icons: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     apple: "/logo-icon.png",
   },
   openGraph: {
-    title: "Beginner Game Programming Coaching | Game Dev Glory",
+    title: "Game Development Help for Beginners | Game Dev Glory",
     description:
       "Build your first complete game with a practical path and personal feedback.",
     type: "website",

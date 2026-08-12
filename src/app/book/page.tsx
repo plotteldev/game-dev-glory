@@ -4,37 +4,26 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Book 1:1 Game Programming Coaching | Game Dev Glory",
+  title: "Book a Free Game Dev Chat | Game Dev Glory",
   description:
-    "Book a 60-minute 1:1 game programming coaching session and leave with clear next steps.",
+    "Chat with Matt about your game dev goals, where you are on the roadmap, and what to focus on next.",
 };
-
-const sessionPoints = [
-  "Bring the messy version: questions, code, ideas, bugs, or uncertainty.",
-  "We will sort through what matters and what can wait.",
-  "Leave knowing what to do next.",
-];
 
 const faqs = [
   {
-    question: "What happens in the 60-minute session?",
+    question: "What happens in the chat?",
     answer:
-      "We talk through where you are now, what you want to build, and what is getting in the way. The goal is to turn that into clear next steps you can act on.",
+      "We will talk about what you want to build, where you are on your game dev journey, and what has been getting in your way.",
   },
   {
-    question: "What should I bring?",
+    question: "Do I need to prepare anything?",
     answer:
-      "Bring your game idea, current project, code, screenshots, errors, or just the rough problem you are trying to solve. It does not need to be polished.",
+      "No. Come as you are. You can bring an idea or a current project if you have one, but you do not need to have anything figured out.",
   },
   {
-    question: "What if you cannot help me?",
+    question: "Who is the chat for?",
     answer:
-      "If I don't think I can help with your situation, you get a full refund. No questions asked.",
-  },
-  {
-    question: "Is this only for complete beginners?",
-    answer:
-      "No. It is for beginner and early-stage game programmers who want focused technical feedback, project direction, or help getting unstuck.",
+      "It is for beginner and early-stage game developers, whether you are choosing a first project, following the roadmap, or already building something of your own.",
   },
 ];
 
@@ -48,36 +37,27 @@ export default function BookPage() {
         <section className="px-5 py-16 sm:px-6 sm:py-24 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow sm:text-sm">
-              60-minute 1:1 coaching
+              Free Game Dev Chat
             </p>
             <h1 className="mx-auto mt-4 max-w-3xl text-5xl font-extrabold uppercase leading-[1.1] text-foreground sm:text-7xl">
-              Are you ready to build games?
+              Let&apos;s chat about your game dev goals
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-brand-yellow sm:text-2xl sm:leading-9">
-              You don&apos;t need to have it all figured out before you book.
+              Wherever you are right now, we can talk it through together.
             </p>
-            <p className="mx-auto mt-4 max-w-2xl text-base font-extrabold leading-7 text-foreground sm:text-lg sm:leading-8">
-              If I can&apos;t help you, you get a full refund. No questions
-              asked.
-            </p>
-
-            <ul className="mx-auto mt-7 grid max-w-3xl gap-3 text-left text-sm leading-6 text-muted sm:text-base">
-              {sessionPoints.map((point) => (
-                <li key={point} className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-yellow" />
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
 
             <div className="mt-8 flex justify-center">
               <a
                 className="inline-flex min-h-12 w-full items-center justify-center rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-sm font-semibold text-background transition hover:bg-[#ffd95f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow sm:w-auto"
+                data-analytics-event="free_chat_booking_click"
                 href={bookingUrl}
               >
-                Book a 60-minute session
+                Book Your Free Chat
               </a>
             </div>
+            <p className="mt-3 text-sm leading-6 text-muted">
+              Choose a time and tell me a little about where you&apos;re at.
+            </p>
           </div>
         </section>
 

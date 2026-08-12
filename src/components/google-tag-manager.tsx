@@ -6,6 +6,24 @@ const googleAdsId = "AW-18205791019";
 export function GoogleTagManager() {
   return (
     <>
+      <Script id="analytics-click-events" strategy="afterInteractive">
+        {`
+          document.addEventListener('click', function(event) {
+            var element = event.target instanceof Element
+              ? event.target.closest('[data-analytics-event]')
+              : null;
+
+            if (!element) return;
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              event: element.getAttribute('data-analytics-event'),
+              link_url: element.getAttribute('href'),
+              link_text: element.textContent ? element.textContent.trim() : ''
+            });
+          });
+        `}
+      </Script>
       {gtmId ? (
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
