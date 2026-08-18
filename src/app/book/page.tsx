@@ -4,16 +4,16 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Book a Free Game Dev Chat | Game Dev Glory",
+  title: "Plan Your First Playable Game | Game Dev Glory",
   description:
-    "Chat with Matt about your game dev goals, where you are on the roadmap, and what to focus on next.",
+    "Book a free call to plan your first playable game and what to focus on over the next 30 days.",
 };
 
 const faqs = [
   {
-    question: "What happens in the chat?",
+    question: "What happens in the call?",
     answer:
-      "We will talk about what you want to build, where you are on your game dev journey, and what has been getting in your way.",
+      "We will talk about what you want to build, narrow it into a realistic first project, and identify what to focus on next.",
   },
   {
     question: "Do I need to prepare anything?",
@@ -21,9 +21,9 @@ const faqs = [
       "No. Come as you are. You can bring an idea or a current project if you have one, but you do not need to have anything figured out.",
   },
   {
-    question: "Who is the chat for?",
+    question: "Who is the plan for?",
     answer:
-      "It is for beginner and early-stage game developers, whether you are choosing a first project, following the roadmap, or already building something of your own.",
+      "It is for complete beginners who want a clear path to their first playable game, whether you have an idea already or need help choosing one.",
   },
 ];
 
@@ -37,13 +37,18 @@ export default function BookPage() {
         <section className="px-5 py-16 sm:px-6 sm:py-24 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow sm:text-sm">
-              Free Game Dev Chat
+              Free First Game Plan
             </p>
             <h1 className="mx-auto mt-4 max-w-3xl text-5xl font-extrabold uppercase leading-[1.1] text-foreground sm:text-7xl">
-              Let&apos;s chat about your game dev goals
+              Plan your first playable game
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-brand-yellow sm:text-2xl sm:leading-9">
-              Wherever you are right now, we can talk it through together.
+              Start with a clear path to building it in 30 days.
+            </p>
+
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+              We&apos;ll talk through your idea, choose a realistic scope, and get
+              clear on your first steps.
             </p>
 
             <div className="mt-8 flex justify-center">
@@ -52,11 +57,11 @@ export default function BookPage() {
                 data-analytics-event="free_chat_booking_click"
                 href={bookingUrl}
               >
-                Book Your Free Chat
+                Plan My First Game
               </a>
             </div>
             <p className="mt-3 text-sm leading-6 text-muted">
-              Choose a time and tell me a little about where you&apos;re at.
+              Choose a time and tell me what you would like to build.
             </p>
           </div>
         </section>

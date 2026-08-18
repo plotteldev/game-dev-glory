@@ -4,7 +4,7 @@ import { getBookingUrl } from "@/components/booking-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
-const applyLabel = "Book Your Free Chat";
+const applyLabel = "Plan My First Game";
 const bookingHref = getBookingUrl();
 
 function Eyebrow({ children }: { children: string }) {
@@ -26,6 +26,10 @@ export function HomePage() {
             <h1 className="mx-auto max-w-3xl text-5xl font-extrabold uppercase leading-[1.1] text-foreground sm:text-7xl">
               DO YOU WANT TO BUILD GAMES?
             </h1>
+
+            <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-brand-yellow sm:text-2xl sm:leading-9">
+              Build your first playable game in 30 days.
+            </p>
 
             <div className="mx-auto mt-6 grid max-w-3xl gap-4">
               <p className="text-xl font-extrabold leading-8 text-foreground sm:text-2xl">

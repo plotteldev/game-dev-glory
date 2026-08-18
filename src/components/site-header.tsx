@@ -19,7 +19,7 @@ function getNavItems() {
 
 export function SiteHeader({
   ctaHref = "/book",
-  ctaLabel = "Book Your Free Chat",
+  ctaLabel = "Plan My First Game",
   showCta = true,
   showNav = true,
 }: SiteHeaderProps) {
