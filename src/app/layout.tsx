@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://gamedevglory.com"),
   title: "Game Development Help for Beginners | Game Dev Glory",
   description:
-    "Game Dev Glory helps beginner game developers go from copying tutorials to building small, complete games with confidence.",
+    "Learn game programming fundamentals from a professional game developer and university educator, with personal feedback on code you write yourself.",
   icons: {
     icon: "/logo-icon.png",
     shortcut: "/logo-icon.png",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Game Development Help for Beginners | Game Dev Glory",
     description:
-      "Build your first complete game with a practical path and personal feedback.",
+      "Understand how games work. Learn programming from the ground up with a professional game developer and personal feedback on your code.",
     type: "website",
     images: [
       {

@@ -24,7 +24,7 @@ export function SiteFooter() {
               Roadmap
             </Link>
             <Link className="transition hover:text-foreground" href="/book">
-              Free Game Dev Chat
+              Learn
             </Link>
             <a className="transition hover:text-foreground" href="/terms">
               Terms

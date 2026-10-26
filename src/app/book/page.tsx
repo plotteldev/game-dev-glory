@@ -1,96 +1,121 @@
 import type { Metadata } from "next";
-import { getAppointmentBookingUrl } from "@/components/booking-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
+const title = "Learn Game Programming | Game Dev Glory";
+const description =
+  "Choose a 60 minute 1-on-1 Session or the 4 Week Coding Foundations Course with Matt at Game Dev Glory.";
+
 export const metadata: Metadata = {
-  title: "Plan Your First Playable Game | Game Dev Glory",
-  description:
-    "Book a free call to plan your first playable game and what to focus on over the next 30 days.",
+  title,
+  description,
+  openGraph: { title, description, url: "/book" },
 };
 
-const faqs = [
+const products = [
   {
-    question: "What happens in the call?",
-    answer:
-      "We will talk about what you want to build, narrow it into a realistic first project, and identify what to focus on next.",
+    title: "60 minute 1-on-1 Session",
+    format: "Individual support",
+    duration: "60 minutes",
+    price: "$149",
+    description:
+      "Spend an hour with me working through your programming questions, code, or a problem you are stuck on.",
+    label: "Book Now",
+    href: "https://cal.com/matt-noone-avjm8m/60min",
+    event: "one_on_one_booking_click",
   },
   {
-    question: "Do I need to prepare anything?",
-    answer:
-      "No. Come as you are. You can bring an idea or a current project if you have one, but you do not need to have anything figured out.",
-  },
-  {
-    question: "Who is the plan for?",
-    answer:
-      "It is for complete beginners who want a clear path to their first playable game, whether you have an idea already or need help choosing one.",
+    title: "4 Week Coding Foundations Course",
+    format: "Ground Up Game Dev",
+    duration: "4 weeks",
+    price: "$699",
+    description:
+      "Learn programming fundamentals from the ground up. Write the code yourself and build an understanding of how it works, with personal support along the way.",
+    label: "Take This Course",
+    href: "https://cal.com/matt-noone-avjm8m/coding-foundations",
+    event: "coding_foundations_booking_click",
   },
 ];
 
 export default function BookPage() {
-  const bookingUrl = getAppointmentBookingUrl();
-
   return (
     <div id="top" className="flex min-h-dvh flex-col bg-background text-foreground">
       <SiteHeader showCta={false} />
-      <main className="flex-1">
-        <section className="px-5 py-16 sm:px-6 sm:py-24 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow sm:text-sm">
-              Free First Game Plan
-            </p>
-            <h1 className="mx-auto mt-4 max-w-3xl text-5xl font-extrabold uppercase leading-[1.1] text-foreground sm:text-7xl">
-              Plan your first playable game
-            </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-brand-yellow sm:text-2xl sm:leading-9">
-              Start with a clear path to building it in 30 days.
-            </p>
-
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-              We&apos;ll talk through your idea, choose a realistic scope, and get
-              clear on your first steps.
-            </p>
-
-            <div className="mt-8 flex justify-center">
-              <a
-                className="inline-flex min-h-12 w-full items-center justify-center rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-sm font-semibold text-background transition hover:bg-[#ffd95f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow sm:w-auto"
-                data-analytics-event="free_chat_booking_click"
-                href={bookingUrl}
+      <main className="flex-1 px-5 py-12 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-center text-4xl font-extrabold leading-tight sm:text-6xl">
+            LEARN TO BUILD GAMES
+          </h1>
+          <div className="mt-10 grid gap-6 sm:mt-12">
+            {products.map((product) => (
+              <article
+                key={product.href}
+                className="grid gap-6 rounded-2xl border border-border bg-linear-to-br from-surface to-background p-6 sm:p-8 md:grid-cols-[minmax(0,1fr)_220px] md:items-center md:gap-10"
               >
-                Plan My First Game
-              </a>
-            </div>
-            <p className="mt-3 text-sm leading-6 text-muted">
-              Choose a time and tell me what you would like to build.
-            </p>
-          </div>
-        </section>
-
-        <section className="border-t border-border px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <div className="mx-auto max-w-6xl">
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow sm:text-sm">
-                Questions
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground">
-                Before you book
-              </h2>
-            </div>
-
-            <div className="mt-7 grid gap-x-10 gap-y-7 md:grid-cols-2">
-              {faqs.map((faq) => (
-                <div key={faq.question} className="border-t border-border pt-5">
-                  <h3 className="text-base font-semibold text-foreground">
-                    {faq.question}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">
-                    {faq.answer}
+                <div>
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-yellow">
+                    {product.format}
                   </p>
+                  <span className="rounded-full border border-border bg-background px-3 py-1 text-sm text-muted">
+                    {product.duration}
+                  </span>
                 </div>
-              ))}
-            </div>
+                <h2 className="mt-6 text-2xl font-semibold leading-tight sm:text-3xl">
+                  {product.title}
+                </h2>
+                <p className="mt-4 text-base leading-7 text-muted">
+                  {product.description}
+                </p>
+                </div>
+                <div className="flex flex-col gap-4 md:border-l md:border-border md:pl-8">
+                <p className="text-3xl font-bold text-foreground">
+                  {product.price}{" "}
+                  <span className="text-sm font-medium text-muted">USD</span>
+                </p>
+                <a
+                  className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-center text-sm font-semibold text-background transition hover:bg-[#ffd95f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-yellow"
+                  data-analytics-event={product.event}
+                  href={product.href}
+                >
+                  {product.label}
+                </a>
+                </div>
+              </article>
+            ))}
           </div>
-        </section>
+          <section
+            aria-labelledby="course-inclusions-heading"
+            className="mt-10 border-t border-border pt-8 sm:mt-12 sm:pt-10"
+          >
+            <h2 id="course-inclusions-heading" className="text-2xl font-semibold leading-tight sm:text-3xl">
+              All Course enrolments include:
+            </h2>
+            <ul className="mt-6 max-w-3xl list-disc space-y-4 pl-5 text-base leading-7 text-muted marker:text-brand-yellow">
+              <li>
+                <strong className="font-semibold text-foreground">Weekly calls with me.</strong>{" "}
+                Talk through what you&apos;re learning, ask questions, and work
+                through anything that hasn&apos;t clicked.
+              </li>
+              <li>
+                <strong className="font-semibold text-foreground">Daily chat check-ins.</strong>{" "}
+                Share your progress and get help between calls so you don&apos;t
+                have to stay stuck until the next session.
+              </li>
+              <li>
+                <strong className="font-semibold text-foreground">Finish early? We keep learning.</strong>{" "}
+                If you finish the course in less than 4 weeks, I guarantee
+                we&apos;ll move on to extra content beyond the course scope for
+                the rest of your 4 weeks.
+              </li>
+              <li>
+                <strong className="font-semibold text-foreground">Need more time? Get 2 extra weeks free.</strong>{" "}
+                If you&apos;re struggling to complete the course in 4 weeks,
+                I&apos;ll give you an extra 2 weeks of support completely free.
+              </li>
+            </ul>
+          </section>
+        </div>
       </main>
       <SiteFooter />
     </div>

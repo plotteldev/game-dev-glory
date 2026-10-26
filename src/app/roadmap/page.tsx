@@ -30,7 +30,7 @@ export default async function RoadmapPage({ searchParams }: RoadmapPageProps) {
       <SiteHeader />
       <main className="px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
         <section className="mx-auto max-w-7xl text-center">
-          <h1 className="mx-auto max-w-3xl text-5xl font-extrabold uppercase leading-[1.1] text-foreground sm:text-7xl">
+          <h1 className="mx-auto max-w-3xl text-4xl font-extrabold uppercase leading-tight text-foreground sm:text-6xl">
             Get Your Free Game Dev Roadmap
           </h1>
 
@@ -39,8 +39,7 @@ export default async function RoadmapPage({ searchParams }: RoadmapPageProps) {
           </p>
 
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-            For beginners who want to build games without an expensive degree or
-            another online course.
+            For beginners who want to build games without an expensive degree.
           </p>
 
           <RoadmapLeadForm
