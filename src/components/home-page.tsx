@@ -37,7 +37,7 @@ export function HomePage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-3xl text-xl font-semibold leading-8 text-brand-yellow sm:text-2xl sm:leading-9">
-              Learn from a professional games programmer and university educator
+              You don&apos;t need a degree, just skills and a portfolio
             </p>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
               Hands-on fundamentals from the ground up. No AI. No fluff.
