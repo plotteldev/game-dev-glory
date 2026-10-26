@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 
 const title = "Learn Game Programming | Game Dev Glory";
 const description =
-  "Choose a 60 minute 1-on-1 Session or the 4 Week Coding Foundations Course with Matt at Game Dev Glory.";
+  "Learn programming from the ground up with the 4 Week Coding Foundations Course and personal support from Matt at Game Dev Glory.";
 
 export const metadata: Metadata = {
   title,
@@ -13,17 +13,6 @@ export const metadata: Metadata = {
 };
 
 const products = [
-  {
-    title: "60 minute 1-on-1 Session",
-    format: "Individual support",
-    duration: "60 minutes",
-    price: "$149",
-    description:
-      "Spend an hour with me working through your programming questions, code, or a problem you are stuck on.",
-    label: "Book Now",
-    href: "https://cal.com/matt-noone-avjm8m/60min",
-    event: "one_on_one_booking_click",
-  },
   {
     title: "4 Week Coding Foundations Course",
     format: "Ground Up Game Dev",
