@@ -37,10 +37,10 @@ export function HomePage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-3xl text-xl font-semibold leading-8 text-brand-yellow sm:text-2xl sm:leading-9">
-              You don&apos;t need a degree, just skills and a portfolio
+              Skip the degree and build skills quickly
             </p>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-              Hands-on support from the ground up. No AI. No fluff.
+              Hands-on support from the ground up.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
