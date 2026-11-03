@@ -40,7 +40,7 @@ export function HomePage() {
               You don&apos;t need a degree, just skills and a portfolio
             </p>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-              Hands-on fundamentals from the ground up. No AI. No fluff.
+              Hands-on support from the ground up. No AI. No fluff.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
