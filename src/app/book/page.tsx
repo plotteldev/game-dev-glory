@@ -4,20 +4,26 @@ import { SiteHeader } from "@/components/site-header";
 
 const title = "Learn Game Programming | Game Dev Glory";
 const description =
-  "Book a 60 minute individual consult or learn programming from the ground up with the 4 Week Coding Foundations Course at Game Dev Glory.";
+  "Book a 60 minute individual consult or learn programming from the ground up with the 4-Week Coding Foundations Bootcamp at Game Dev Glory.";
 
 export const metadata: Metadata = {
-  title,
   description,
   openGraph: { title, description, url: "/book" },
 };
 
 const products = [
   {
+    title: "Free Intro Call",
+    price: "Free",
+    description:
+      "New to Game Dev Glory? Let's talk about where you are, where you want to be, and the best path to get you there.",
+    label: "Book Now",
+    href: "https://cal.com/matt-noone-avjm8m/15min",
+    event: "free_intro_call_booking_click",
+  },
+  {
     title: "60 minute Individual Consult",
-    format: "Individual support",
-    duration: "60 minutes",
-    price: "$149",
+    price: "$147",
     description:
       "Bring any questions or problems to me and we'll work through them to accelerate your game dev journey.",
     label: "Book Now",
@@ -25,15 +31,13 @@ const products = [
     event: "one_on_one_booking_click",
   },
   {
-    title: "4 Week Coding Foundations Course",
-    format: "Ground Up Game Dev",
-    duration: "4 weeks",
-    price: "$699",
+    title: "4-Week Coding Foundations Bootcamp",
+    price: "$1,097",
     description:
       "Learn programming fundamentals from the ground up. Write the code yourself and build an understanding of how it works, with personal support along the way.",
-    label: "Take This Course",
-    href: "https://cal.com/matt-noone-avjm8m/coding-foundations",
-    event: "coding_foundations_booking_click",
+    label: "More Info",
+    href: "/coding-foundations-bootcamp",
+    event: "coding_foundations_info_click",
   },
 ];
 
@@ -46,32 +50,26 @@ export default function BookPage() {
           <h1 className="text-center text-4xl font-extrabold leading-tight sm:text-6xl">
             LEARN TO BUILD GAMES
           </h1>
-          <div className="mt-10 grid gap-6 sm:mt-12">
+          <div className="mt-8 grid gap-4 sm:mt-10">
             {products.map((product) => (
               <article
                 key={product.href}
-                className="grid gap-6 rounded-2xl border border-border bg-linear-to-br from-surface to-background p-6 sm:p-8 md:grid-cols-[minmax(0,1fr)_220px] md:items-center md:gap-10"
+                className="grid gap-4 rounded-xl border border-border bg-linear-to-br from-surface to-background p-5 sm:p-6 md:grid-cols-[minmax(0,1fr)_200px] md:items-center md:gap-6"
               >
                 <div>
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-yellow">
-                    {product.format}
-                  </p>
-                  <span className="rounded-full border border-border bg-background px-3 py-1 text-sm text-muted">
-                    {product.duration}
-                  </span>
-                </div>
-                <h2 className="mt-6 text-2xl font-semibold leading-tight sm:text-3xl">
+                <h2 className="text-xl font-semibold leading-tight sm:text-2xl">
                   {product.title}
                 </h2>
-                <p className="mt-4 text-base leading-7 text-muted">
+                <p className="mt-2 text-base leading-6 text-muted">
                   {product.description}
                 </p>
                 </div>
-                <div className="flex flex-col gap-4 md:border-l md:border-border md:pl-8">
-                <p className="text-3xl font-bold text-foreground">
+                <div className="flex items-center justify-between gap-4 md:flex-col md:items-stretch md:gap-3 md:border-l md:border-border md:pl-6">
+                <p className="text-2xl font-bold text-foreground">
                   {product.price}{" "}
-                  <span className="text-sm font-medium text-muted">USD</span>
+                  {product.price !== "Free" && (
+                    <span className="text-sm font-medium text-muted">USD</span>
+                  )}
                 </p>
                 <a
                   className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-yellow bg-brand-yellow px-5 py-3 text-center text-sm font-semibold text-background transition hover:bg-[#ffd95f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-yellow"
@@ -84,37 +82,6 @@ export default function BookPage() {
               </article>
             ))}
           </div>
-          <section
-            aria-labelledby="course-inclusions-heading"
-            className="mt-10 border-t border-border pt-8 sm:mt-12 sm:pt-10"
-          >
-            <h2 id="course-inclusions-heading" className="text-2xl font-semibold leading-tight sm:text-3xl">
-              All Course enrolments include:
-            </h2>
-            <ul className="mt-6 max-w-3xl list-disc space-y-4 pl-5 text-base leading-7 text-muted marker:text-brand-yellow">
-              <li>
-                <strong className="font-semibold text-foreground">Weekly calls with me.</strong>{" "}
-                Talk through what you&apos;re learning, ask questions, and work
-                through anything that hasn&apos;t clicked.
-              </li>
-              <li>
-                <strong className="font-semibold text-foreground">Daily chat check-ins.</strong>{" "}
-                Share your progress and get help between calls so you don&apos;t
-                have to stay stuck until the next session.
-              </li>
-              <li>
-                <strong className="font-semibold text-foreground">Finish early? We keep learning.</strong>{" "}
-                If you finish the course in less than 4 weeks, I guarantee
-                we&apos;ll move on to extra content beyond the course scope for
-                the rest of your 4 weeks.
-              </li>
-              <li>
-                <strong className="font-semibold text-foreground">Need more time? Get 2 extra weeks free.</strong>{" "}
-                If you&apos;re struggling to complete the course in 4 weeks,
-                I&apos;ll give you an extra 2 weeks of support completely free.
-              </li>
-            </ul>
-          </section>
         </div>
       </main>
       <SiteFooter />

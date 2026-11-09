@@ -3,7 +3,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Terms | Game Dev Glory",
   description: "Program terms for Game Dev Glory roadmap resources and coaching.",
 };
 

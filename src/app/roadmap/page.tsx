@@ -5,7 +5,6 @@ import { SiteHeader } from "@/components/site-header";
 import { getSubmissionErrorMessage } from "@/lib/form-submissions";
 
 export const metadata: Metadata = {
-  title: "Free Gamer to Game Dev Roadmap | Game Dev Glory",
   description:
     "Get the free Gamer to Game Dev Roadmap in under 30 seconds.",
   openGraph: {

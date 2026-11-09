@@ -37,10 +37,10 @@ export function HomePage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-3xl text-xl font-semibold leading-8 text-brand-yellow sm:text-2xl sm:leading-9">
-              Skip the degree and build skills quickly
+              In the world of AI, fundamentals are more important than ever
             </p>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-              Hands-on support from the ground up.
+              1-on-1 support without an expensive degree or tutorials that leave you stranded
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
@@ -91,8 +91,7 @@ export function HomePage() {
         <section aria-labelledby="your-coach-heading" className="border-t border-border bg-linear-to-br from-brand-blue-pale via-background to-background px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <h2 id="your-coach-heading" className="text-3xl font-semibold leading-tight text-foreground sm:text-4xl lg:text-5xl">
-              Industry and Educational Experience
-              <span className="block text-brand-yellow">Personal guidance</span>
+              Meet your coach
             </h2>
             <div className="mt-6 flow-root text-left text-base leading-7 text-muted sm:text-lg sm:leading-8 [&>p+p]:mt-5">
               <div className="float-right mb-4 ml-5 w-28 overflow-hidden rounded-2xl border border-border bg-linear-to-t from-brand-blue-soft to-surface sm:mb-6 sm:ml-8 sm:w-48 lg:w-56">
@@ -109,21 +108,15 @@ export function HomePage() {
                     Hi, I&apos;m Matt! I&apos;ve been making games professionally since 2018 and taught degree-level games programming at university for 5 years.
                   </p>
                   <p>
-                    During this time, I became really frustrated seeing courses across all levels of education shift away from teaching from the ground up and towards quick and dirty solutions that aimed to help students pass, rather than understand.
+                    I&apos;ve helped hundreds of students learn coding fundamentals from the ground up and gain the skills to build their own games.
                   </p>
                   <p>
-                    This set them up for failure and a massive shock when they tried to apply for jobs or create their own projects. If you never dig in to how things work, the harsh reality is that you simply won&apos;t have the skills to succeed. Employers expect you to have mastered the fundamentals and beyond (even for junior positions), and building your own game is a massive undertaking that requires a deep understanding of what you're building.
+                    In the world of AI, these fundamentals are being forgotten, leaving employers hungry for developers who understand every line of code they write.
                   </p>
                   <p>
-                    My frustration has only grown in the world of generative AI. Social Media (and even some courses now) would have you believe that AI means you don&apos;t need to understand how things work because you don&apos;t need to write code anymore.
+                    That&apos;s why I made Game Dev Glory. It&apos;s my mission to teach you the fundamentals of programming and games development so you can stand out from the crowd with a genuine understanding of what it takes to make games.
                   </p>
-                  <p>
-                    This is simply not true. Without the fundamental understanding, trying to build a project with AI feels like running around in circles, fixing one problem but creating another, and not understanding why. Forget about using it to get a games programming job in the industry - most companies won&apos;t even let you use it due to privacy concerns!
-                  </p>
-                  <p>
-                    That&apos;s why I made Game Dev Glory and the Ground Up Game Dev course series. It&apos;s my mission to teach you the fundamentals of programming and games development so you can stand out from the crowd with a genuine understanding of what it takes to make games.
-                  </p>
-                  <p className="font-medium text-foreground">
+                  <p className="font-medium text-brand-yellow">
                     Let&apos;s learn to build games together!
                   </p>
             </div>
@@ -132,14 +125,14 @@ export function HomePage() {
 
         <section className="border-t border-border px-5 py-14 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <Eyebrow>Coding Foundations</Eyebrow>
+            <Eyebrow>Coding Foundations Bootcamp</Eyebrow>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-foreground sm:text-5xl">
-              Learn to code from the ground up.
+              Build your coding foundations in 4 weeks.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-              Start with the Coding Foundations course. Learn how code works by
-              writing it yourself, with personal feedback to help you understand
-              each step.
+              Learn programming from the ground up in an intensive 4-week bootcamp.
+              Write code yourself, get personal feedback, and build the
+              understanding you need to start making your own games.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
               <Link

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gamedevglory.com"),
-  title: "Game Development Help for Beginners | Game Dev Glory",
+  title: "Game Dev Glory",
   description:
     "Learn game programming fundamentals from a professional game developer and university educator, with personal feedback on code you write yourself.",
   icons: {

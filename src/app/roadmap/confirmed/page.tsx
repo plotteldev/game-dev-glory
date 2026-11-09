@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Roadmap Sent | Game Dev Glory",
   description: "Confirmation for the free Gamer to Game Dev Roadmap.",
 };
 

@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Manage Subscription | Game Dev Glory",
   description:
     "Manage Game Dev Glory billing, invoices, payment methods, and cancellations through Stripe.",
 };

@@ -4,7 +4,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Details Received | Game Dev Glory",
   description: "Confirmation for Game Dev Glory coaching requests.",
 };
 
